@@ -38,10 +38,12 @@ _DATE_PATTERNS_STRONG = [
         re.compile(rf"ngày\s*(\d{{1,2}})\s*tháng\s*(\d{{1,2}})\s*năm\s*{_Y4}", re.IGNORECASE),
         lambda m: (int(m[3]), int(m[2]), int(m[1])),
     ),
-    # 14/08/2020, 14-08-2020, 14.08.2020; ':' and ',' also seen as separators (13:06:2020)
+    # 14/08/2020, 14-08-2020, 14.08.2020; ':' and ',' also seen as separators (13:06:2020).
+    # OCR may glue the time to the year: "11/06/202021:07:25", "01.10.202009.14".
     (
         re.compile(
-            rf"(?<!\d)(?<!\d:)(\d{{1,2}})\s?[/\-.:,]\s?(\d{{1,2}})\s?[/\-.:,]\s?{_Y4}(?!\d)"
+            rf"(?<!\d)(?<!\d:)(\d{{1,2}})\s?[/\-.:,]\s?(\d{{1,2}})\s?[/\-.:,]\s?{_Y4}"
+            r"(?:(?!\d)|(?=\d{1,2}[:.]\d{2}(?!\d)))"
         ),
         lambda m: (int(m[3]), int(m[2]), int(m[1])),
     ),
@@ -62,7 +64,8 @@ _DATE_PATTERNS_STRONG = [
 # 2-digit year: stricter, used only when no strong pattern matched.
 _DATE2 = re.compile(r"(?<!\d)(?<!\d:)(\d{1,2})[/\-.](\d{1,2})[/\-.](\d{2})(?![\d:])")
 _TIME = re.compile(
-    r"(?<![\d.,/])(\d{1,2})\s?[:hH.]\s?(\d{2})(?:\s?[:.]\s?(\d{2}))?(?![\d.,/])"
+    # a sentence dot after the minutes ("09:03. 13/07/2020") is fine; "09.03.2020" is not
+    r"(?<![\d.,/])(\d{1,2})\s?[:hH.]\s?(\d{2})(?:\s?[:.]\s?(\d{2}))?(?![\d,/])(?![.]\d)"
     r"(?:\s?(SA|CH|AM|PM)\b)?",
     flags=re.IGNORECASE,
 )

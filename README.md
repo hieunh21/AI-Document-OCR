@@ -4,9 +4,9 @@ Read a photo of a Vietnamese retail receipt and extract **seller, seller address
 timestamp and total cost**, with the evidence region for each value, a human review
 step, and a reproducible offline benchmark on **MC-OCR 2021**.
 
-> Status: **Phase 0–2 done** (project skeleton, data contracts, MC-OCR adapter, EDA,
-> leakage-controlled splits, OCR + orientation + image-quality baselines with a dev
-> benchmark). KIE comes in Phase 3. The app currently serves mock data.
+> Status: **Phase 0–3 done** (data contracts, MC-OCR adapter and splits, OCR + orientation +
+> image quality, rule-based and LLM key-information extraction with dev benchmarks).
+> The app still serves mock data (Phase 5).
 > Roadmap: `VietDocAI_MC_OCR_Phase_Roadmap.md`; progress: `docs/progress/`.
 
 ## Layout
@@ -89,10 +89,22 @@ PP-OCR detection + VietOCR recognition (`v6med_det+vietocr_seq2seq|transformer`)
 `+orient` for automatic page orientation. Dev results: `evaluation/reports/ocr_dev.md`,
 image quality: `evaluation/reports/iqa_dev.md`.
 
+## Key information extraction (Phase 3)
+
+```bash
+python -m evaluation.build_gazetteer                       # store list from the train split
+python -m evaluation.kie_eval --split dev --ocr-run "v6_medium+orient@gpu0"     --kie rules+gaz-nofb llm:gemini+gaz --workers 4         # LLM needs GEMINI_* in .env
+python scripts/extract_receipt.py path/to/receipt.jpg --kie rules+gaz-nofb
+```
+
+KIE options (`ai/kie/factory.py`): rule baseline (`rules`, `rules+gaz-nofb`) and Gemini over
+OCR text (`llm:gemini`, `llm:gemini+gaz`). The LLM only sees OCR text with span ids and must
+cite them; evidence boxes always come from OCR. Dev numbers: `evaluation/reports/kie_dev.md`.
+
 ## Benchmark
 
-End-to-end KIE benchmark comes in Phase 4. OCR-level dev numbers are in
-`evaluation/reports/`; no KIE accuracy is claimed yet.
+Dev results so far are in `evaluation/reports/` (OCR, image quality, KIE). The full benchmark
+with per-stratum results and the single held-out test run comes in Phase 4.
 
 ## References
 

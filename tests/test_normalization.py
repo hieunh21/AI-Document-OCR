@@ -64,6 +64,9 @@ def test_dates_and_times_are_not_amounts():
         # OCR output often drops the space after the colon (regression, found in Phase 2)
         ("Ngày bán:17/08/2020 06:28", "2020-08-17T06:28"),
         ("Ngay:10-08-2020", "2020-08-10"),
+        ("Thời gian: 09:03. 13/07/2020", "2020-07-13T09:03"),  # dot after the minutes
+        ("11/06/202021:07:25", "2020-06-11T21:07:25"),  # OCR glued the time to the year
+        ("Thài gian:01.10.202009.14 S6 HD: 19810000202020", "2020-10-01T09:14"),
     ],
 )
 def test_parse_timestamp(text, iso):

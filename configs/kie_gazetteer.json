@@ -1,0 +1,1329 @@
+{
+ "built_from": "train split (808 images), ground truth only",
+ "min_seller_count": 2,
+ "sellers": [
+  {
+   "key": "vincommerce",
+   "name": "VinCommerce",
+   "count": 226
+  },
+  {
+   "key": "minimart anan",
+   "name": "MINIMART ANAN",
+   "count": 187
+  },
+  {
+   "key": "nha sach gd tc cam pha",
+   "name": "NHÀ SÁCH GD-TC CẨM PHẢ",
+   "count": 66
+  },
+  {
+   "key": "cua hang nam oanh",
+   "name": "CỬA HÀNG NĂM OÁNH",
+   "count": 40
+  },
+  {
+   "key": "pho mo",
+   "name": "PHỐ MỎ",
+   "count": 24
+  },
+  {
+   "key": "sctc co tho 104 tran phu cam pha",
+   "name": "SCTC CÔ THỎ 104 TRẦN PHÚ - CẨM PHẢ",
+   "count": 18
+  },
+  {
+   "key": "sieu thi bach hoa tong hop",
+   "name": "SIEU THI BACH HOA TONG HOP",
+   "count": 14
+  },
+  {
+   "key": "saigon co op co op food hn the k park",
+   "name": "Saigon Co.op Co.op Food HN THE K-PARK",
+   "count": 13
+  },
+  {
+   "key": "ten dai ly",
+   "name": "TÊN ĐẠI LÝ:",
+   "count": 11
+  },
+  {
+   "key": "phuc anh minimart",
+   "name": "Phúc Anh Minimart",
+   "count": 10
+  },
+  {
+   "key": "the coffee hquse",
+   "name": "THE COFFEE HQUSE",
+   "count": 7
+  },
+  {
+   "key": "minimart ananan",
+   "name": "MINIMART ANANAN",
+   "count": 6
+  },
+  {
+   "key": "ten dai ly vinmart",
+   "name": "TÊN ĐẠI LÝ: VINMART",
+   "count": 6
+  },
+  {
+   "key": "thuc coffee",
+   "name": "THỨC COFFEE",
+   "count": 4
+  },
+  {
+   "key": "guitar cafe",
+   "name": "Guitar Cafe",
+   "count": 4
+  },
+  {
+   "key": "co op mart",
+   "name": "Co.op mart",
+   "count": 3
+  },
+  {
+   "key": "sieu thi minh loan",
+   "name": "SIỀU THỊ MINH LOAN",
+   "count": 3
+  },
+  {
+   "key": "familymart",
+   "name": "FamilyMart",
+   "count": 3
+  },
+  {
+   "key": "the coffee house",
+   "name": "THE COFFEE HOUSE",
+   "count": 2
+  },
+  {
+   "key": "thanh xuan",
+   "name": "Thanh Xuân",
+   "count": 2
+  },
+  {
+   "key": "nha hang aozora sushi",
+   "name": "Nhà hàng Aozora Sushi",
+   "count": 2
+  },
+  {
+   "key": "the coffee h9use",
+   "name": "THE COFFEE H9USE",
+   "count": 2
+  },
+  {
+   "key": "ten dai ly 5156 vinmart",
+   "name": "TÊN ĐẠI LÝ: 5156-VINMART",
+   "count": 2
+  },
+  {
+   "key": "co op mart co opmart hau giang",
+   "name": "co.op mart Co.opMart HAU GIANG",
+   "count": 2
+  },
+  {
+   "key": "co op food hn the k park saigon co op",
+   "name": "Co.op Food HN THE K-PARK Saigon Co.op",
+   "count": 2
+  },
+  {
+   "key": "vit commerce",
+   "name": "Vit Commerce",
+   "count": 2
+  },
+  {
+   "key": "co opmart hau giang",
+   "name": "Co.opMart HAU GIANG",
+   "count": 2
+  },
+  {
+   "key": "milano coffee",
+   "name": "MILANO COFFEE",
+   "count": 2
+  },
+  {
+   "key": "bach hoa xanh",
+   "name": "BÁCH HOÀ XANH",
+   "count": 2
+  }
+ ],
+ "addresses": [
+  {
+   "seller_key": "bach hoa xanh",
+   "key": "thua dat so 14 to ban do so 3 khu pho dong chieu phuong tan dong hiep thi xa di an",
+   "address": "Thửa đất số 14 Tờ bản đồ số 3 Khu phố Đông Chiêu, Phường Tân Đông Hiệp, Thị xã Dĩ An.",
+   "count": 1
+  },
+  {
+   "seller_key": "bach hoa xanh",
+   "key": "116 118 vinh hoi phuong 04 quan 4 thanh pho ho chi minh viet nam",
+   "address": "116-118 Vĩnh Hội, Phường 04, Quận 4, Thành phố Hồ Chí Minh, Việt Nam",
+   "count": 1
+  },
+  {
+   "seller_key": "co op food hn the k park saigon co op",
+   "key": "du an dau tu xay dung khu nha o hi brand tang 1 sh 42 toa k3 cong trinh chung cu ket hop dich vu tren o dat h ct2 thuoc p phu la q ha dong tp ha noi tai khu do thi moi van phu",
+   "address": "Du an Dau tu xay dung Khu nha o Hi Brand Tang 1, SH 42 Toa K3 cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc P. Phu La, Q. Ha Dong, Tp Ha Noi tai khu do thi moi Van Phu,",
+   "count": 1
+  },
+  {
+   "seller_key": "co op food hn the k park saigon co op",
+   "key": "p phu la q ha dong tp ha noi",
+   "address": "P. Phu La, Q. Ha Dong, Tp Ha Noi",
+   "count": 1
+  },
+  {
+   "seller_key": "co op mart",
+   "key": "co opmart xa lo ha noi",
+   "address": "Co.opMart XA LO HA NOI",
+   "count": 1
+  },
+  {
+   "seller_key": "co op mart",
+   "key": "co opmart nguyen dinh chieu",
+   "address": "Co.opMart NGUYEN DINH CHIEU",
+   "count": 1
+  },
+  {
+   "seller_key": "co op mart",
+   "key": "co opmart nguyen dinh chieu 168 nguyen dinh chieu 0 3",
+   "address": "Co.opMart NGUYEN DINH CHIEU 168 Nguyen Đinh Chiêu 0.3",
+   "count": 1
+  },
+  {
+   "seller_key": "co op mart co opmart hau giang",
+   "key": "dat hang qua dt 028 39 600 913 188 hau giang p 6 q 6 tphcm",
+   "address": "Dat hang qua DT: 028.39.600.913 188 Hau Giang, P.6, Q.6, TpHCM",
+   "count": 1
+  },
+  {
+   "seller_key": "co op mart co opmart hau giang",
+   "key": "188 hau giang p 6 q 6 tphcm",
+   "address": "188 Hau Giang, P.6 Q.6 , TPHCM",
+   "count": 1
+  },
+  {
+   "seller_key": "co opmart hau giang",
+   "key": "188 hau giang p 6 q 6 tphcm",
+   "address": "188 Hau Giang, P.6, Q.6, TpHCM",
+   "count": 1
+  },
+  {
+   "seller_key": "co opmart hau giang",
+   "key": "b8 hau giang p 6 q 6 tphcm",
+   "address": "B8 Hau Giang, P.6, Q.6, TpHCM",
+   "count": 1
+  },
+  {
+   "seller_key": "cua hang nam oanh",
+   "key": "thon phu thuy xa phu thi huyen gia lam tp ha noi",
+   "address": "Thôn Phú Thuỵ, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "count": 35
+  },
+  {
+   "seller_key": "cua hang nam oanh",
+   "key": "thon phu thue xa phu thi huyen gia lam tp ha noi",
+   "address": "Thôn Phú Thuệ, xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "cua hang nam oanh",
+   "key": "thoi phu thuy xa phu thi huyen gia lam tp ha noi",
+   "address": "Thôi Phú Thụy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "cua hang nam oanh",
+   "key": "thon phu thuy xa phu thi huyen gio lam tp ha noi",
+   "address": "Thôn Phú Thuỵ, Xã Phú Thị, Huyện Gio Lâm, TP Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "cua hang nam oanh",
+   "key": "thon phu thuy xa phu thi huyen gia lam tp ha noi 0869322496 02436765210",
+   "address": "Thôn Phú Thụy, Xã Phú Thị, Huyện Gia Lâm, TP Hà Nội 0869322496-02436765210",
+   "count": 1
+  },
+  {
+   "seller_key": "familymart",
+   "key": "block d3 khu b ktx dhqg p dong hoa tx li an binh duong",
+   "address": "Block D3 Khu B KTX ĐHQG, P.Đông Hoà, TX Lĩ An, Bình Dương",
+   "count": 1
+  },
+  {
+   "seller_key": "familymart",
+   "key": "block d3 khu bktx dhqg p dong hoa tx li an binh duong",
+   "address": "Block D3. Khu BKTX ĐHQG. P Đông Hoà, TX Lĩ An, Bình Dương",
+   "count": 1
+  },
+  {
+   "seller_key": "familymart",
+   "key": "8 duong so 35 kdc cat lai p cat lai q2",
+   "address": "8 Đường số 35, KDC Cát Lái, P.Cát Lái, Q2",
+   "count": 1
+  },
+  {
+   "seller_key": "guitar cafe",
+   "key": "d8 phan chu trinh hiep phu quan 9 ho",
+   "address": "Đ8 Phan Chu Trinh, Hiệp Phú, Quận 9, Hồ",
+   "count": 1
+  },
+  {
+   "seller_key": "guitar cafe",
+   "key": "da phan chu trinh hiep phu quan 9 ho",
+   "address": "Đa Phan Chu Trinh, Hiếp Phú, Quận 9, Hồ",
+   "count": 1
+  },
+  {
+   "seller_key": "guitar cafe",
+   "key": "28 phan chu trinh thiep phu quan 9 ho",
+   "address": "28 Phan Chu Trinh, Thiệp Phú, Quận 9, Hồ",
+   "count": 1
+  },
+  {
+   "seller_key": "guitar cafe",
+   "key": "p8 phan chu trinh hiep phu quan 9 ho",
+   "address": "P8 Phan Chu Trinh, Hiệp Phú, Quận 9, Hồ",
+   "count": 1
+  },
+  {
+   "seller_key": "milano coffee",
+   "key": "186 cay tram p 11 q go vap tp hcm",
+   "address": "186 Cầy Trâm, P.11, Q Gò Vấp, TP.HCM",
+   "count": 2
+  },
+  {
+   "seller_key": "minimart anan",
+   "key": "cho sui phu thi gia lam",
+   "address": "Chợ Sủi Phú Thị Gia Lâm",
+   "count": 178
+  },
+  {
+   "seller_key": "minimart anan",
+   "key": "cho sui phu thi thi gia lam",
+   "address": "Chợ Sủi Phú Thị Thị Gia Lâm",
+   "count": 3
+  },
+  {
+   "seller_key": "minimart anan",
+   "key": "chuc son phu thi gia lam",
+   "address": "Chức sơn Phú Thị Gia Lam",
+   "count": 2
+  },
+  {
+   "seller_key": "minimart anan",
+   "key": "cho sui pho thi gia lam",
+   "address": "Chợ Sủi, Phố Thị, Gia Lâm",
+   "count": 1
+  },
+  {
+   "seller_key": "minimart ananan",
+   "key": "cho sui phu thi gia lam",
+   "address": "Chợ Sủi Phú Thị Gia Lâm",
+   "count": 6
+  },
+  {
+   "seller_key": "nha hang aozora sushi",
+   "key": "bs3 thuy khue quan tay ho thanh pho ha noi",
+   "address": "BS3 Thụy Khuê, Quận Tây Hồ, Thành phố Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "nha hang aozora sushi",
+   "key": "153 thuy khue quan tay ho thanh pho ha noi",
+   "address": "153 Thuỷ Khuê, Quận Tây Hồ, Thành phố Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "nha sach gd tc cam pha",
+   "key": "dc 212 duong tran phu cam pha",
+   "address": "ĐC: 212 Đường Trần Phú-Cẩm Phả",
+   "count": 63
+  },
+  {
+   "seller_key": "nha sach gd tc cam pha",
+   "key": "dc 212 duong tran phu cam pha thoi gian 10 09 44 13 08 2020",
+   "address": "Đc: 212 Đường Trần Phú - Cẩm Phả Thời gian: 10:09:44 - 13/08/2020",
+   "count": 1
+  },
+  {
+   "seller_key": "nha sach gd tc cam pha",
+   "key": "dc 212 duong tran phu tam phu",
+   "address": "ĐC: 212 Đường Trần Phú - Tâm Phú",
+   "count": 1
+  },
+  {
+   "seller_key": "pho mo",
+   "key": "to 7 khu tan lap 4 p cam thuy tp cam pha quang ninh",
+   "address": "Tổ 7 khu Tân Lập 4 - P.Cẩm Thủy Tp. Cẩm Phả - Quảng Ninh",
+   "count": 22
+  },
+  {
+   "seller_key": "pho mo",
+   "key": "tp cam pha quang ninh",
+   "address": "Tp. Cẩm Phả - Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "pho mo",
+   "key": "ho 7 khu tan lap 4 p cam thuy tp cam pha quang ninh",
+   "address": "Hồ 7 khu Tân Lập 4 - P.Cẩm Thủy Tp Cẩm Phả - Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "phuc anh minimart",
+   "key": "248 co bi gia lam ha noi",
+   "address": "248 Cổ Bi - Gia Lâm - Hà Nội",
+   "count": 8
+  },
+  {
+   "seller_key": "phuc anh minimart",
+   "key": "248 co bi gio lam ha noi",
+   "address": "248 Có Bi - Gio Lâm - Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "saigon co op co op food hn the k park",
+   "key": "tang 1 sh42 toa k3 cong trinh chung cu ket hop dich vu tren o dat h ct2 thuoc du an dau tu xay dung khu nha o hi brand tai khu do thi moi van phu p phu la q ha dong tp ha noi",
+   "address": "Tang 1,SH42 - Toa K3, Cong trinh chung cu ket hop đich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi",
+   "count": 5
+  },
+  {
+   "seller_key": "saigon co op co op food hn the k park",
+   "key": "tang 1 sh 42 toa k3 cong trinh chung cu ket hop dich vu tren o dat h ct2 thuoc du an dau tu xay dung khu nha o hi brand tai khu do thi moi van phu p phu la q ha dong tp ha noi",
+   "address": "Tang 1, SH 42 Toa K3 cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung khu nha o Hi Brand tai Khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi",
+   "count": 1
+  },
+  {
+   "seller_key": "saigon co op co op food hn the k park",
+   "key": "da an dau tu xay dung khu nha o hi brand tang 1 sh42 toa k3 cong trinh chung cu ket hop dich vu tren o dat h ct2 thuoc p phu la q ha dong tp ha moi tai khu do thi moi van phu",
+   "address": "Da an Dau tu xay dung Khu nha o Hi Brand Tang 1, SH42 - Toa K3, Cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc P. Phu La, Q. Ha Dong, Tp Ha Moi tai khu do thi moi Van Phu,",
+   "count": 1
+  },
+  {
+   "seller_key": "saigon co op co op food hn the k park",
+   "key": "tang 1 sh42 toa k3 cong trinh chung cu",
+   "address": "Tang 1,SH42 - Toa K3, Cong trinh chung cu",
+   "count": 1
+  },
+  {
+   "seller_key": "saigon co op co op food hn the k park",
+   "key": "tang 1 sh42 toa k3 cong trinh chung cu ket hop dich vu tren o dat h ct2 thuoc du an dau tu xay dung nha o hi brand tai khu do thi moi van phu p phu la q ha dong tp ha noi",
+   "address": "Tang 1, SH42 - Toa K3, cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung nha o Hi Brand tai khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi",
+   "count": 1
+  },
+  {
+   "seller_key": "saigon co op co op food hn the k park",
+   "key": "tang 1 sh42 toa k3 cong trinh chung cu het hop dich vu tren o dat h ct2 thuoc du an dau tu xay dung khu nha o hi brand tai khu do thi moi van phu p phu la q ha dong tp ha noi",
+   "address": "Tang 1, SH42 - Toa K3, Cong trinh chung cu Het hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi",
+   "count": 1
+  },
+  {
+   "seller_key": "saigon co op co op food hn the k park",
+   "key": "tang 1 sh42 toa k3 cong trinh chung cu du an dau tu xay dung khu nha o hi brand tai khu do thi moi van phu p phu la q ha dong tp ha noi",
+   "address": "Tang 1,SH42 - Toa K3, Cong trinh chung cu Du an Dau tu xay dung Khu nha o Hi Brand tai Khu do thi moi Van Phu, P. Phu La, Q.Ha Dong, Tp Ha Noi",
+   "count": 1
+  },
+  {
+   "seller_key": "saigon co op co op food hn the k park",
+   "key": "du an dau tu xay dung khu nha o hi brand tang 1 sh42 toa k3 cong trinh chung cu ket hop dich vu tren o dat h ct2 thuoc p phu la q ha dong tp ha noi tai khu do thi moi van phu",
+   "address": "Du an Dau tu xay dung khu nha o Hi Brand Tang 1, SH42- Toa K3, cong trinh chung cu ket hop dich vu tren o dat H- CT2 thuoc P. Phu La, Q. Ha Dong, Tp Ha Noi tại khu do thi moi Van Phu",
+   "count": 1
+  },
+  {
+   "seller_key": "saigon co op co op food hn the k park",
+   "key": "tam 1 sh42 toa k3 cong trinh chung cu ket hop dich vu tren o dat h ct2 thuoc du an dau tu xay dung khu nha o hi brand tai khu do thi moi van phu p phu la q ha dong tp ha noi",
+   "address": "Tam 1,SH42 - Toa K3, Cong trinh chung cu ket hop dich vu tren o dat H-CT2 thuoc Du an Dau tu xay dung Khu nha o Hi Brand tại Khu do thi moi Van Phu, P. Phu La, Q. Ha Dong, Tp Ha Noi",
+   "count": 1
+  },
+  {
+   "seller_key": "sctc co tho 104 tran phu cam pha",
+   "key": "104 tran phu phuong cam tay thanh pho cam pha quang ninh",
+   "address": "104 Trần Phú - phường Cẩm Tây - Thành phố Cẩm Phả - Quảng Ninh",
+   "count": 14
+  },
+  {
+   "seller_key": "sctc co tho 104 tran phu cam pha",
+   "key": "hoa tran phu phuong cam tay thanh pho cam pha quang ninh",
+   "address": "hoá Trần Phú - phường Cẩm Tây - Thành phố Cẩm Phả - Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "sctc co tho 104 tran phu cam pha",
+   "key": "hoa tran phu phuong canh tay thanh pho cam pha quang ninh",
+   "address": "Hoá Trần Phú, phường Cảnh Tây - Thành phố Cẩm Phả - Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "sctc co tho 104 tran phu cam pha",
+   "key": "104 tran phu phuong cam tay thanh pho cam pha quang tinh",
+   "address": "104 Trần Phú, phường Cẩm Tây, Thành phố Cẩm Phả - Quảng Tỉnh",
+   "count": 1
+  },
+  {
+   "seller_key": "sctc co tho 104 tran phu cam pha",
+   "key": "104 tran phu phuong tay thanh pho cam pha quang ninh",
+   "address": "104 Trần Phú phường Tây Thành phố Cẩm Phả Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "sieu thi bach hoa tong hop",
+   "key": "so 5 cam tay cam pha qn",
+   "address": "Số 5 Cẩm Tây - Cẩm Phả - QN",
+   "count": 11
+  },
+  {
+   "seller_key": "sieu thi bach hoa tong hop",
+   "key": "bo 5 cam tay cam pha qn",
+   "address": "Bố 5 Cẩm Tây - Cẩm Phả - QN",
+   "count": 1
+  },
+  {
+   "seller_key": "sieu thi minh loan",
+   "key": "tt101 cc 12 tang ngo 25 vu ngoc phan",
+   "address": "TT101 CC 12 Tang Ngõ 25 Vũ Ngọc Phan",
+   "count": 3
+  },
+  {
+   "seller_key": "ten dai ly",
+   "key": "dia chi so 1060 1062 tran phu p c",
+   "address": "ĐỊA CHỈ SỐ 1060-1062 TRẦN PHÚ. P.C",
+   "count": 2
+  },
+  {
+   "seller_key": "ten dai ly",
+   "key": "dia chi to 7 pham minh tien a p ca",
+   "address": "ĐỊA CHỈ: TỔ 7, PHẠM MINH TIẾN A, P.CÂ",
+   "count": 1
+  },
+  {
+   "seller_key": "ten dai ly",
+   "key": "dia chi dai ly to 8 khu 3b p cam trung cam ha quang ninh",
+   "address": "ĐỊA CHỈ ĐẠI LÝ: TỔ 8 KHU 3B P.CẨM TRUNG CAM HA QUANG NINH",
+   "count": 1
+  },
+  {
+   "seller_key": "ten dai ly",
+   "key": "dia chi to 8 khu 3b p cam trung",
+   "address": "Dia Chi Tổ 8 KHU 3B, P.CAM TRUNG",
+   "count": 1
+  },
+  {
+   "seller_key": "ten dai ly",
+   "key": "to 8 khu 18 p cam trung t",
+   "address": "TỔ 8, KHU 18, P. Cẩm TRUNG, T",
+   "count": 1
+  },
+  {
+   "seller_key": "ten dai ly",
+   "key": "dia chi dai ly to 8 khu 3b p cam trung cam hang quang ninh",
+   "address": "ĐỊA CHỈ ĐẠI LÝ TỔ 8 KHU 3B P.CẨM TRUNG CÁM HÀNG QUẢNG NINH",
+   "count": 1
+  },
+  {
+   "seller_key": "ten dai ly",
+   "key": "to 7 khu minh tien a p ca",
+   "address": "TỔ 7 KHU MINH TIẾN A, P.CÂ",
+   "count": 1
+  },
+  {
+   "seller_key": "ten dai ly",
+   "key": "dia chi dia ly cam pha quang ninh",
+   "address": "ĐỊA CHỈ ĐIA LÝ CAM PHA, QUANG NINH",
+   "count": 1
+  },
+  {
+   "seller_key": "ten dai ly",
+   "key": "dia chi dai ly to 8 khu 3b p cam trung",
+   "address": "ĐỊA CHỈ ĐẠI LÝ: Tổ 8, khu 3B, P.Cẩm Trung",
+   "count": 1
+  },
+  {
+   "seller_key": "ten dai ly",
+   "key": "to 7 khu minh tien a p cam",
+   "address": "TỔ 7 KHU MINH TIẾN A, P. CẨM",
+   "count": 1
+  },
+  {
+   "seller_key": "ten dai ly 5156 vinmart",
+   "key": "dia chi dai ly 5156 to 2 minh tien a cam binh cam pha qn",
+   "address": "ĐỊA CHỈ ĐẠI LÝ: 5156-To 2 MINH TIEN A CAM BINH, CAM PHA, QN",
+   "count": 1
+  },
+  {
+   "seller_key": "ten dai ly 5156 vinmart",
+   "key": "dia chi dai ly 5156 to 7 minh tien a cam binh cam pha qn",
+   "address": "ĐỊA CHỈ ĐẠI LÝ : 5156 TỔ 7 Minh TIẾN A CAM BINH CAM PHA QN",
+   "count": 1
+  },
+  {
+   "seller_key": "ten dai ly vinmart",
+   "key": "dia chi to 7 khu minh tien a p ca",
+   "address": "Địa chỉ: TỔ 7 KHU MINH TIẾN A.P .CA",
+   "count": 2
+  },
+  {
+   "seller_key": "ten dai ly vinmart",
+   "key": "dia chi so 1060 1062 tran phu p c",
+   "address": "ĐỊA CHỈ: .SỐ 1060-1062 TRẦN PHÚ. P. C",
+   "count": 2
+  },
+  {
+   "seller_key": "ten dai ly vinmart",
+   "key": "dia chi du an khu dan cu lan bien",
+   "address": "ĐỊA CHỈ . DỰ ÁN KHU DÂN CƯ LẤN BIỂN",
+   "count": 1
+  },
+  {
+   "seller_key": "ten dai ly vinmart",
+   "key": "to 7 khu minh tien a p ca",
+   "address": "TỔ 7 KHU MINH TIÊN A.P.CA",
+   "count": 1
+  },
+  {
+   "seller_key": "thanh xuan",
+   "key": "244 23a huynh van banh p 11 q pn",
+   "address": "244/23a Huỳnh Văn Bánh, P.11, Q.PN",
+   "count": 2
+  },
+  {
+   "seller_key": "the coffee h9use",
+   "key": "403 phan huy ich p 14 q go vap",
+   "address": "403 Phan Huy Ích, P.14, Q Gò Vấp",
+   "count": 2
+  },
+  {
+   "seller_key": "the coffee house",
+   "key": "403 phan huy ich p 14 q go vap",
+   "address": "403 Phan Huy Ích, P.14, Q. Gò Vấp",
+   "count": 1
+  },
+  {
+   "seller_key": "the coffee house",
+   "key": "403 phan huy ich p 14 qgo vap",
+   "address": "403 Phan Huy Ích, P.14, QGò Vấp",
+   "count": 1
+  },
+  {
+   "seller_key": "the coffee hquse",
+   "key": "403 phan huy ich p 14 q go vap",
+   "address": "403 Phan Huy Ích, P.14, Q.Gò Vấp",
+   "count": 7
+  },
+  {
+   "seller_key": "thuc coffee",
+   "key": "22 quang trung p10 go vap",
+   "address": "22 Quang Trung, P10, Gò Vấp",
+   "count": 4
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 7 khu minh tien a to 7 khu minh tien a p cam binh tp cam pha qnh",
+   "address": "VM+ QNH Tổ 7, khu Minh Tiến A Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH",
+   "count": 24
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 112 thanh nien so 112 thanh nien p cam thanh tp cam pha quang ninh",
+   "address": "VM+ QNH 112 Thanh Niên Số 112 Thanh Niên, P. Cẩm Thành TP. Cẩm Phả, Quảng Ninh",
+   "count": 16
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 590 tran phu so 590 tran phu p cam thuy tp cam pha quang ninh",
+   "address": "VM+ QNH 590 Trần Phú Số 590 Trần Phú, P. Cẩm Thủy TP. Cẩm Phả, Quảng Ninh",
+   "count": 12
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh du an kdc lan bien coc 6 da khu dclb coc 6 p cam son tp cam pha t quang ninh",
+   "address": "VM+QNH Dự án KDC lấn biển cọc 6 DA khu DCLB coc 6,P.Cẩm Sơn TP. Cẩm Phả, T.Quảng Ninh",
+   "count": 10
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 1062 tran phu so 1060 1062 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 1060-1062 Trần Phú Số 1060-1062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "count": 9
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh du an quy dat duong sat da qd doc tuyen ds to 3 khu 2 p cam son tp cam pha t qn",
+   "address": "VM+QNH Dự án quỹ đất đường sắt DA QĐ dọc tuyến ĐS Tổ 3 Khu 2 P.Cẩm Sơn, TP.Cẩm Phả, T.QN",
+   "count": 8
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 86 tran phu so 86 duong tran phu p cam tay tp cam pha t quang ninh",
+   "address": "VM+ QNH 86 Trần Phú Số 86 Đường Trần Phú, P. Cẩm Tây TP Cẩm Phả, T.Quảng Ninh.",
+   "count": 8
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 8 khu 3b cam trung to 8 khu 3b p cam trung tp cam pha t quang ninh",
+   "address": "VM+QNH Tổ 8 Khu 3B Cẩm Trung Tổ 8, Khu 3B, P. Cẩm Trung TP. Cẩm Phả, T.Quảng Ninh",
+   "count": 8
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 1062 tran phu so 10604062 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 1060-1062 Trần Phú Số 10604062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 8
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh du an kdc lan bien coc 6 da khu dclb coc 8 p cam son tp cam pha t quang ninh",
+   "address": "VM+QNH Dự án KDC lấn biển cọc 6 DA khu DCLB coc 8, P.Cẩm Sơn TP.Cẩm Phả, T.Quảng Ninh",
+   "count": 5
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 690 tran phu so 590 tran phu p cam thuy tp cam pha quang ninh",
+   "address": "VM+ QNH 690 Trần Phú Số 590 Trần Phú, P. Cẩm Thuỷ TP. Cẩm Phả, Quảng Ninh",
+   "count": 3
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm hni 32 lang trung so 32 ngo lang trung p lang ha q dong da ha noi",
+   "address": "VM + HNI 32 Láng Trung Số 32 ngõ Láng Trung, P. Láng Hà Q. Đống Đa, Hà Nội",
+   "count": 3
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 112 thanh nien so 112 thanh hoa p cam thanh tp cam pha quang ninh",
+   "address": "VM+ QNH 112 Thanh Niên Số 112 Thanh Hóa, P. Cẩm Thành TP. Cẩm Phả, Quảng Ninh",
+   "count": 2
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm cnh to 7 khu minh tien a to 7 khu minh tien a p cam binh tp cam pha qnh",
+   "address": "VM+ CNH Tổ 7, Khu Minh Tiến A Tổ 7. Khu Minh Tiến A P.Cẩm Bình, TP. Cẩm Pha, QNH",
+   "count": 2
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vmn qnh to 7 khu minh tien a to 7 khu minh tien a p cam binh tp cam pha qnh",
+   "address": "VMN-QNH Tổ 7, Khu Minh Tiến A Tổ 7 Khu Minh Tiến A P.Cẩm Bình, TP. Cẩm Phả, QNH",
+   "count": 2
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh so 463 to 66 khu diem thuy so 483 to 8 khu diem thuy p cam dong tp cam pha",
+   "address": "VM+ QNH Số 463 Tổ 66 Khu Diêm Thuỷ Số 483, Tổ 8, Khu Diêm Thuỷ P. Cẩm Đồng, TP. Cẩm Phả",
+   "count": 2
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "tp cam pha quang ninh",
+   "address": "TP. Cẩm Phả, Quảng Ninh",
+   "count": 2
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 1060 1062 tran phu so 1060 1062 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 1060-1060-1062 Trần Phú Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 2
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh du an kdc lan bien coc 6 da khu dc1 b coc b p cam son tp cam pha t quang ninh",
+   "address": "VM+QNH Dự án KDC lấn biển cọc 6 DA Khu DC1 B Coc B.P Cẩm Sơn TP.Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 1062 tran phu so 10804062 duong tran phu tp cam pha quang ninh",
+   "address": "VM+ QNH 1060-1062 Trần Phú Số 10804062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 112 thanh nien tp cam pha quang ninh",
+   "address": "VM + QNH 112 Thanh Niên TP Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 106041062 tran phu so 10604082 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 106041062 Trần Phú Số 10604082 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 10604062 tran phu so 10604062 duong tran phu tp cam pha quang ninh ngay ban 13 08 2020 20 25",
+   "address": "VM+QNH 10604062 Trần Phú Số 10604062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh Ngày bán: 13/08/2020 20:25",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "tp cam pha t quang ninh",
+   "address": "TP Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm onh 590 tran phu so 590 tran phu p cam thuy tp cam pha quang ninh",
+   "address": "VM-ONH 590 Trần Phú Số 590 Trần Phú P. Cẩm Thuỷ TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 7 khu minh tien a to 7 khu minh tien a p cam binh tp cam pha cnh",
+   "address": "VM+ QNH Tổ 7,Khu Minh Tiến A Tổ 7, khu Minh Tiến A P. Cẩm Bình. TP. Cẩm Phả. CNH",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh so 463 to 66 khu diem thuy so 463 to 66 khu dam thuy p cam dong tp cam pha",
+   "address": "VM+ QNH Số 463 Tổ 66 Khu Diêm Thủy Số 463, Tổ 66, Khu Dâm Thuỷ P. Cẩm Đông, TP. Cẩm Phả",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "so 112 thanh nien p cam thanh tp cam pha quang ninh",
+   "address": "Số 112 Thanh Niên. P. Cẩm Thanh TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "to 8 khu 3b p cam trung tp cam pha t quang ninh",
+   "address": "Tổ 8, Khu 3B, P. Cẩm Trung TP.Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "mi pham ngoc thach",
+   "address": "Mi Phạm Ngọc Thạch",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 86 tran phu so 38 duong tran phu p cam tay tp cam pha t quang ninh",
+   "address": "VM+ QNH 86 Trần Phú Số 38 Đường Trần Phú, P. Cẩm Tây TP Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 10604062 tran phu so 10604062 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 10604062 Trần Phú Số 10604062 Duong Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vn qnh du an kdc lan bien coc 6 da khu dclb coc 6 p cam son tp cam pha t quang ninh",
+   "address": "VN + QNH Dự án KDC lấn biến cọc 6 DA khu DCLB cọc 6,P.Cẩm Sơn TP. Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh so 463 to 66 khu diem thuy so 483 to 66 khu diem thuy p cam dong tp cam pha",
+   "address": "VM+ QNH Số 463 Tổ 66 Khu Diêm Thủy Số 483, Tổ 66, Khu Diêm Thuỷ P.Cẩm Đông, TP. Cẩm Phả",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 112 thanh nien so 112 thanh man p cam thanh tp cam pha quang minh",
+   "address": "VM+QNH 112 Thanh Niên Số 112 Thanh Mân, P Cẩm Thanh TP. Cẩm Phả, Quảng Minh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vin qnh to 8 khu 38 cam trung to 8 khu 2b p cam tung tp cam pha t quang ninh",
+   "address": "Vin+ QNH Tổ 8. Khu 38 Cẩm Trung Tổ 8, Khu 2B, P. Cẩm Tung TP. Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 7 khu minh tien a p cam binh tp cam pha qnh",
+   "address": "VM+ QNH Tổ 7, khu Minh Tiến A P.Cẩm Bình, TP.Cẩm Phả, QNH",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm hcma t93 nguyen kiem t93 nguyen kiem phuong 3 quan go vap tp hcm",
+   "address": "VM+ HCMA T93 Nguyễn Kiệm T93 Nguyễn Kiệm, Phường 3 Quận Gò Vấp, TP HCM",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 8 khu 38 cam trung to 8 khu 3b p cam trung tp cam pha t quang ninh",
+   "address": "VM+QNH Tổ 8 Khu 38 Cẩm Trung Tổ 8, Khu 3B, P. Cẩm Trung TP. Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 7 khu minh tien a to 7 khu hinh tien a p cam binh tp cam pha qnh",
+   "address": "VM+QNH Tổ 7, Khu Minh Tiến A Tổ 7, Khu Hình Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 10604062 tran phu so 1060 1062 duong tran phu tp cam pha quang ninh ngay 13 08 2020 thoi gian 20 26",
+   "address": "VM+QNH 10604062 Trần Phú Số 1060-1062 Dương Trần Phú TP. Cẩm Phả, Quảng Ninh Ngày: 13/08/2020 Thời gian: 20:26",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm cnh 112 thanh nien so 112 thanh hoa p cam thanh tp cam pha quang ninh",
+   "address": "VM+ CNH 112 Thanh Niên Số 112 Thanh Hóa, P. Cẩm Thành TP.Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "wm qnh du an quy dat duong sat da qd doc tuyen ds to 3 khu 2 p cam son tp cam pha t qn",
+   "address": "WM+QNH Dư án quỹ đất đường sắt DA QĐ doc tuyến ĐS Tổ 3 Khu 2 P. Cẩm Sơn, TP. Cẩm Phả, T.QN",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh so 463 to 66 khu diem thuy so 463 to 8 khu diem thuy p cam dong tp cam pha",
+   "address": "VM+QNH Số 463 Tổ 66 Khu Diêm Thuỷ Số 463, Tổ 8, Khu Diêm Thủy P. Cẩm Đông, TP. Cẩm Phả",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "wm ttth cho sui so 42 pho sui xa phu thi huyen gia lam ha noi",
+   "address": "WM+ TTTH Chợ Sủi Số 42 Phố Sủi, xã Phú Thị huyện Gia Lâm, Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 7 khu minh tien a p cam binh tp cam pha qnh to 7 khu minh tien a",
+   "address": "VM+QNH Tổ 7 Khu Minh Tiến Â P Cẩm Bình TP Cẩm Phả QNH Tổ 7, Khu Minh Tiến A",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vmh qnh 112 thanh nien so 112 thanh nien p cam thanh tp cam pha quang ninh",
+   "address": "VMH+QNH 112 Thanh Niên Số 112 Thanh Niên. P. Cẩm Thành Tp. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "ngay ban 15 08 2020 11 16",
+   "address": "Ngày bán: 15/08/2020 11:16",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 8 khu 3b cam trung to 8 khu 38 p cam trung tp cam pha t quang ninh",
+   "address": "VM+QNH Tổ 8 Khu 3B Cẩm Trung Tổ 8, Khu 38, P. Cẩm Trung TP.Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 10604062 tran phu so 10804082 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 10604062 Trần Phú Số 10804082 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 86 tran phu so 85 duong tran phu p cam tay tp cam pha t quang ninh",
+   "address": "VM + QNH 86 Trần Phú Số 85 Đường Trần Phú, P. Cẩm Tây TP Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 10604062 tran phu so 10804062 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 10604062 Trần Phú Số 10804062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 10662 tran phu so 1060 1062 duong tran phu tp cam pha quang ninh",
+   "address": "VM+ QNH 1060-10662 Trần Phú Số 1060-1062 Đường Trần Phú TP Cẩm Phả. Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "pham ngoc thach tttm vincom so 1 pham ngoc thach",
+   "address": "Phạm Ngọc Thạch TTTM Vincom Số 1 Phạm Ngọc Thạch",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 1062 tran phu so 1080 1062 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 1060-1062 Trần Phú Số 1080-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "da khu dclb coc 8 p cam son tp cam pha t quang ninh",
+   "address": "DA khu DCLB cọc 8, P. Cẩm Sơn TP. Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh du an kdc lan bien coc6 da khu dclb coc 8 p cam son tp cam pha t quang ninh",
+   "address": "VM+ QNH Dư án KDC lấn biển coc6 DA khu DCLB cọc 8, P. Cẩm Sơn TP. Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "ma pham ngoc thach",
+   "address": "Ma Pham Ngọc Thạch",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm hcm cc the manor 1 91 ng h canh 91 nguyen huu canh phuong 22 q binh thanh tp hcm",
+   "address": "VM + HCM CC The Manor 1, 91 Ng. H . Canh 91 Nguyễn Hữu Cảnh, Phường 22 Q.Bình Thạnh, TP.HCM",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm my dinh tang 1 nha ct9 kdt my dinh p lie tri q mam tu liem hn",
+   "address": "VM+ Mỹ Đình Tầng 1, nhà CT9.KĐT Mỹ Đình P. Liê Trì, Q. Mam Từ Liêm, HN",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 88 tran phu so 86 duong tran phu p cam tay tp cam pha t quang ninh",
+   "address": "VM+ QNH 88 Trần Phú Số 86 Đường Trần Phú, P.Cẩm Tây TP Cẩm Phả T Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "nm qnh 1060 1062 tran phu so 10604062 duong tran phu tp cam pha quang ninh",
+   "address": "NM+ QNH 1060-1062 Trần PHú Số 10604062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 86 tran phu so 36 duong than pho p cam tay tp cam pha t quang ninh",
+   "address": "VM+ QNH 86 Trần Phú Số 36 Đường Thàn Phố, P. Cẩm Tây TP Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 590 tran phu so 690 tran phu p cam thuy tp cam pha quang ninh",
+   "address": "VM+QNH 590 Trần Phú Số 690 Trần Phú P. Cẩm Thủy TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm 81a xuan dieu so 81a duong xuan dau p quan an q tay ho ha noi",
+   "address": "VM+ 81A Xuân Diệu Số 81A, đường Xuân Dâu P.Quản An, Q Tây Hồ, Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vn qnh 1060 1062 tran phu so 10404062 duong tran phu tp cam pha quang ninh",
+   "address": "VN+ QNH 1060-1062 Trần Phú Số 10404062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 1062 tran phu so 10601062 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 1060-1062 Trần Phú Số 10601062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 112 thanh nien so 112 thanh nam p cam thanh tp cam pha quang ninh",
+   "address": "VM + QNH 112 Thanh Niên Số 112 Thanh Năm, P. Cẩm Thành TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh so 463 to 68 khu diem thuy so 463 to 86 khu dam thuy p cam dong tp cam pha",
+   "address": "VM+QNH Số 463 Tổ 68 Khu Diêm Thủy Số 463, Tổ 86, Khu Dâm Thuỷ P.Cẩm Đông, TP. Cẩm Phả",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vp 1 cnh 86 tran phu so 36 duong tran phu t cam tay tp cam pha t quang ninh",
+   "address": "VP-1 + CNH 86 Trần Phú Số 36 Đường Trần Phú, T. Cẩm Tây TP Cẩm Phả, T. Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 1062 tran phu so 10604082 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 1060-1062 Trần Phú Số 10604082 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "ma chh to 7 khu minh tien a to 7 khu minh tien a p cam binh tp cam pha qnh",
+   "address": "MA CHH Tổ 7 , Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 7 khi minh tien a to 7 khu minh tien a p cam binh tp cam pha qnh",
+   "address": "VM+ QNH Tổ 7, Khi Minh Tiến A Tổ 7. Khu Minh Tiến A P . Cẩm Bình, TP . Cảm Phả, QNH",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 86 tran phu so 36 duong tran phu p cam tay tp cam pha t quang ninh",
+   "address": "VM+ QNH 86 Trần Phú Số 36 Đường Trần Phú, P. Cẩm Tây TP Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 1062 tran phu",
+   "address": "VM+QNH 1060-1062 Trần PHú",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "da qd doc tuyen ds to 3 khu 2 p cam son tp cam pha t qn",
+   "address": "DA QĐ đọc tuyến ĐS Tổ 3 Khu 2 P.Cẩm Sơn, TP. Cẩm Phả, T.QN",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm hni 32 lang trung so 32 ngo lang trung p lanh ha q dong da ha noi",
+   "address": "VM+ HNI 32 Láng Trung Số 32 ngõ Láng Trung, P . Lánh Hạ Q. Đống Đa, Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh so 463 to 66 khu diem thuy so 483 to 86 khu dam thuy p cam dong tp cam pha",
+   "address": "VM+ QNH Số 463 Tổ 66 Khu Diêm Thúy Số 483, Tổ 86, Khu Dâm Thuỷ P.Cẩm Đông, TP. Cẩm Phả",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 7 khu minh tien a vm qnh to 7 khu minh tien a p cam binh tp cam pha qnh",
+   "address": "VM+ QNH Tổ 7, khu Minh Tiến A VM+ QNH Tổ 7, khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qqnh 86 tran phu so 86 duong tran phu p cam tay tp cam pha t quang ninh",
+   "address": "VM+ QQNH 86 Trần Phú Số 86 Đường Trần Phú , P.Cẩm Tây TP Cẩm Phả, T.Quang Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm hn 32 lang trung so 32 ngo lang trung p lang ha q dong da ha noi",
+   "address": "VM + HN 32 Láng Trung Số 32 ngõ Láng Trung, P. Láng Hà Q.Đống Đa, Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm hni 32 lang trung q dong da ha noi",
+   "address": "VM + HNI 32 Láng Trung Q. Đống Đa, Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 10604052 tran phu so 1060 1062 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 10604052 Trần Phú Số 1060-1062 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm cnh 112 thanh nien so 112 thanh man p cam thanh tp cam pha quang ninh",
+   "address": "VM+ CNH 112 Thanh Niên Số 112 Thanh Mận, P. Cẩm Thành TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm 139 chien thang p tan trieu h thanh tri ha noi",
+   "address": "VM+ 139 Chiến Thắng P Tân Triều, H Thanh Trì, Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 10622 tran phu soos 1060 1062 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 1060-10622 Trần Phú Soos 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 1062 tran phu so 10604062 duong tran phu ttp cam pha quang ninh",
+   "address": "VM + QNH 1060-1062 Trần Phú Số 10604062 Đường Trần Phú TTP.Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 112 thanh nien so 112 thanh kien p cam thanh tp cam pha quang ninh",
+   "address": "VM+ QNH 112 Thanh Niên Số 112 Thanh Kiên P Cẩm Thành TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 1062 tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 1060-1062 Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "nm4 qnh du an kdc lan bien coc 6 da khu dclb coc 8 p cam son tp cam pha t quang ninh",
+   "address": "NM4-QNH Dư án KDC lấn biển coc 6 DA khu DCLB cọc 8, P.Cẩm Sơn TP. Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm cnh 1060 1062 tran phu so 10604082 duong tran phu tp cam pha quang ninh",
+   "address": "VM+CNH 1060-1062 Trần Phú Số 10604082 Đường Trần Phú TP.Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 1062 tran phu so 10404042 duong tran phu tp cam pha quang ninh",
+   "address": "VM + QNH 1060-1062 Trần Phú Số 10404042 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm cnh 112 thanh niem so 112 thanh nien p cam thanh tp cam pha quang ninh",
+   "address": "VM+ CNH 112 Thanh Niệm Số 112 Thanh Niên, P. Cẩm Thành TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "nm qnh so 463 to 66 khu diem thuy so 463 to 66 khu diem thuy p cam dong tp cam pha",
+   "address": "NM+ QNH Số 463 Tổ 66 Khu Diêm Thuỷ Số 463, Tổ 66, Khu Diêm Thuy P.Câm Đông, TP>Câm Pha",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 1060 1062 tran phu so 1060 1062 duong tran phu tt cam pha quang ninh",
+   "address": "VM+ QNH 1060-1062 Trần Phú Số 1060-1062 Đường Trần Phú TT. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm onh to 8 khu 3b cam trung to 8 khu 38 p cam trung tp cam pha t quang ninh",
+   "address": "VM + ONH Tổ 8 Khu 3B Cẩm Trung Tổ 8, Khu 38, P. Cẩm Trung TP. Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm hcm 793 nguyen kiem t93 nguyen kiem phuong 3 quan go vap tp hcm",
+   "address": "VM+HCM 793 Nguyễn Kiệm T93 Nguyễn Kiệm Phường 3 Quận Gò Vấp, TP HCM",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm hni 23 ngo 136 cau dien so 23 ngo 136 duong cau dien p minh khai q bac tu liem hn",
+   "address": "VM + HNI 23 ngõ 136 Cầu Diễn Số 23 ngõ 136 đường Cầu Diễn P.Minh Khai, Q Bắc Từ Liêm, HN",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vma qua to 7 khu minh tien a to 7 khu minh tien a p cam binh tp cam pha qnh",
+   "address": "VMA QUA Tổ 7 , Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P.Cẩm Bình, TP.Cẩm Phả, QNH",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "so 42 pho sui xa phu thi huyen gia lam ha noi",
+   "address": "Số 42 Phố Sủi, xã Phú Thị huyện Gia Lâm, Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 590 tran phu so 590 tran phu p cam thuy hp cam pha quang ninh",
+   "address": "VM+ QNH 590 Trần Phú Số 590 Trần Phú, P.Cẩm Thúy HP.Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 7 khu minh tien a to 7 khu minh tien a p cam binh tp cam phu qnh",
+   "address": "VM+ QNH Tổ 7, khu Minh Tiến A Tổ 7, Khu Minh Tiến A P Cẩm Bình, TP.Câm Phú, QNH",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "nha quh to 7 khu minh tien a to 7 khu minh tien a p cam binh tp cam pha qnh",
+   "address": "NHÀ QUH Tổ 7 , Khu Minh Tiến A Tổ 7, Khu Minh Tiến A P. Cẩm Bình, TP. Cẩm Phả, QNH",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "tp cam pha quang ninh so 1060 1082 duong tran phu",
+   "address": "TP. Cẩm Phả, Quảng Ninh Số 1060-1082 Đường Trần Phú",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "p cam binh tp cam pha qnh to 7 khu minh tien a",
+   "address": "P.Cẩm Bình, TP.Cẩm Phả, QNH Tổ 7, khu Minh Tiến A",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh so 463 to 66 khu diem thuy so 463 to 66 khu dan thuy p cam dong tp cam pha",
+   "address": "VM+ QNH Số 463 Tổ 66 Khu Diêm Thủy Số 463, Tổ 66, Khu Dân Thuỷ P. Cẩm Đông, TP. Cẩm Phả",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vmn qnh 112 thanh nien so 112 thanh nien p cam thanh tp cam pha quang ninh",
+   "address": "VMN QNH 112 Thanh Niên Số 112 Thanh Niên, P.Cẩm Thành TP.Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm hn 36 dinh thon so 35 dinh thon thon p my dinh 1 q nam tu uan ha noi",
+   "address": "VM+HN: 36 Đình Thôn Số 35 Đinh Thôn Thôn P. Mỹ Đình 1 Q. Nam Từ Uấn, Hà Nội",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 8 khu 3b p cam trung to 8 khu 3b p cam trung tp cam pha t quang ninh",
+   "address": "VM+QNH Tổ 8, khu 3B, P.Cẩm Trung Tổ 8, Khu 3B, P. Cẩm Trung TP.Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm onh 112 thanh nien so 112 thanh nien p cam thanh tp cam phu quang ninh",
+   "address": "VM + ONH 112 Thanh Niên Số 112 Thanh Niên, P.Cẩm Thành TP. Cẩm Phú, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 580 tran phu so 590 tran phu p cam thuy tp cam pha quang ninh",
+   "address": "VM+ QNH 580 Trần phú Số 590 Trần Phú. P. Cẩm Thuỷ TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh du an kdc lan bien coc 6 da khu dcl b cac b p cam son tp cam pha t quang ninh",
+   "address": "VM+QNH Dự án KDC lấn biển cọc 6 DA khu DCL B cac B P.Cẩm Sơn TP.Cẩm Phả T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh 590 tran phu so 680 tran phu p cam thuy tp cam pha quang ninh",
+   "address": "VM+QNh 590 Trần Phú Số 680 Trần Phú, P.Cẩm Thuỷ TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "so 590 tran phu p cam thuy so 590 tran phu p cam thuy tp cam pha quang ninh",
+   "address": "Số 590 Trần Phú, P.Cẩm Thuỷ Số 590 Trần Phú, P.Cẩm Thuỷ TP. Cẩm Phả, Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm qnh to 8 khu 3b cam trung to b khu 3b p cam trung tp cam pha t quang ninh",
+   "address": "VM+ QNH Tổ 8 Khu 3B Cẩm Trung Tổ B, Khu 3B, P.Cẩm Trung TP.Cẩm Phả, T.Quảng Ninh",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vmn qnh to 7 khu minh tien a to 7 khu minh tien a tp cam binh tp cam pha qnh",
+   "address": "VMN QNH Tổ 7, Khu Minh Tiến A Tổ 7 , Khu Minh Tiến A TP. Cẩm Bình, TP. Cẩm Phả, QNH",
+   "count": 1
+  },
+  {
+   "seller_key": "vincommerce",
+   "key": "vm hcm 793 nguyen kiem t93 nguyen kiem phuong 3",
+   "address": "VM+ HCM 793 Nguyễn Kiệm T93 Nguyễn Kiệm, Phường 3",
+   "count": 1
+  },
+  {
+   "seller_key": "vit commerce",
+   "key": "vm qnh 1060 1062 tran phu so 1060 1062 duong tran phu tp cam pha quang ninh",
+   "address": "VM+QNH 1060-1062 Trần Phú Số 1060-1062 Đường Trần Phú TP. Cẩm Phả, Quảng Ninh",
+   "count": 2
+  }
+ ]
+}

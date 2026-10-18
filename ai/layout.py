@@ -19,8 +19,8 @@ def polygon_bbox(points: Sequence[Sequence[float]]) -> list[float]:
     return [min(xs), min(ys), max(xs), max(ys)]
 
 
-def reading_order(items: Sequence[T], bbox: Callable[[T], Sequence[float]]) -> list[T]:
-    """Sort boxes top-to-bottom, then left-to-right within a visual line.
+def group_lines(items: Sequence[T], bbox: Callable[[T], Sequence[float]]) -> list[list[T]]:
+    """Group boxes into visual lines, top-to-bottom; each line sorted left-to-right.
 
     Two boxes are on the same line when their vertical overlap is at least half
     of the smaller box height — receipts often print "Tổng tiền:" and the amount
@@ -40,4 +40,9 @@ def reading_order(items: Sequence[T], bbox: Callable[[T], Sequence[float]]) -> l
                 last.append(it)
                 continue
         lines.append([it])
-    return [it for line in lines for it in sorted(line, key=lambda o: bbox(o)[0])]
+    return [sorted(line, key=lambda o: bbox(o)[0]) for line in lines]
+
+
+def reading_order(items: Sequence[T], bbox: Callable[[T], Sequence[float]]) -> list[T]:
+    """Top-to-bottom, then left-to-right within a visual line (see ``group_lines``)."""
+    return [it for line in group_lines(items, bbox) for it in line]

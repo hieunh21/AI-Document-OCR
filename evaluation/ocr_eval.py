@@ -31,14 +31,13 @@ import json
 import statistics
 import sys
 import time
-import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
 from ai.layout import reading_order
 from ai.normalization.datetime_vi import parse_timestamp
 from ai.normalization.money import find_amounts, to_vnd
-from ai.normalization.text import fold_for_match, normalize_text
+from ai.normalization.text import fold_for_match, normalize_text, strip_accents
 from ai.schemas import OCRResult, OCRSpan
 from evaluation.dataset_adapter import McocrRecord, Region, load_split
 
@@ -48,11 +47,6 @@ MIN_OVERLAP = 0.5
 
 
 # --------------------------------------------------------------------------- text
-
-
-def strip_accents(s: str) -> str:
-    s = s.replace("đ", "d").replace("Đ", "D")
-    return "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn")
 
 
 def views(s: str) -> dict[str, str]:

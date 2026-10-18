@@ -28,3 +28,14 @@ def fold_for_match(s: str | None) -> str:
     s = normalize_text(s) or ""
     s = _NON_WORD.sub(" ", s.casefold())
     return _WS.sub(" ", s).strip()
+
+
+def strip_accents(s: str) -> str:
+    """Remove Vietnamese diacritics (``đ`` -> ``d``); keeps case."""
+    s = s.replace("đ", "d").replace("Đ", "D")
+    return "".join(c for c in unicodedata.normalize("NFD", s) if unicodedata.category(c) != "Mn")
+
+
+def fold_noacc(s: str | None) -> str:
+    """``fold_for_match`` without diacritics: robust key for keyword matching on OCR text."""
+    return strip_accents(fold_for_match(s))

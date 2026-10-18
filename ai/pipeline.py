@@ -11,7 +11,7 @@ from dataclasses import dataclass, field
 
 from PIL import Image, ImageOps
 
-from ai.kie.base import KIEProvider
+from ai.kie.base import KIEProvider, extract_from_ocr
 from ai.ocr.base import OCRProvider
 from ai.quality.assess import QualityAssessor, QualityReport
 from ai.schemas import ExtractionWarning, OCRResult, ReceiptExtraction
@@ -44,7 +44,7 @@ class ReceiptPipeline:
         t1 = time.perf_counter()
         ocr = self.ocr.predict(image)
         t2 = time.perf_counter()
-        extraction = self.kie.extract(image, ocr.spans)
+        extraction, _ = extract_from_ocr(self.kie, ocr, image)
         t3 = time.perf_counter()
         quality = self.quality.assess(image, ocr) if self.quality else None
         t4 = time.perf_counter()

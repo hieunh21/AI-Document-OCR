@@ -14,6 +14,7 @@ dependencies = [
     "pandas>=2.2,<3",
     "pillow>=10.4",
     "opencv-contrib-python>=4.10",  # same distribution PaddleX installs (one cv2 only)
+    "rapidfuzz>=3.9",
 ]
 
 [project.optional-dependencies]
@@ -22,6 +23,9 @@ dependencies = [
 ocr = [
     "paddlepaddle>=3.3,<4",
     "paddleocr>=3.7,<4",
+]
+llm = [
+    "google-genai>=1.0",
 ]
 dev = [
     "pytest>=8",
