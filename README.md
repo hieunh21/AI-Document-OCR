@@ -4,9 +4,10 @@ Read a photo of a Vietnamese retail receipt and extract **seller, seller address
 timestamp and total cost**, with the evidence region for each value, a human review
 step, and a reproducible offline benchmark on **MC-OCR 2021**.
 
-> Status: **Phase 0–1 done** (project skeleton, data contracts, MC-OCR adapter, EDA,
-> leakage-controlled splits). OCR/KIE models come in Phase 2–3. The app currently
-> serves mock data. Roadmap: `VietDocAI_MC_OCR_Phase_Roadmap.md`.
+> Status: **Phase 0–2 done** (project skeleton, data contracts, MC-OCR adapter, EDA,
+> leakage-controlled splits, OCR + orientation + image-quality baselines with a dev
+> benchmark). KIE comes in Phase 3. The app currently serves mock data.
+> Roadmap: `VietDocAI_MC_OCR_Phase_Roadmap.md`; progress: `docs/progress/`.
 
 ## Layout
 
@@ -29,7 +30,7 @@ Requirements: Python 3.11–3.12, Node ≥ 20.19 (developed on Node 24 LTS), opt
 # Python
 uv venv .venv --python 3.12              # or: python -m venv .venv
 uv pip install --python .venv -e ".[dev]"  # core + tests
-# uv pip install --python .venv -e ".[ocr]"  # PaddleOCR (large download), needed from Phase 2
+# uv pip install --python .venv -e ".[ocr]"  # PaddleOCR on CPU; for GPU + VietOCR see docs/setup_gpu.md
 
 # Backend  (run from the repository root)
 .venv/Scripts/python -m uvicorn app.main:app --app-dir backend --reload   # Windows
@@ -73,9 +74,25 @@ Annotations that exist but cannot be normalized are *unscorable*, not `null`. Sp
 70/15/15 with duplicate groups (SHA-256, 1024-bit dHash, same transaction) kept together
 and stratified by seller. Details: `evaluation/data_contract.md`; numbers: `docs/dataset_eda.md`.
 
+## OCR (Phase 2)
+
+```bash
+# OCR a split with a preset (outputs cached under outputs/ocr/, git-ignored)
+python -m evaluation.ocr_eval run --split dev --preset "v6_medium+orient" --device gpu:0
+python -m evaluation.ocr_eval report --split dev --runs "v6_medium+orient@gpu0"
+python -m evaluation.iqa_eval fit --ocr-run v6_medium@gpu0     # image-quality model
+python scripts/render_ocr_overlay.py --run "v6_medium+orient@gpu0" --split dev --n 4
+```
+
+Presets (`ai/ocr/factory.py`): PP-OCRv6 `v6_tiny|v6_small|v6_medium`, PP-OCRv5 latin, and
+PP-OCR detection + VietOCR recognition (`v6med_det+vietocr_seq2seq|transformer`); append
+`+orient` for automatic page orientation. Dev results: `evaluation/reports/ocr_dev.md`,
+image quality: `evaluation/reports/iqa_dev.md`.
+
 ## Benchmark
 
-Not run yet (Phase 4). No accuracy numbers are claimed.
+End-to-end KIE benchmark comes in Phase 4. OCR-level dev numbers are in
+`evaluation/reports/`; no KIE accuracy is claimed yet.
 
 ## References
 

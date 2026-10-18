@@ -13,13 +13,15 @@ dependencies = [
     "numpy>=1.26,<3",
     "pandas>=2.2,<3",
     "pillow>=10.4",
+    "opencv-contrib-python>=4.10",  # same distribution PaddleX installs (one cv2 only)
 ]
 
 [project.optional-dependencies]
-# OCR stack is heavy (PaddlePaddle + PaddleOCR); install only when needed (Phase 2+).
+# OCR stack is heavy; CPU-only variant below. GPU + VietOCR need custom indexes and
+# --no-deps steps: follow docs/setup_gpu.md instead.
 ocr = [
-    "paddlepaddle>=3.0,<4",
-    "paddleocr>=3.0,<4",
+    "paddlepaddle>=3.3,<4",
+    "paddleocr>=3.7,<4",
 ]
 dev = [
     "pytest>=8",

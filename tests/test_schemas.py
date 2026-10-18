@@ -87,7 +87,7 @@ def test_mock_pipeline_round_trip():
     for ev in ex.evidence.values():  # evidence must point at real OCR spans
         assert set(ev.span_ids) <= span_ids
     assert ReceiptExtraction.model_validate_json(ex.model_dump_json()) == ex
-    assert set(result.timings_ms) == {"preprocess", "ocr", "kie", "total"}
+    assert set(result.timings_ms) == {"preprocess", "ocr", "kie", "quality", "total"}
 
 
 def _blank_image():

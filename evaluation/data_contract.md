@@ -1,6 +1,6 @@
 # Data contract — MC-OCR 2021 for VietDocAI
 
-Status: **frozen for Phase 2–4** (version `mcocr2021-gt-v1`, splits `splits-v1`).
+Status: **frozen for Phase 2–4** (version `mcocr2021-gt-v2`, splits `splits-v1`).
 Changing anything below requires bumping the version, regenerating
 `data/splits/` and `docs/dataset_eda.md`, and saying so in the next report.
 
@@ -125,3 +125,10 @@ Per field `f`, per image where `f` is scorable:
 - **Latency**: `latency_ms` per stage (preprocess / OCR / KIE / total), P50 and P95, with hardware stated.
 
 Our numbers are **not** comparable with the RIVF 2021 leaderboard (different split and protocol).
+
+## Changelog
+
+| Version | Date | Change | Effect |
+|---|---|---|---|
+| `mcocr2021-gt-v1` | 2026-10-18 | Initial contract (Phase 1) | — |
+| `mcocr2021-gt-v2` | 2026-10-18 | Date parser rejected any date directly after `:` (`"Ngày:16/08/2020"`); now only a preceding `<digit>:` (clock time) is excluded. Found in Phase 2 when OCR text dropped the space. | 5 more normalized timestamps (1040 → 1045); splits unchanged (`--check` reproducible) |

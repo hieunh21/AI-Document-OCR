@@ -80,6 +80,7 @@ class OCRResult(_Model):
     spans: list[OCRSpan] = Field(default_factory=list)
     model_version: str | None = None
     latency_ms: float | None = None
+    rotation: int = Field(default=0, description="CCW degrees applied before OCR (0/90/180/270)")
 
 
 # --------------------------------------------------------------------------- KIE

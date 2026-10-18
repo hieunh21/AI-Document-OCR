@@ -40,7 +40,9 @@ _DATE_PATTERNS_STRONG = [
     ),
     # 14/08/2020, 14-08-2020, 14.08.2020; ':' and ',' also seen as separators (13:06:2020)
     (
-        re.compile(rf"(?<![\d:])(\d{{1,2}})\s?[/\-.:,]\s?(\d{{1,2}})\s?[/\-.:,]\s?{_Y4}(?!\d)"),
+        re.compile(
+            rf"(?<!\d)(?<!\d:)(\d{{1,2}})\s?[/\-.:,]\s?(\d{{1,2}})\s?[/\-.:,]\s?{_Y4}(?!\d)"
+        ),
         lambda m: (int(m[3]), int(m[2]), int(m[1])),
     ),
     # "15 Aug 20", "15-Aug-2020"
@@ -58,7 +60,7 @@ _DATE_PATTERNS_STRONG = [
     ),
 ]
 # 2-digit year: stricter, used only when no strong pattern matched.
-_DATE2 = re.compile(r"(?<![\d:])(\d{1,2})[/\-.](\d{1,2})[/\-.](\d{2})(?![\d:])")
+_DATE2 = re.compile(r"(?<!\d)(?<!\d:)(\d{1,2})[/\-.](\d{1,2})[/\-.](\d{2})(?![\d:])")
 _TIME = re.compile(
     r"(?<![\d.,/])(\d{1,2})\s?[:hH.]\s?(\d{2})(?:\s?[:.]\s?(\d{2}))?(?![\d.,/])"
     r"(?:\s?(SA|CH|AM|PM)\b)?",

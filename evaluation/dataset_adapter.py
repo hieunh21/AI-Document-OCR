@@ -66,7 +66,7 @@ DEFAULT_ROOT = Path(os.environ.get("VIETDOCAI_MCOCR_DIR", "data/raw/mcocr"))
 TRAIN_CSV = "mcocr_train_df.csv"
 TRAIN_IMAGES = "train_images"
 VAL_IMAGES = "val_images"  # public validation images, no labels available
-GT_VERSION = "mcocr2021-gt-v1"
+GT_VERSION = "mcocr2021-gt-v2"
 
 CATEGORY_TO_FIELD: dict[int, str] = {
     15: "seller",

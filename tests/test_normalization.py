@@ -61,6 +61,9 @@ def test_dates_and_times_are_not_amounts():
         ("Ngày 22/01/2020 Giờ: 16:49", "2020-01-22T16:49"),
         ("Ngày: 23/09/2019 9:10:04", "2019-09-23T09:10:04"),
         ("Giờ vào: 14-08-2020 20:53 Giờ ra: 14-08-2020 21:31", "2020-08-14T20:53"),
+        # OCR output often drops the space after the colon (regression, found in Phase 2)
+        ("Ngày bán:17/08/2020 06:28", "2020-08-17T06:28"),
+        ("Ngay:10-08-2020", "2020-08-10"),
     ],
 )
 def test_parse_timestamp(text, iso):

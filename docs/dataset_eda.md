@@ -75,21 +75,21 @@ Region multiplicity matters for evaluation:
 
 | Field | Annotated | Normalized | Breakdown |
 |---|---|---|---|
-| timestamp | 1088 | 1040 (95.6%) | date+time 897, date only 143, null 48 |
+| timestamp | 1088 | 1045 (96.0%) | date+time 901, date only 144, null 43 |
 | total_cost | 1082 | 1006 (93.0%) | null 76 (keyword-only region, ambiguous or mislabelled) |
 
 Data-quality flags raised by the adapter (an image can have several):
 
 | Flag | Images | Meaning |
 |---|---|---|
-| `timestamp_no_time` | 143 | date without time |
+| `timestamp_no_time` | 144 | date without time |
 | `missing_seller` | 84 | no SELLER region |
 | `missing_seller_address` | 78 | no ADDRESS region |
 | `total_cost_no_amount` | 74 | TOTAL_COST regions hold only a keyword (amount not annotated) |
 | `missing_total_cost` | 73 | no TOTAL_COST region |
 | `missing_timestamp` | 67 | no TIMESTAMP region |
-| `timestamp_unparsed` | 27 | text present but no valid date (typos like `2C20`, `20199`, garbage) |
-| `timestamp_time_only` | 21 | only a clock time, no date |
+| `timestamp_unparsed` | 26 | text present but no valid date (typos like `2C20`, `20199`, garbage) |
+| `timestamp_time_only` | 17 | only a clock time, no date |
 | `timestamp_multiple_times` | 12 | check-in/check-out style; first time is used |
 | `suspect_timestamp_contains_total` | 9 | TIMESTAMP region holds an amount (label swap) |
 | `suspect_total_cost_contains_date` | 5 | TOTAL_COST region holds a date (label swap) |
@@ -106,7 +106,7 @@ Per-field scoring set for normalized metrics (see `evaluation/data_contract.md`)
 |---|---|---|---|---|
 | `seller` | 1153 | 1071 | 82 | 2 |
 | `seller_address` | 1153 | 1077 | 76 | 2 |
-| `timestamp` | 1105 | 1040 | 65 | 50 |
+| `timestamp` | 1110 | 1045 | 65 | 45 |
 | `total_cost` | 1075 | 1004 | 71 | 80 |
 
 ## 6. Sellers (store chains)
