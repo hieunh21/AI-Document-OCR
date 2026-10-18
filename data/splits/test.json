@@ -1,0 +1,1236 @@
+{
+  "name": "test",
+  "version": "splits-v1",
+  "seed": 2026,
+  "ratios": {
+    "train": 0.7,
+    "dev": 0.15,
+    "test": 0.15
+  },
+  "source_csv": "mcocr_train_df.csv",
+  "source_csv_sha256": "cf4e94276ed97f6132a96d08c05432a1b1fdb7d4337a18b05dc87f2d62b0f0f1",
+  "dedup": {
+    "dhash_size": 32,
+    "max_hamming": 150,
+    "signals": [
+      "sha256",
+      "dhash",
+      "transaction"
+    ]
+  },
+  "paths_relative_to": "VIETDOCAI_MCOCR_DIR (default data/raw/mcocr)",
+  "num_images": 173,
+  "items": [
+    {
+      "img_id": "mcocr_public_145013aeriv.jpg",
+      "path": "train_images/mcocr_public_145013aeriv.jpg",
+      "sha256": "ea98cd4478ce77eae9c753dcd49c80bc83b7328a553cae176b6582db9d136a9f",
+      "group_id": "mcocr_public_145013aeriv.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013auohz.jpg",
+      "path": "train_images/mcocr_public_145013auohz.jpg",
+      "sha256": "828eb1cad28d6bb71ec6705635ed6703d808440da9206fd2fc978cfd65a8c0f1",
+      "group_id": "mcocr_public_145013auohz.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145013bldqx.jpg",
+      "path": "train_images/mcocr_public_145013bldqx.jpg",
+      "sha256": "c53b2c7b47d770192a88ae65bf7ffeca862366e0d25cefeec81e7690cbef54ce",
+      "group_id": "mcocr_public_145013bldqx.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145013bvmvl.jpg",
+      "path": "train_images/mcocr_public_145013bvmvl.jpg",
+      "sha256": "811dc984b51c24786771a6bf702c10fa7402a8d38e770e4d5e8b6ea5db173be8",
+      "group_id": "mcocr_public_145013bvmvl.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013byufi.jpg",
+      "path": "train_images/mcocr_public_145013byufi.jpg",
+      "sha256": "bd3215803aa7dcdf3179b392f5fa7fe21fcac7f5138db2589e7dfb6162e384c6",
+      "group_id": "mcocr_public_145013byufi.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145013ckcsv.jpg",
+      "path": "train_images/mcocr_public_145013ckcsv.jpg",
+      "sha256": "07c695b15d96220fb1aeba2c27f3e6a109d6ddea0596b7e776cc36dbee224e4c",
+      "group_id": "mcocr_public_145013ckcsv.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013ckwpd.jpg",
+      "path": "train_images/mcocr_public_145013ckwpd.jpg",
+      "sha256": "10de7321814beb7aec4812a1ea33025c5419bb59acab4b27f633c19bce5cb825",
+      "group_id": "mcocr_public_145013ckwpd.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013cqpwh.jpg",
+      "path": "train_images/mcocr_public_145013cqpwh.jpg",
+      "sha256": "124c7df0f60fe4e0dd81bad36c1d02156f1644775d7cef2d13c6bd15b8841c63",
+      "group_id": "mcocr_public_145013cqpwh.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013crqqo.jpg",
+      "path": "train_images/mcocr_public_145013crqqo.jpg",
+      "sha256": "366a3bdf6518ccfc1eb918bc34e7298ecd5fa819cb59c9f6da9c9ed04e4febc3",
+      "group_id": "mcocr_public_145013crqqo.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145013crsoa.jpg",
+      "path": "train_images/mcocr_public_145013crsoa.jpg",
+      "sha256": "bb49c4ca52af58ba89a0914c4cdc6abc66605109a224ba46dc44aa9aa86ae0f5",
+      "group_id": "mcocr_public_145013crsoa.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013dfzcb.jpg",
+      "path": "train_images/mcocr_public_145013dfzcb.jpg",
+      "sha256": "ce060aee69e2ca9188703c0d6d37b34efc70297a149adcc026a1e25dc05d8d24",
+      "group_id": "mcocr_public_145013dfzcb.jpg",
+      "stratum": "seller_04"
+    },
+    {
+      "img_id": "mcocr_public_145013dhzmu.jpg",
+      "path": "train_images/mcocr_public_145013dhzmu.jpg",
+      "sha256": "47c044bc1bf9392da4bc2afa4a3d68ff38f5b5aa8db3d11348cd4c72cb80dc5a",
+      "group_id": "mcocr_public_145013dhzmu.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145013dxysa.jpg",
+      "path": "train_images/mcocr_public_145013dxysa.jpg",
+      "sha256": "eeb70338669109bb2302f57d1004959dec02d7b3f057e9e4b31cfbb36fdfa20b",
+      "group_id": "mcocr_public_145013dxysa.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145013dylla.jpg",
+      "path": "train_images/mcocr_public_145013dylla.jpg",
+      "sha256": "3bc9cbee4ecfea98db1f2fad26501b36aab6eac6c30a86a002cb4ea331865328",
+      "group_id": "mcocr_public_145013dylla.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013eekwk.jpg",
+      "path": "train_images/mcocr_public_145013eekwk.jpg",
+      "sha256": "9f93305491e74b3a6a5d4d76b8ccce87ebdab44985c5acdcd3284f5334eb1fde",
+      "group_id": "mcocr_public_145013eekwk.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013eyjmn.jpg",
+      "path": "train_images/mcocr_public_145013eyjmn.jpg",
+      "sha256": "fd5e1da2a1ccb61a4a1affb0116f5c462b79521d4c62e93de21bddb0481004ed",
+      "group_id": "mcocr_public_145013eyjmn.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145013fcovi.jpg",
+      "path": "train_images/mcocr_public_145013fcovi.jpg",
+      "sha256": "22c2995be6a513db6697d21f51e2ae31eb6d7c4b8f5fff97a355e7706a3ed76c",
+      "group_id": "mcocr_public_145013fcovi.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013fiibr.jpg",
+      "path": "train_images/mcocr_public_145013fiibr.jpg",
+      "sha256": "77e380678e0e067e781d236e1cee7cf3e4a2b9a7b56009d85af080636e65029f",
+      "group_id": "mcocr_public_145013fiibr.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145013geoih.jpg",
+      "path": "train_images/mcocr_public_145013geoih.jpg",
+      "sha256": "dbe4a4de58d52cdf6c26e4542c47b94663c2ac7a2fe234e3ee7fd517f633cbf8",
+      "group_id": "mcocr_public_145013geoih.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013haeps.jpg",
+      "path": "train_images/mcocr_public_145013haeps.jpg",
+      "sha256": "ffb7f2b23dbda46f8480c52c0efbc9d08411a1f4f20d24f260258c6fd5be8bad",
+      "group_id": "mcocr_public_145013haeps.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145013hfchp.jpg",
+      "path": "train_images/mcocr_public_145013hfchp.jpg",
+      "sha256": "16eb2a8f7eb781079ae85577d998449916e17bd2c118221386b5a0e13af2d0ea",
+      "group_id": "mcocr_public_145013hfchp.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013ibbrd.jpg",
+      "path": "train_images/mcocr_public_145013ibbrd.jpg",
+      "sha256": "8836a8673b2c40a3a5b46c7ad642a9a446a27615750a64f35164fed975938f4b",
+      "group_id": "mcocr_public_145013ibbrd.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013idjei.jpg",
+      "path": "train_images/mcocr_public_145013idjei.jpg",
+      "sha256": "e2490e018423f19051b89aca14716f226c30eda50dc6c0c83d3cd5c0e30dcc94",
+      "group_id": "mcocr_public_145013idjei.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145013iesjs.jpg",
+      "path": "train_images/mcocr_public_145013iesjs.jpg",
+      "sha256": "5364cc30b2581c086687fa97e0c45d50941251314bc20029b601a2d8d919c06e",
+      "group_id": "mcocr_public_145013iesjs.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013itpoe.jpg",
+      "path": "train_images/mcocr_public_145013itpoe.jpg",
+      "sha256": "bed7320985cd80326d19d3f2e6550bf46524f97ff2ec30cfc1f7f60c963cb27b",
+      "group_id": "mcocr_public_145013itpoe.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013jechb.jpg",
+      "path": "train_images/mcocr_public_145013jechb.jpg",
+      "sha256": "15acdff6c107928245786c91acf78645dce5acb36661c7c90f51f5c4769dc7c2",
+      "group_id": "mcocr_public_145013jechb.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013kbhkb.jpg",
+      "path": "train_images/mcocr_public_145013kbhkb.jpg",
+      "sha256": "f3f0b8ea2d906c4fb236c3e0df20daea756e1c4e06baf999863161e25539b931",
+      "group_id": "mcocr_public_145013kbhkb.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145013kgaqa.jpg",
+      "path": "train_images/mcocr_public_145013kgaqa.jpg",
+      "sha256": "83a645d22564c55f6c80357a8c2a8c9446d596f48afdf975dff28ec92d7aee44",
+      "group_id": "mcocr_public_145013kgaqa.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013kokcl.jpg",
+      "path": "train_images/mcocr_public_145013kokcl.jpg",
+      "sha256": "aeb51298154325446607ef84fa9d1a72c8ad4cc0e30bd8bd5bf9cf4da3c2835b",
+      "group_id": "mcocr_public_145013kokcl.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013kwwha.jpg",
+      "path": "train_images/mcocr_public_145013kwwha.jpg",
+      "sha256": "1c3d3463f36d8eccaba159fe5eaae116faa64ee47985f24d6fb356448bfd2e59",
+      "group_id": "mcocr_public_145013kwwha.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145013lozjt.jpg",
+      "path": "train_images/mcocr_public_145013lozjt.jpg",
+      "sha256": "730bdf952f3fb2f79e50f6799e8ed961627f5223b57acc9f1520e72af56241c6",
+      "group_id": "mcocr_public_145013lozjt.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145013lukaj.jpg",
+      "path": "train_images/mcocr_public_145013lukaj.jpg",
+      "sha256": "e40f159c20e38e114e73fc8cd9e538e3ea1b331a75f3de186b2857321232d975",
+      "group_id": "mcocr_public_145013lukaj.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013mctzs.jpg",
+      "path": "train_images/mcocr_public_145013mctzs.jpg",
+      "sha256": "545852b705c0da426b29284d6925ca2b86b3180f5fd60d0b4da377f4701b9a5d",
+      "group_id": "mcocr_public_145013mctzs.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013mfogg.jpg",
+      "path": "train_images/mcocr_public_145013mfogg.jpg",
+      "sha256": "b2e096657d58c1730c3630ee5427abdd0f5c96cfedaf217b3645c67d464c9ed8",
+      "group_id": "mcocr_public_145013mfogg.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145013msokr.jpg",
+      "path": "train_images/mcocr_public_145013msokr.jpg",
+      "sha256": "289092bac5552f5cf72b9808730ca8fc8bc0d52861cf1d297a13f1433910f3fe",
+      "group_id": "mcocr_public_145013msokr.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145013mwcaz.jpg",
+      "path": "train_images/mcocr_public_145013mwcaz.jpg",
+      "sha256": "5de50b3d057c2122606ceac9107c161686b61933a0e2f682f1947efad6a2cd5a",
+      "group_id": "mcocr_public_145013mwcaz.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145013nwbcg.jpg",
+      "path": "train_images/mcocr_public_145013nwbcg.jpg",
+      "sha256": "47c9d278942334549354590bfe581741978bd932bbfafee198f4db3dc6b55ca8",
+      "group_id": "mcocr_public_145013nwbcg.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145013ohrly.jpg",
+      "path": "train_images/mcocr_public_145013ohrly.jpg",
+      "sha256": "4bc7cbe351f60821c19abb6a965dba8dfc90ae023aa43b009bd3d2114c258b73",
+      "group_id": "mcocr_public_145013ohrly.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145013otqcx.jpg",
+      "path": "train_images/mcocr_public_145013otqcx.jpg",
+      "sha256": "65e40c243f8bc86a8db35f25f8ce6fa4005b0f5ec2e69d5d9cef1762332b879e",
+      "group_id": "mcocr_public_145013otqcx.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013oxnpr.jpg",
+      "path": "train_images/mcocr_public_145013oxnpr.jpg",
+      "sha256": "8b8f55e10818a18a32e43cc38a251f87559450e8a2bb0a832ef9404e1baa0433",
+      "group_id": "mcocr_public_145013oxnpr.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013ozjnr.jpg",
+      "path": "train_images/mcocr_public_145013ozjnr.jpg",
+      "sha256": "8119a32c2c92a553586eb579be17a6dc66295c053a554bc90baa36c245ce276c",
+      "group_id": "mcocr_public_145013ozjnr.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013pytgf.jpg",
+      "path": "train_images/mcocr_public_145013pytgf.jpg",
+      "sha256": "c5328554b5634b5dd8209ecfb72eb741e117a8f1503a92e0faf9dfd16823a9c8",
+      "group_id": "mcocr_public_145013pytgf.jpg",
+      "stratum": "seller_06"
+    },
+    {
+      "img_id": "mcocr_public_145013qujjw.jpg",
+      "path": "train_images/mcocr_public_145013qujjw.jpg",
+      "sha256": "b7290c6a4e949f69af08826afd4ecade9af9cc5e80587e7bcad96baa40d577bd",
+      "group_id": "mcocr_public_145013qujjw.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013qwmeo.jpg",
+      "path": "train_images/mcocr_public_145013qwmeo.jpg",
+      "sha256": "0a916c9ab9a0fe0efa930ca1e5867f85260a7db45ff2bf0881a66189b5190183",
+      "group_id": "mcocr_public_145013qwmeo.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145013rrmow.jpg",
+      "path": "train_images/mcocr_public_145013rrmow.jpg",
+      "sha256": "468112050894a95c99adfeb29a24ea08e53ef3f5a1ee70e4dfe271bfb1b3ea2f",
+      "group_id": "mcocr_public_145013rrmow.jpg",
+      "stratum": "seller_04"
+    },
+    {
+      "img_id": "mcocr_public_145013shpih.jpg",
+      "path": "train_images/mcocr_public_145013shpih.jpg",
+      "sha256": "deaf22e0fb28218dd7a30ca8b1c59df54ee34f8e59dfb9dc56459b6aa6f5d971",
+      "group_id": "mcocr_public_145013shpih.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145013skwtp.jpg",
+      "path": "train_images/mcocr_public_145013skwtp.jpg",
+      "sha256": "f0455afd1ecb4d2fa4120d4cf82577c50d595063e9362e0431f573ec616d3a03",
+      "group_id": "mcocr_public_145013skwtp.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013syjan.jpg",
+      "path": "train_images/mcocr_public_145013syjan.jpg",
+      "sha256": "0c4565923fb1b21642c6a6337682e8f0b4880b1d17004dd01bc7c0e42d2403f4",
+      "group_id": "mcocr_public_145013syjan.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145013tgayt.jpg",
+      "path": "train_images/mcocr_public_145013tgayt.jpg",
+      "sha256": "ed878ccc40c213ea9b7a075e7fa01a79182be6f2ae7e810fb0f3f8aa5d46f723",
+      "group_id": "mcocr_public_145013tgayt.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145013uixud.jpg",
+      "path": "train_images/mcocr_public_145013uixud.jpg",
+      "sha256": "8a8b353cea2fe9e648e1a4c281d31eb8753296515860e436fcb8710754ef8721",
+      "group_id": "mcocr_public_145013uixud.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013vfius.jpg",
+      "path": "train_images/mcocr_public_145013vfius.jpg",
+      "sha256": "dd7c7e85d1ee4849c2663b572128c01179402ff1520a402da86c5106cefe3870",
+      "group_id": "mcocr_public_145013vfius.jpg",
+      "stratum": "seller_05"
+    },
+    {
+      "img_id": "mcocr_public_145013vmzzn.jpg",
+      "path": "train_images/mcocr_public_145013vmzzn.jpg",
+      "sha256": "7f2effe827c8a4046305923732a3de75529a8c58608ba434f7eb3fb62b69119b",
+      "group_id": "mcocr_public_145013vmzzn.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145013wraxn.jpg",
+      "path": "train_images/mcocr_public_145013wraxn.jpg",
+      "sha256": "a0b020033213de72dd2b3d71ac294a3438f62c935356dc4e4ffe323858a47729",
+      "group_id": "mcocr_public_145013wraxn.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145013wrunk.jpg",
+      "path": "train_images/mcocr_public_145013wrunk.jpg",
+      "sha256": "2945f9405a3ff9b45d32c6282431e6422d92c40722d7495bd74ae8f7607355f4",
+      "group_id": "mcocr_public_145013wrunk.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013zcfau.jpg",
+      "path": "train_images/mcocr_public_145013zcfau.jpg",
+      "sha256": "b17a80755e3f49c442a1dbeb93135048fcfb2f8177c46202009cd7c3883d6c1a",
+      "group_id": "mcocr_public_145013zcfau.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145013zcscc.jpg",
+      "path": "train_images/mcocr_public_145013zcscc.jpg",
+      "sha256": "d371043cc1cb63ef6743d9c0909bf21ee7bcdad842ff23974b845ed786cca64f",
+      "group_id": "mcocr_public_145013zcscc.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145013zpqsi.jpg",
+      "path": "train_images/mcocr_public_145013zpqsi.jpg",
+      "sha256": "7bc0352776898d88fc6e085401859ffb76c2a28bc1a32507b4b0ac449afef6bb",
+      "group_id": "mcocr_public_145013zpqsi.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014anjdg.jpg",
+      "path": "train_images/mcocr_public_145014anjdg.jpg",
+      "sha256": "c4a75a9fc51b38a835302155c2769f5d17cce5490b0501365980e00fe360640c",
+      "group_id": "mcocr_public_145014anjdg.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014apodg.jpg",
+      "path": "train_images/mcocr_public_145014apodg.jpg",
+      "sha256": "23d6fe1ddbb34d024bcdb74b31505cc72e1059d03ef517e2a1cf82cc6c6cc4f3",
+      "group_id": "mcocr_public_145014apodg.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014armln.jpg",
+      "path": "train_images/mcocr_public_145014armln.jpg",
+      "sha256": "e64524465543eff0274d912eddf8fd00fff3854c69f34f60cb7cb3d9e9b056e7",
+      "group_id": "mcocr_public_145014armln.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014bnscr.jpg",
+      "path": "train_images/mcocr_public_145014bnscr.jpg",
+      "sha256": "87c6460a4609bbf6b5ea9b679f968d218087f5ec60917aaef15459f6c44c62df",
+      "group_id": "mcocr_public_145014bnscr.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014bpeci.jpg",
+      "path": "train_images/mcocr_public_145014bpeci.jpg",
+      "sha256": "5a73b7238e61b5f6215ce71ac9063201e89579c732f323e023483a7287210fb6",
+      "group_id": "mcocr_public_145014bpeci.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014btewf.jpg",
+      "path": "train_images/mcocr_public_145014btewf.jpg",
+      "sha256": "ec651e3cb56a6a5507d76fe414525c564824f72af715c0b3fd1cc6b37c9b60bc",
+      "group_id": "mcocr_public_145014btewf.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014btidj.jpg",
+      "path": "train_images/mcocr_public_145014btidj.jpg",
+      "sha256": "4b8e2c8f32bd328c6b77c231adfaa315606d613f7a102675624d71e4c950e5d2",
+      "group_id": "mcocr_public_145014btidj.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014bvfay.jpg",
+      "path": "train_images/mcocr_public_145014bvfay.jpg",
+      "sha256": "7a9208ed8d3e26a508cba419baca423d12e0b88c83e35c9ebd416d453660ef64",
+      "group_id": "mcocr_public_145014bvfay.jpg",
+      "stratum": "seller_04"
+    },
+    {
+      "img_id": "mcocr_public_145014cbbmj.jpg",
+      "path": "train_images/mcocr_public_145014cbbmj.jpg",
+      "sha256": "4d3c16b237e79fc64d039bac072f55d5735992e2f96d5f76661467b64b6ebddf",
+      "group_id": "mcocr_public_145014cbbmj.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014cbkkn.jpg",
+      "path": "train_images/mcocr_public_145014cbkkn.jpg",
+      "sha256": "6f1999752ea51f0baf4e3222eee14ee1df4b96b43c298bef93e155e6669a2590",
+      "group_id": "mcocr_public_145014cbkkn.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014cfgjy.jpg",
+      "path": "train_images/mcocr_public_145014cfgjy.jpg",
+      "sha256": "b0c94939d7976000236ead656a54025eca1aeb84cbf3dcf1c119c6be78f6582d",
+      "group_id": "mcocr_public_145014cfgjy.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014cftxo.jpg",
+      "path": "train_images/mcocr_public_145014cftxo.jpg",
+      "sha256": "6cb485225b432a5eeb327d2e5802d08c2cecd527c5261825eb3113a8c0cc2db1",
+      "group_id": "mcocr_public_145014cftxo.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014cgbau.jpg",
+      "path": "train_images/mcocr_public_145014cgbau.jpg",
+      "sha256": "9724ffcf069a535ad9419dd56a377fce6b0803c2a26c42cb8b5a5a212a5f8104",
+      "group_id": "mcocr_public_145014cgbau.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014clbzb.jpg",
+      "path": "train_images/mcocr_public_145014clbzb.jpg",
+      "sha256": "aaf234c9e9db45bb41e0333148eb553b9d8ff6ebb8c96f5839cef03004883484",
+      "group_id": "mcocr_public_145014clbzb.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014cmcvj.jpg",
+      "path": "train_images/mcocr_public_145014cmcvj.jpg",
+      "sha256": "97e01c393ff8c3c69f72ee4750ecce24359858b6beb92552468b66d3d6ea0717",
+      "group_id": "mcocr_public_145014cmcvj.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014cwifi.jpg",
+      "path": "train_images/mcocr_public_145014cwifi.jpg",
+      "sha256": "33f6772694c22add9386ece30541bdb29a7776456a585ec9dd14ba81fd27aed2",
+      "group_id": "mcocr_public_145014cwifi.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145014dhkqp.jpg",
+      "path": "train_images/mcocr_public_145014dhkqp.jpg",
+      "sha256": "841678990f43d0c02ba6a87e761d06b1a36e6590c90c444dd69b0f8a279b5915",
+      "group_id": "mcocr_public_145014dhkqp.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014ejgcd.jpg",
+      "path": "train_images/mcocr_public_145014ejgcd.jpg",
+      "sha256": "a9112ba4bdca081851a2946336a0d11c5d66f5a1d70ca4a8b944f6a0425b73f9",
+      "group_id": "mcocr_public_145014ejgcd.jpg",
+      "stratum": "seller_04"
+    },
+    {
+      "img_id": "mcocr_public_145014emexr.jpg",
+      "path": "train_images/mcocr_public_145014emexr.jpg",
+      "sha256": "826e610fb9b114ded0a6ecd61586dd516beca819a7aa1824ef495cdaa28fb6bb",
+      "group_id": "mcocr_public_145014emexr.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014epafb.jpg",
+      "path": "train_images/mcocr_public_145014epafb.jpg",
+      "sha256": "3c27f79725ec6bbd742dcabbb3350192765767add079d1cfba9a5da8a7ecfa11",
+      "group_id": "mcocr_public_145014epafb.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145014epano.jpg",
+      "path": "train_images/mcocr_public_145014epano.jpg",
+      "sha256": "2a902da061ecb1d21f6121f364dae3652ff183c39188047e1be8b423d0e9081f",
+      "group_id": "mcocr_public_145014epano.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014etlhn.jpg",
+      "path": "train_images/mcocr_public_145014etlhn.jpg",
+      "sha256": "4bade2bdd4b96baa92c84fb94e24b4c43ea0691c7a4e7d8c503bbb758d8d9121",
+      "group_id": "mcocr_public_145014etlhn.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014euevz.jpg",
+      "path": "train_images/mcocr_public_145014euevz.jpg",
+      "sha256": "14538cd712d610dc963760424496af5235eaf5b341b587f9a17a759f98e6fa91",
+      "group_id": "mcocr_public_145014euevz.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014euhfv.jpg",
+      "path": "train_images/mcocr_public_145014euhfv.jpg",
+      "sha256": "16e07266de217f700e9b709c8a09a11996f438b05a5e0ffb1e565b2d2f1fc273",
+      "group_id": "mcocr_public_145014euhfv.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014evoja.jpg",
+      "path": "train_images/mcocr_public_145014evoja.jpg",
+      "sha256": "f70aa3aa9ab32f000e7d51566861b910e9e85eb338354337a6c16fe4452e41e9",
+      "group_id": "mcocr_public_145014evoja.jpg",
+      "stratum": "seller_04"
+    },
+    {
+      "img_id": "mcocr_public_145014fcvez.jpg",
+      "path": "train_images/mcocr_public_145014fcvez.jpg",
+      "sha256": "f013cb966eed313e893fb0d066954fbb18013af956b1d37407e78ad7a2e28fd7",
+      "group_id": "mcocr_public_145014fcvez.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014fdjhi.jpg",
+      "path": "train_images/mcocr_public_145014fdjhi.jpg",
+      "sha256": "a3ca429517492ce0bf702812876679372bfeba9f6f6d44de599e5da23d286e0b",
+      "group_id": "mcocr_public_145014fdjhi.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014fgfzb.jpg",
+      "path": "train_images/mcocr_public_145014fgfzb.jpg",
+      "sha256": "9e02003e41aa5e73daffc63f8fe23afa3b6502bd1321e73cf67c8a6a06286eef",
+      "group_id": "mcocr_public_145014fgfzb.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014fhbos.jpg",
+      "path": "train_images/mcocr_public_145014fhbos.jpg",
+      "sha256": "858517d3a49d6f089808f1676eadbbb3296b702a6c915559361bceb377330e9b",
+      "group_id": "mcocr_public_145014fhbos.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014fltno.jpg",
+      "path": "train_images/mcocr_public_145014fltno.jpg",
+      "sha256": "b11d5d42fce8593e9ba25558f60899f27778b93d66ac6fe6322f3e64fc27a0e7",
+      "group_id": "mcocr_public_145014fltno.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014fvnus.jpg",
+      "path": "train_images/mcocr_public_145014fvnus.jpg",
+      "sha256": "19c4562df1f3af6281dda971d6533315db4aa5d6d5b9c5cefcb808d60c6b390a",
+      "group_id": "mcocr_public_145014fvnus.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014gcmnd.jpg",
+      "path": "train_images/mcocr_public_145014gcmnd.jpg",
+      "sha256": "e3703b3f0b7d9c4645aa3d8d9500ec08f8f2d49182839ecefe46d7da5a474506",
+      "group_id": "mcocr_public_145014gcmnd.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014giqwv.jpg",
+      "path": "train_images/mcocr_public_145014giqwv.jpg",
+      "sha256": "c0637f9b34133edd353bba8f8796fd47105314593045ee40c42b81aa7963c428",
+      "group_id": "mcocr_public_145014giqwv.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014gkura.jpg",
+      "path": "train_images/mcocr_public_145014gkura.jpg",
+      "sha256": "d08dd5911d7abb9fa1f8bdcfa83b3a56fcb08ddec440ea2d129deaf9120c14db",
+      "group_id": "mcocr_public_145014gkura.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014glqgm.jpg",
+      "path": "train_images/mcocr_public_145014glqgm.jpg",
+      "sha256": "46e60fafbb6f7766d002654a0ddd56a206828742862483e520d7152e14eef93e",
+      "group_id": "mcocr_public_145014glqgm.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014gmvig.jpg",
+      "path": "train_images/mcocr_public_145014gmvig.jpg",
+      "sha256": "27be59328d33eeabc71ff2b763c9ff8e07153d907fb72a892740009681dad4df",
+      "group_id": "mcocr_public_145014gmvig.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014gndox.jpg",
+      "path": "train_images/mcocr_public_145014gndox.jpg",
+      "sha256": "ac18359ab431688079a1afdf2ed571b15ad21cae7d2d1e71fefbd172144a0473",
+      "group_id": "mcocr_public_145014gndox.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014gvogn.jpg",
+      "path": "train_images/mcocr_public_145014gvogn.jpg",
+      "sha256": "4aa322b5fe5dc336564dc6f6c7c08154119e8d405978ee26f790dc33e4c817eb",
+      "group_id": "mcocr_public_145014gvogn.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014gylsk.jpg",
+      "path": "train_images/mcocr_public_145014gylsk.jpg",
+      "sha256": "dc511b964423c3e195a9c26ddac1183c41f0d53c004d55b2a6c604ea727ddd62",
+      "group_id": "mcocr_public_145014gylsk.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014howdt.jpg",
+      "path": "train_images/mcocr_public_145014howdt.jpg",
+      "sha256": "157f57f18584fcd23f968e241a1cb5c2699e6ce252963eb30445cb3e0b8cc3b5",
+      "group_id": "mcocr_public_145014howdt.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014hpkhf.jpg",
+      "path": "train_images/mcocr_public_145014hpkhf.jpg",
+      "sha256": "365a5876515c04c54bedc3ba624ce87964c4295f34501917c246f29b9da66abc",
+      "group_id": "mcocr_public_145014hpkhf.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145014iueod.jpg",
+      "path": "train_images/mcocr_public_145014iueod.jpg",
+      "sha256": "f5989adc35d8bf274d9b72047de22efbfad354b056a988245cfccba5ba73ebfe",
+      "group_id": "mcocr_public_145014iueod.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145014ivlka.jpg",
+      "path": "train_images/mcocr_public_145014ivlka.jpg",
+      "sha256": "b95ac3ed8c58a579687ceffa38b0a276b6f1d9c08f5c399f5f7fcc10c17f4bde",
+      "group_id": "mcocr_public_145014ivlka.jpg",
+      "stratum": "seller_04"
+    },
+    {
+      "img_id": "mcocr_public_145014iwkki.jpg",
+      "path": "train_images/mcocr_public_145014iwkki.jpg",
+      "sha256": "10f1e4869fe12a80bd0c219062d87f5cab5da713453ab2812d3bb4b7329a99a0",
+      "group_id": "mcocr_public_145014iwkki.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145014jkegi.jpg",
+      "path": "train_images/mcocr_public_145014jkegi.jpg",
+      "sha256": "b267ae31ed415cb8d37a6e6d368e54bbdd96ae1c541384285563be088a106ace",
+      "group_id": "mcocr_public_145014jkegi.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014jvwce.jpg",
+      "path": "train_images/mcocr_public_145014jvwce.jpg",
+      "sha256": "0823b11610226c142f13021488750033d56558fbf49309693f8d876ed6547815",
+      "group_id": "mcocr_public_145014jvwce.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145014kcbzk.jpg",
+      "path": "train_images/mcocr_public_145014kcbzk.jpg",
+      "sha256": "22c10831edbdcee9281595e9fc7caa28bc3d936189610aebfaeeb329e59bdd58",
+      "group_id": "mcocr_public_145014kcbzk.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014kljgu.jpg",
+      "path": "train_images/mcocr_public_145014kljgu.jpg",
+      "sha256": "f4e56f0a28502a439be6dfcb7abc2b43ba550a68fb022b8554614934d0fe3552",
+      "group_id": "mcocr_public_145014kljgu.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145014klyxi.jpg",
+      "path": "train_images/mcocr_public_145014klyxi.jpg",
+      "sha256": "c1c167b571f31f7e6941391e018aac167a02c50e69755cca4ed08b5559e30cac",
+      "group_id": "mcocr_public_145014klyxi.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014kupdx.jpg",
+      "path": "train_images/mcocr_public_145014kupdx.jpg",
+      "sha256": "473acbfae133b8d334013cec9089f1a1bbd05769a9a88f32824e17146c834d39",
+      "group_id": "mcocr_public_145014kupdx.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014kxqtn.jpg",
+      "path": "train_images/mcocr_public_145014kxqtn.jpg",
+      "sha256": "1de3345ff2215ac91ba75defb655d42794ed4718d7b1ac1c783cfac38fd876f7",
+      "group_id": "mcocr_public_145014kxqtn.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014kyxew.jpg",
+      "path": "train_images/mcocr_public_145014kyxew.jpg",
+      "sha256": "a8ba2fde85f42ad6c1e104170e8c17e01a9f71f42bfecfa4083c89859c5a55f4",
+      "group_id": "mcocr_public_145014kyxew.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014ldvxl.jpg",
+      "path": "train_images/mcocr_public_145014ldvxl.jpg",
+      "sha256": "2b9e68a8bacbcfaa55bca53af2428fcaa7fc6911cf473e863bdc48963ea65872",
+      "group_id": "mcocr_public_145014ldvxl.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145014lfctk.jpg",
+      "path": "train_images/mcocr_public_145014lfctk.jpg",
+      "sha256": "c6e229cef1b82ea7757e624af3850baf6f3a1080c4d08f81ba41f6441b916457",
+      "group_id": "mcocr_public_145014lfctk.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014llqzl.jpg",
+      "path": "train_images/mcocr_public_145014llqzl.jpg",
+      "sha256": "982126fefaf731ab563a027fcccada9037d470c514f62214eb8416d91a70aa37",
+      "group_id": "mcocr_public_145014llqzl.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014lmarv.jpg",
+      "path": "train_images/mcocr_public_145014lmarv.jpg",
+      "sha256": "49eed6c3af6a97bc867d82767f86a8154c1347f2498f8a294e78feb371c3b41f",
+      "group_id": "mcocr_public_145014lmarv.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014luapg.jpg",
+      "path": "train_images/mcocr_public_145014luapg.jpg",
+      "sha256": "be1ddb1937ec5a6c6221b87887d7a6045ae96ce071b6ca1511eee0e730df956c",
+      "group_id": "mcocr_public_145014luapg.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014lwrxk.jpg",
+      "path": "train_images/mcocr_public_145014lwrxk.jpg",
+      "sha256": "aa8dc7d866354b2fa018ffacd9d005beb319dc5d7d04c36f2df7facea7202c92",
+      "group_id": "mcocr_public_145014lwrxk.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145014mfmvh.jpg",
+      "path": "train_images/mcocr_public_145014mfmvh.jpg",
+      "sha256": "7de9903f20ebf890553e5d47d6a9cc95f430982a7f96c9535459c09a371ebd3b",
+      "group_id": "mcocr_public_145014mfmvh.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014mntfs.jpg",
+      "path": "train_images/mcocr_public_145014mntfs.jpg",
+      "sha256": "8ad132a65c0638e266c4a15dfc86786bd1a703e73a0d95c1decc3afe7226e21a",
+      "group_id": "mcocr_public_145014mntfs.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145014mnwlg.jpg",
+      "path": "train_images/mcocr_public_145014mnwlg.jpg",
+      "sha256": "76acfc410662e22229ab0afe12c69d572ed174be35b7218f2bcc06e5b681042d",
+      "group_id": "mcocr_public_145014mnwlg.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014mpahy.jpg",
+      "path": "train_images/mcocr_public_145014mpahy.jpg",
+      "sha256": "3fdfef05ac5c4438e9f1c764b82b05eb0e5e62fe71247d7e0399350f3dc314a0",
+      "group_id": "mcocr_public_145014mpahy.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014mppzy.jpg",
+      "path": "train_images/mcocr_public_145014mppzy.jpg",
+      "sha256": "a03d6e257c934313e4bdcb2177fd8c11dd6b17d239c85a5a6b5e9ca6b5a0bc83",
+      "group_id": "mcocr_public_145014mppzy.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145014mzrbm.jpg",
+      "path": "train_images/mcocr_public_145014mzrbm.jpg",
+      "sha256": "6c2d5b34fb7935e73c1e6101b07bfd2b4c6f1cd57c51d543d31a7724f1ff1316",
+      "group_id": "mcocr_public_145014mzrbm.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014ndurw.jpg",
+      "path": "train_images/mcocr_public_145014ndurw.jpg",
+      "sha256": "1488100207b203f9bdfa3b6f30e29417f15b932cc5ea7b846dc883d493a166b6",
+      "group_id": "mcocr_public_145014ndurw.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145014nwfmm.jpg",
+      "path": "train_images/mcocr_public_145014nwfmm.jpg",
+      "sha256": "12c367749dc8610f1559b97e714cdb7d1c2281e69e8cc8e41fa87c181983090c",
+      "group_id": "mcocr_public_145014nwfmm.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014obtof.jpg",
+      "path": "train_images/mcocr_public_145014obtof.jpg",
+      "sha256": "3f9b21f1d29c43e795e2da6c378229097ad8459c89f3803bf1240346b9c8b119",
+      "group_id": "mcocr_public_145014obtof.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014ofdxo.jpg",
+      "path": "train_images/mcocr_public_145014ofdxo.jpg",
+      "sha256": "82c9a30ab0423d9eca320e5292bea67795707dbdb6ccf079ccaeadecc5e92f3a",
+      "group_id": "mcocr_public_145014ofdxo.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014oorxd.jpg",
+      "path": "train_images/mcocr_public_145014oorxd.jpg",
+      "sha256": "2efd8b7408ddc4f821af1d99446b0f9ef2fd92c4bd17cc76dbae9fa4831a73cb",
+      "group_id": "mcocr_public_145014oorxd.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014owdgs.jpg",
+      "path": "train_images/mcocr_public_145014owdgs.jpg",
+      "sha256": "2f07ab0233229164bbfd8b0dab8b082109193c812730287fe972ea9eed65c34a",
+      "group_id": "mcocr_public_145014owdgs.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014owowx.jpg",
+      "path": "train_images/mcocr_public_145014owowx.jpg",
+      "sha256": "89f12a6b90ba689054f876584b88a3ffcfe8f8affe7508e6a016a2d1b2a7ddf8",
+      "group_id": "mcocr_public_145014owowx.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014oxghl.jpg",
+      "path": "train_images/mcocr_public_145014oxghl.jpg",
+      "sha256": "960d75bb9ce378cbdea71da4eca9a382e4d900407c498b6215279c9ff8360846",
+      "group_id": "mcocr_public_145014oxghl.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014paioy.jpg",
+      "path": "train_images/mcocr_public_145014paioy.jpg",
+      "sha256": "abe9ec0029e1d7bcf18c67f3fe865374ce3eb6a1cfac96a8adb899f1ef8195b2",
+      "group_id": "mcocr_public_145014paioy.jpg",
+      "stratum": "seller_06"
+    },
+    {
+      "img_id": "mcocr_public_145014pdqkk.jpg",
+      "path": "train_images/mcocr_public_145014pdqkk.jpg",
+      "sha256": "8be0b57efd7ee49d1590b4d430938ac31ba7c6b534331581cd4a79eabc3d1ed6",
+      "group_id": "mcocr_public_145014pdqkk.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014phbcu.jpg",
+      "path": "train_images/mcocr_public_145014phbcu.jpg",
+      "sha256": "3d8a58759b65c45223e24f327e2d6a128e9161dac76b083ba3ccabbc9e9f0d50",
+      "group_id": "mcocr_public_145014phbcu.jpg",
+      "stratum": "seller_06"
+    },
+    {
+      "img_id": "mcocr_public_145014phmqt.jpg",
+      "path": "train_images/mcocr_public_145014phmqt.jpg",
+      "sha256": "632116fd3933a7a2836504c4ef594edba3427ab8055a2bda8f31954b0e4b976a",
+      "group_id": "mcocr_public_145014phmqt.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014phuqi.jpg",
+      "path": "train_images/mcocr_public_145014phuqi.jpg",
+      "sha256": "4f2beffc893816a1ea74a586492a3dbdffd685378682dbc2bf39bd25f7e80ab2",
+      "group_id": "mcocr_public_145014phuqi.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014pjtlz.jpg",
+      "path": "train_images/mcocr_public_145014pjtlz.jpg",
+      "sha256": "ddd180a39b19c12e28834d5e781aa2088e711ba3186f831a8e75d6c2aee0f44b",
+      "group_id": "mcocr_public_145014pjtlz.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014qrfai.jpg",
+      "path": "train_images/mcocr_public_145014qrfai.jpg",
+      "sha256": "c9ed157f713a7b70ecf3561329986f0ce10d578fc3fc2de42fac37341c2f7ccd",
+      "group_id": "mcocr_public_145014qrfai.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145014qxkke.jpg",
+      "path": "train_images/mcocr_public_145014qxkke.jpg",
+      "sha256": "2ae2cb92abd92cb59e7191c6c2bd68ddfbc3270d1c8d6e43b8ca81e18d2d4493",
+      "group_id": "mcocr_public_145014qxkke.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014rdcoj.jpg",
+      "path": "train_images/mcocr_public_145014rdcoj.jpg",
+      "sha256": "d22d92dd073a6c0c787cb46a0059acafe3a27f40d00404b0861105216f579821",
+      "group_id": "mcocr_public_145014rdcoj.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014rtorl.jpg",
+      "path": "train_images/mcocr_public_145014rtorl.jpg",
+      "sha256": "0d5fd31933a633c6b629813fd175e8a4c436117252f406b002fecb4ffae19425",
+      "group_id": "mcocr_public_145014rtorl.jpg",
+      "stratum": "seller_07"
+    },
+    {
+      "img_id": "mcocr_public_145014sfktp.jpg",
+      "path": "train_images/mcocr_public_145014sfktp.jpg",
+      "sha256": "87b961b5a8455dfc505325d3873aae61b253bcf51151a0837b7f7aea2592d739",
+      "group_id": "mcocr_public_145014sfktp.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014skpym.jpg",
+      "path": "train_images/mcocr_public_145014skpym.jpg",
+      "sha256": "df0438eb41259267a1e464df89ecc75b58656a1d1fa4aaf59a687958b5755c29",
+      "group_id": "mcocr_public_145014skpym.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014slmit.jpg",
+      "path": "train_images/mcocr_public_145014slmit.jpg",
+      "sha256": "7afac0e82b5a3980371af64335c925ce1914431de8227187fd60d46dab7561eb",
+      "group_id": "mcocr_public_145014slmit.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014tecsd.jpg",
+      "path": "train_images/mcocr_public_145014tecsd.jpg",
+      "sha256": "d52afa4146cd8d4551ff1737db82f2cea422a26847a49838adf31349f5e9fc28",
+      "group_id": "mcocr_public_145014tecsd.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014tugre.jpg",
+      "path": "train_images/mcocr_public_145014tugre.jpg",
+      "sha256": "49d9fea660da4fe4ebdc03e252d1bc99690d7142efb4fcf3cc21d4509fd6e10a",
+      "group_id": "mcocr_public_145014tugre.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014uevcn.jpg",
+      "path": "train_images/mcocr_public_145014uevcn.jpg",
+      "sha256": "2a34e52c1579ac281ce468f3a7c5a49b5a5f9a1bfc14c8b05bb6872760e5ecc6",
+      "group_id": "mcocr_public_145014uevcn.jpg",
+      "stratum": "seller_05"
+    },
+    {
+      "img_id": "mcocr_public_145014ugdwd.jpg",
+      "path": "train_images/mcocr_public_145014ugdwd.jpg",
+      "sha256": "43cf21277e6d5ad482bbfad623c23fd88738a8a7abac2828fc9d74f948700319",
+      "group_id": "mcocr_public_145014ugdwd.jpg",
+      "stratum": "seller_04"
+    },
+    {
+      "img_id": "mcocr_public_145014urzox.jpg",
+      "path": "train_images/mcocr_public_145014urzox.jpg",
+      "sha256": "539639f4fdd301aeedf3fbeec529fc7e030ab3a24c545bfc325ba598dae936e4",
+      "group_id": "mcocr_public_145014urzox.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014uzdqt.jpg",
+      "path": "train_images/mcocr_public_145014uzdqt.jpg",
+      "sha256": "a6273cb3a719e758b7e15df3d9de06e05364c8182310efd439884bc22cf229f8",
+      "group_id": "mcocr_public_145014uzdqt.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014vauus.jpg",
+      "path": "train_images/mcocr_public_145014vauus.jpg",
+      "sha256": "ed7586f8f517f8316f29aff88e5f511adc5062cf3420754c60aa8f6a9a56f19d",
+      "group_id": "mcocr_public_145014vauus.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014vjvjt.jpg",
+      "path": "train_images/mcocr_public_145014vjvjt.jpg",
+      "sha256": "38ce63a540ccab68bebb69dbcc2325803f66dcb4b848fc027d202849d9cab9dd",
+      "group_id": "mcocr_public_145014vjvjt.jpg",
+      "stratum": "seller_03"
+    },
+    {
+      "img_id": "mcocr_public_145014vkdhy.jpg",
+      "path": "train_images/mcocr_public_145014vkdhy.jpg",
+      "sha256": "860b6d5a1d59071f6df730102d1b2383c1376b777e88455a325ddef61e3f9fb3",
+      "group_id": "mcocr_public_145014vkdhy.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014wcjoc.jpg",
+      "path": "train_images/mcocr_public_145014wcjoc.jpg",
+      "sha256": "f34e8863baa0a5aebad719905ca6f5eb66b31f703f2926a2b1dece383d817206",
+      "group_id": "mcocr_public_145014wcjoc.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014wcrlk.jpg",
+      "path": "train_images/mcocr_public_145014wcrlk.jpg",
+      "sha256": "20622cc73b09b2c0f3c7e0ce182590b290b18d2f78132545f25487fc98b487ab",
+      "group_id": "mcocr_public_145014wcrlk.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014wejxq.jpg",
+      "path": "train_images/mcocr_public_145014wejxq.jpg",
+      "sha256": "283be2683540fe83fa825c3beef97b11b829e879d1e549c5e3754f7871e6ad8d",
+      "group_id": "mcocr_public_145014wejxq.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014wkdkh.jpg",
+      "path": "train_images/mcocr_public_145014wkdkh.jpg",
+      "sha256": "c483a00b036959850350b8dca62e2a411f1a3fc8774b360104deab85a01da940",
+      "group_id": "mcocr_public_145014wkdkh.jpg",
+      "stratum": "seller_05"
+    },
+    {
+      "img_id": "mcocr_public_145014xajzl.jpg",
+      "path": "train_images/mcocr_public_145014xajzl.jpg",
+      "sha256": "2d7ea696403a2501cd88f005220823aaea4e26881ce8ffc28cd73860b1fef1ea",
+      "group_id": "mcocr_public_145014xajzl.jpg",
+      "stratum": "seller_04"
+    },
+    {
+      "img_id": "mcocr_public_145014xcxaw.jpg",
+      "path": "train_images/mcocr_public_145014xcxaw.jpg",
+      "sha256": "b1bb8bc03d5c5155129494b2c310b2d39be013b4ff12a83130fa2b0fe91eaea8",
+      "group_id": "mcocr_public_145014xcxaw.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014xdscy.jpg",
+      "path": "train_images/mcocr_public_145014xdscy.jpg",
+      "sha256": "fba204be9adb9ef60196e827448e477fd237024dcd0c8cf2bfccc7ca144999f1",
+      "group_id": "mcocr_public_145014xdscy.jpg",
+      "stratum": "no_seller"
+    },
+    {
+      "img_id": "mcocr_public_145014xinpg.jpg",
+      "path": "train_images/mcocr_public_145014xinpg.jpg",
+      "sha256": "20ae19a47f0c44ebc95b0b580c5ea04406906047e2df53fdf3d1c8becf17dc60",
+      "group_id": "mcocr_public_145014xinpg.jpg",
+      "stratum": "seller_07"
+    },
+    {
+      "img_id": "mcocr_public_145014xkuxu.jpg",
+      "path": "train_images/mcocr_public_145014xkuxu.jpg",
+      "sha256": "a8bae86b8b01faf46e065a964c893ea7fe8a690b9ef819ee29bddd27084e6190",
+      "group_id": "mcocr_public_145014xkuxu.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014xpucl.jpg",
+      "path": "train_images/mcocr_public_145014xpucl.jpg",
+      "sha256": "9f244f9f6293e8658db6845bb98cb6b343950dcb9c9741a34a4efc12eeadcb1c",
+      "group_id": "mcocr_public_145014xpucl.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014xqbce.jpg",
+      "path": "train_images/mcocr_public_145014xqbce.jpg",
+      "sha256": "2e77d06e612c267c9ddc3da131b1528c4c92ef44323631e9664e3d4945b6dd5d",
+      "group_id": "mcocr_public_145014xqbce.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014xsppi.jpg",
+      "path": "train_images/mcocr_public_145014xsppi.jpg",
+      "sha256": "1f591d0f9f55fae22583fd264d0889647dae125087c0b8774594e2fa7366cb70",
+      "group_id": "mcocr_public_145014xsppi.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014xxiyx.jpg",
+      "path": "train_images/mcocr_public_145014xxiyx.jpg",
+      "sha256": "621447151df34a6251e379a7723d7ab558abf3485609617b42339ecfa4eefbf2",
+      "group_id": "mcocr_public_145014xxiyx.jpg",
+      "stratum": "seller_04"
+    },
+    {
+      "img_id": "mcocr_public_145014yhorz.jpg",
+      "path": "train_images/mcocr_public_145014yhorz.jpg",
+      "sha256": "3fdd377d69284540c8e929ea9370466c06729ffb66e0bc9233ab7f5316040053",
+      "group_id": "mcocr_public_145014yhorz.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014yjdpq.jpg",
+      "path": "train_images/mcocr_public_145014yjdpq.jpg",
+      "sha256": "f570ea5363b85a450c98279eed6b24b2e34b8ec381548f7b84c4afc2a8456813",
+      "group_id": "mcocr_public_145014yjdpq.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014yngbg.jpg",
+      "path": "train_images/mcocr_public_145014yngbg.jpg",
+      "sha256": "2d6756ba22990e2332a754ba3bc4d69479085c2c4d08ddf3854970c94664eaa2",
+      "group_id": "mcocr_public_145014yngbg.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014ynigt.jpg",
+      "path": "train_images/mcocr_public_145014ynigt.jpg",
+      "sha256": "74fa95b95d1bacf4f3bc6251e114202d96d7447215bb40a37ed1002e21d4021d",
+      "group_id": "mcocr_public_145014ynigt.jpg",
+      "stratum": "seller_02"
+    },
+    {
+      "img_id": "mcocr_public_145014yqlhe.jpg",
+      "path": "train_images/mcocr_public_145014yqlhe.jpg",
+      "sha256": "dd149d46eee2ade5beca53752f29551eaacfaa39eb7f6ca80e5cff2aa5dcc790",
+      "group_id": "mcocr_public_145014yqlhe.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014zdfgy.jpg",
+      "path": "train_images/mcocr_public_145014zdfgy.jpg",
+      "sha256": "730f65fc4d9dc1d984107393964ca1c434e77901651497f43c826d2d96b8ccb9",
+      "group_id": "mcocr_public_145014zdfgy.jpg",
+      "stratum": "seller_01"
+    },
+    {
+      "img_id": "mcocr_public_145014zqocc.jpg",
+      "path": "train_images/mcocr_public_145014zqocc.jpg",
+      "sha256": "00ba43b17d0a4fe9920e5b0dfbaa7c7bc9dbd45216de8d5a05216f8a3b8e38f6",
+      "group_id": "mcocr_public_145014zqocc.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014zsdex.jpg",
+      "path": "train_images/mcocr_public_145014zsdex.jpg",
+      "sha256": "df4807cc6546ea364b4e9af5a35fb2fe8e3c7a17a93f43ae8bcfee5d1782b693",
+      "group_id": "mcocr_public_145014zsdex.jpg",
+      "stratum": "other"
+    },
+    {
+      "img_id": "mcocr_public_145014zstox.jpg",
+      "path": "train_images/mcocr_public_145014zstox.jpg",
+      "sha256": "062572eedf8c7b0ddd11a79c56fe39598a69fb450bed0bca29e7051b2454fbee",
+      "group_id": "mcocr_public_145014zstox.jpg",
+      "stratum": "seller_02"
+    }
+  ]
+}

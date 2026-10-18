@@ -1,0 +1,118 @@
+{
+  "$defs": {
+    "OCRSpan": {
+      "additionalProperties": false,
+      "description": "One detected text region (usually a line).",
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "bbox": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "title": "Bbox",
+          "type": "array"
+        },
+        "polygon": {
+          "anyOf": [
+            {
+              "items": {
+                "items": {
+                  "type": "number"
+                },
+                "maxItems": 2,
+                "minItems": 2,
+                "type": "array"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Polygon"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "bbox"
+      ],
+      "title": "OCRSpan",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "image_width": {
+      "exclusiveMinimum": 0,
+      "title": "Image Width",
+      "type": "integer"
+    },
+    "image_height": {
+      "exclusiveMinimum": 0,
+      "title": "Image Height",
+      "type": "integer"
+    },
+    "spans": {
+      "items": {
+        "$ref": "#/$defs/OCRSpan"
+      },
+      "title": "Spans",
+      "type": "array"
+    },
+    "model_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Model Version"
+    },
+    "latency_ms": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Latency Ms"
+    }
+  },
+  "required": [
+    "image_width",
+    "image_height"
+  ],
+  "title": "OCRResult",
+  "type": "object"
+}

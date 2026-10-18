@@ -1,0 +1,295 @@
+{
+  "$defs": {
+    "Evidence": {
+      "additionalProperties": false,
+      "description": "A region on the document that supports a field value.\n\nMust point at a real OCR span (``source_id``) or a real annotated region —\nnever at coordinates invented by a language model.",
+      "properties": {
+        "page": {
+          "default": 1,
+          "minimum": 1,
+          "title": "Page",
+          "type": "integer"
+        },
+        "bbox": {
+          "items": {
+            "type": "number"
+          },
+          "maxItems": 4,
+          "minItems": 4,
+          "title": "Bbox",
+          "type": "array"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text"
+        },
+        "source_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Id"
+        }
+      },
+      "required": [
+        "bbox"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "ExtractionWarning": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "field": {
+          "anyOf": [
+            {
+              "enum": [
+                "seller",
+                "seller_address",
+                "timestamp",
+                "total_cost"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Field"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "ExtractionWarning",
+      "type": "object"
+    },
+    "FieldEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "span_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Span Ids",
+          "type": "array"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "number"
+              },
+              "maxItems": 4,
+              "minItems": 4,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bbox"
+        },
+        "regions": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "title": "Regions",
+          "type": "array"
+        }
+      },
+      "title": "FieldEvidence",
+      "type": "object"
+    },
+    "RawFields": {
+      "additionalProperties": false,
+      "description": "Text as read from the document, before normalization.",
+      "properties": {
+        "seller": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Seller"
+        },
+        "seller_address": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Seller Address"
+        },
+        "timestamp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Timestamp"
+        },
+        "total_cost": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Total Cost"
+        }
+      },
+      "title": "RawFields",
+      "type": "object"
+    },
+    "ReceiptFields": {
+      "additionalProperties": false,
+      "description": "Normalized values. ``None`` = not present / not readable — never a guess.",
+      "properties": {
+        "seller": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Seller"
+        },
+        "seller_address": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Seller Address"
+        },
+        "timestamp": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "ISO 8601 local time without timezone: YYYY-MM-DD or YYYY-MM-DDTHH:MM[:SS]",
+          "examples": [
+            "2020-08-11T08:06",
+            "2020-08-14"
+          ],
+          "title": "Timestamp"
+        },
+        "total_cost": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Amount in VND (integer dong)",
+          "title": "Total Cost"
+        }
+      },
+      "title": "ReceiptFields",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Output of a KIE provider for one receipt image.",
+  "properties": {
+    "document_type": {
+      "const": "receipt",
+      "default": "receipt",
+      "title": "Document Type",
+      "type": "string"
+    },
+    "model_version": {
+      "title": "Model Version",
+      "type": "string"
+    },
+    "fields": {
+      "$ref": "#/$defs/ReceiptFields"
+    },
+    "raw_fields": {
+      "$ref": "#/$defs/RawFields"
+    },
+    "evidence": {
+      "additionalProperties": {
+        "$ref": "#/$defs/FieldEvidence"
+      },
+      "propertyNames": {
+        "enum": [
+          "seller",
+          "seller_address",
+          "timestamp",
+          "total_cost"
+        ]
+      },
+      "title": "Evidence",
+      "type": "object"
+    },
+    "warnings": {
+      "items": {
+        "$ref": "#/$defs/ExtractionWarning"
+      },
+      "title": "Warnings",
+      "type": "array"
+    }
+  },
+  "required": [
+    "model_version"
+  ],
+  "title": "ReceiptExtraction",
+  "type": "object"
+}

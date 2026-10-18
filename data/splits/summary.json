@@ -1,0 +1,108 @@
+{
+  "version": "splits-v1",
+  "seed": 2026,
+  "ratios": {
+    "train": 0.7,
+    "dev": 0.15,
+    "test": 0.15
+  },
+  "source_csv": "mcocr_train_df.csv",
+  "source_csv_sha256": "cf4e94276ed97f6132a96d08c05432a1b1fdb7d4337a18b05dc87f2d62b0f0f1",
+  "dedup": {
+    "dhash_size": 32,
+    "max_hamming": 150,
+    "signals": [
+      "sha256",
+      "dhash",
+      "transaction"
+    ]
+  },
+  "paths_relative_to": "VIETDOCAI_MCOCR_DIR (default data/raw/mcocr)",
+  "num_labelled": 1155,
+  "num_unlabelled_val": 391,
+  "groups": {
+    "num_groups": 1116,
+    "num_multi_image_groups": 37,
+    "images_in_multi_image_groups": 76,
+    "largest_group": 4,
+    "linking_pairs_by_signal": {
+      "sha256": 55,
+      "dhash": 2,
+      "transaction": 4
+    }
+  },
+  "train_images_duplicated_in_val": [
+    "mcocr_public_145013adyee.jpg",
+    "mcocr_public_145013bpcpt.jpg",
+    "mcocr_public_145013geohx.jpg",
+    "mcocr_public_145013jechb.jpg",
+    "mcocr_public_145013nwbcg.jpg",
+    "mcocr_public_145014aglyp.jpg",
+    "mcocr_public_145014avuac.jpg",
+    "mcocr_public_145014divcp.jpg",
+    "mcocr_public_145014dkmtx.jpg",
+    "mcocr_public_145014fltno.jpg",
+    "mcocr_public_145014jgtbj.jpg",
+    "mcocr_public_145014mdhan.jpg",
+    "mcocr_public_145014mnwrz.jpg",
+    "mcocr_public_145014qjkba.jpg",
+    "mcocr_public_145014upass.jpg",
+    "mcocr_public_145014vxrob.jpg",
+    "mcocr_public_145014wpnpe.jpg",
+    "mcocr_public_145014wvmqh.jpg",
+    "mcocr_public_145014xsefn.jpg",
+    "mcocr_public_145014xsppi.jpg"
+  ],
+  "split_sizes": {
+    "train": 808,
+    "dev": 174,
+    "test": 173
+  },
+  "strata": {
+    "no_seller": {
+      "train": 58,
+      "dev": 13,
+      "test": 13
+    },
+    "other": {
+      "train": 194,
+      "dev": 42,
+      "test": 41
+    },
+    "seller_01": {
+      "train": 226,
+      "dev": 48,
+      "test": 48
+    },
+    "seller_02": {
+      "train": 187,
+      "dev": 40,
+      "test": 40
+    },
+    "seller_03": {
+      "train": 66,
+      "dev": 14,
+      "test": 14
+    },
+    "seller_04": {
+      "train": 40,
+      "dev": 9,
+      "test": 9
+    },
+    "seller_05": {
+      "train": 13,
+      "dev": 3,
+      "test": 3
+    },
+    "seller_06": {
+      "train": 13,
+      "dev": 3,
+      "test": 3
+    },
+    "seller_07": {
+      "train": 11,
+      "dev": 2,
+      "test": 2
+    }
+  }
+}

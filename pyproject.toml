@@ -1,0 +1,52 @@
+[project]
+name = "vietdocai"
+version = "0.1.0"
+description = "Vietnamese receipt intelligence: OCR + key information extraction on MC-OCR 2021"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "pydantic>=2.7,<3",
+    "pydantic-settings>=2.3,<3",
+    "fastapi>=0.115,<1",
+    "uvicorn[standard]>=0.30",
+    "python-multipart>=0.0.9",
+    "numpy>=1.26,<3",
+    "pandas>=2.2,<3",
+    "pillow>=10.4",
+]
+
+[project.optional-dependencies]
+# OCR stack is heavy (PaddlePaddle + PaddleOCR); install only when needed (Phase 2+).
+ocr = [
+    "paddlepaddle>=3.0,<4",
+    "paddleocr>=3.0,<4",
+]
+dev = [
+    "pytest>=8",
+    "httpx>=0.27",
+    "ruff>=0.6",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "backend/tests"]
+pythonpath = [".", "backend"]
+addopts = "-q"
+markers = [
+    "dataset: tests that need the licensed MC-OCR data under data/raw (skipped when absent)",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.setuptools]
+packages = []
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query", "fastapi.File"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["ai", "evaluation", "app", "tests"]

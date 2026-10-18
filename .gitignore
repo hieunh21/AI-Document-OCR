@@ -1,0 +1,62 @@
+# ---------------------------------------------------------------
+# Dataset files (MC-OCR 2021, downloaded from Kaggle) stay local:
+# never commit raw images, CSVs or per-image derived dumps.
+# ---------------------------------------------------------------
+data/raw/
+data/interim/
+data/cache/
+data/smoke/
+data/private/
+*.jpg
+*.jpeg
+*.png
+!docs/assets/**/*.png
+!frontend/public/**/*.png
+mcocr_*.csv
+
+# Uploaded user files / object storage (dev)
+storage/
+uploads/
+
+# Model weights & caches
+models/
+weights/
+*.pdparams
+*.pdmodel
+*.pdiparams
+*.onnx
+.paddlex/
+.paddleocr/
+
+# Outputs of experiments (reports in evaluation/reports/ are committed)
+outputs/
+runs/
+evaluation/predictions/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+uv.lock
+
+# Node
+node_modules/
+frontend/dist/
+*.log
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
