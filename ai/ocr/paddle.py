@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import time
 from dataclasses import dataclass, field
+from pathlib import Path
 
 import numpy as np
 from PIL import Image
@@ -35,6 +36,37 @@ class PaddlePreset:
 
 PRESETS: dict[str, PaddlePreset] = {
     "v6_medium": PaddlePreset("PP-OCRv6_medium_det", "PP-OCRv6_medium_rec"),
+    # The pipeline drops detected boxes scoring < 0.6; faint or serif lines (store
+    # addresses) fall below it while the standalone detector keeps them (Phase 4).
+    "v6_medium_bt05": PaddlePreset(
+        "PP-OCRv6_medium_det", "PP-OCRv6_medium_rec", extra={"text_det_box_thresh": 0.5}
+    ),
+    # PP-OCRv6 medium rec fine-tuned on MC-OCR train lines with a Vietnamese dictionary
+    # (the stock dictionary lacks all 90 tone-marked letters such as "ẩ", "ộ"); weights
+    # come from notebooks/finetune_ppocrv6_rec_vi.ipynb.
+    "v6_medium_vi": PaddlePreset(
+        "PP-OCRv6_medium_det",
+        "PP-OCRv6_medium_rec",
+        extra={"text_recognition_model_dir": "models/ppocrv6_medium_rec_vi"},
+    ),
+    # Round 2: output layers built from the stock ones (scripts/remap_rec_head.py) instead
+    # of random; round 1 lost the stock model's precision on digits (docs/finetune_rec.md).
+    "v6_medium_vi2": PaddlePreset(
+        "PP-OCRv6_medium_det",
+        "PP-OCRv6_medium_rec",
+        extra={"text_recognition_model_dir": "models/ppocrv6_medium_rec_vi2"},
+    ),
+    # Round 3 (trained locally): 320 px wide training images as in the stock config. The
+    # PPLCNetV4 backbone pools training features to a fixed 40 time steps, so rounds 1-2
+    # (640 px) learnt characters twice too narrow and repeated them at inference.
+    "v6_medium_vi3": PaddlePreset(
+        "PP-OCRv6_medium_det",
+        "PP-OCRv6_medium_rec",
+        extra={"text_recognition_model_dir": "models/ppocrv6_medium_rec_vi3"},
+    ),
+    "v6_medium_bt04": PaddlePreset(
+        "PP-OCRv6_medium_det", "PP-OCRv6_medium_rec", extra={"text_det_box_thresh": 0.4}
+    ),
     "v6_small": PaddlePreset("PP-OCRv6_small_det", "PP-OCRv6_small_rec"),
     "v6_tiny": PaddlePreset("PP-OCRv6_tiny_det", "PP-OCRv6_tiny_rec"),
     "v5_mobile_latin": PaddlePreset("PP-OCRv5_mobile_det", "latin_PP-OCRv5_mobile_rec"),
@@ -67,7 +99,9 @@ class PaddleOCRProvider(OCRProvider):
         import paddleocr
 
         orient = "+orient" if self.auto_orient else ""
-        return f"{paddleocr.__version__}:{self.preset.det}+{self.preset.rec}{orient}"
+        rec_dir = self.preset.extra.get("text_recognition_model_dir")
+        rec = self.preset.rec + (f"@{Path(rec_dir).name}" if rec_dir else "")
+        return f"{paddleocr.__version__}:{self.preset.det}+{rec}{orient}"
 
     def _engine(self):
         if self._ocr is None:
@@ -88,6 +122,12 @@ class PaddleOCRProvider(OCRProvider):
             if self.preset.det_limit_type:
                 kwargs["text_det_limit_type"] = self.preset.det_limit_type
             kwargs.update(self.preset.extra)
+            rec_dir = kwargs.get("text_recognition_model_dir")
+            if rec_dir and not Path(rec_dir, "inference.yml").exists():
+                raise FileNotFoundError(
+                    f"{rec_dir}/inference.yml missing: unzip the fine-tuned model there "
+                    "(notebooks/finetune_ppocrv6_rec_vi.ipynb)"
+                )
             self._ocr = PaddleOCR(**kwargs)
         return self._ocr
 

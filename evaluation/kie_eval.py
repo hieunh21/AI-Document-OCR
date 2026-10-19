@@ -1,14 +1,6 @@
-"""KIE evaluation on cached OCR output (metric definitions: data_contract.md §5).
+"""KIE evaluation on cached OCR output.
 
-Per field, over images where the field is *scorable*:
-
-* **EM** — normalized prediction equals ground truth (``None == None`` counts);
-  text fields compared with ``fold_for_match``; ``timestamp`` at the precision of the
-  ground truth (date-only GT -> date part, GT without seconds -> ``HH:MM``);
-* **P / R / F1** over non-null values (TP = non-null pred that matches);
-* **CER** (text fields) of the folded prediction vs folded GT, on images with a GT
-  value (a missing prediction counts as 100 % error);
-* ``timestamp`` also gets a **date-only EM**.
+Metric definitions: ``evaluation/metrics.py`` and ``evaluation/data_contract.md`` §5.
 
 CLI::
 
@@ -22,111 +14,17 @@ import csv
 import json
 import sys
 import time
-from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from ai.kie.base import extract_from_ocr
-from ai.normalization.text import fold_for_match
 from ai.schemas import FIELD_NAMES, ReceiptExtraction
-from evaluation.dataset_adapter import McocrRecord, load_split
+from evaluation.dataset_adapter import load_split
+from evaluation.metrics import score
 from evaluation.ocr_eval import load_results
 
 OUT_ROOT = Path("outputs/kie")
 REPORTS = Path("evaluation/reports")
-TEXT_FIELDS = ("seller", "seller_address")
-
-
-def levenshtein(a: str, b: str) -> int:
-    if len(a) < len(b):
-        a, b = b, a
-    prev = list(range(len(b) + 1))
-    for i, ca in enumerate(a, 1):
-        cur = [i]
-        for j, cb in enumerate(b, 1):
-            cur.append(min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (ca != cb)))
-        prev = cur
-    return prev[-1]
-
-
-def ts_match(pred: str | None, gt: str | None, date_only: bool = False) -> bool:
-    if gt is None or pred is None:
-        return gt is None and pred is None
-    if date_only or "T" not in gt:
-        return pred[:10] == gt[:10]
-    return pred[: len(gt)] == gt if len(gt) > 16 else pred[:16] == gt
-
-
-def field_match(field: str, pred, gt) -> bool:
-    if field == "timestamp":
-        return ts_match(pred, gt)
-    if pred is None or gt is None:
-        return pred is None and gt is None
-    if field in TEXT_FIELDS:
-        return fold_for_match(pred) == fold_for_match(gt)
-    return pred == gt
-
-
-def score(records: list[McocrRecord], preds: dict[str, ReceiptExtraction]) -> dict:
-    stats: dict[str, dict] = {f: defaultdict(float) for f in FIELD_NAMES}
-    rows = []
-    for rec in records:
-        pred = preds[rec.img_id]
-        skip = rec.unscorable_fields()
-        for f in FIELD_NAMES:
-            if f in skip:
-                continue
-            p, g = getattr(pred.fields, f), getattr(rec.gt.fields, f)
-            ok = field_match(f, p, g)
-            s = stats[f]
-            s["n"] += 1
-            s["em"] += ok
-            s["pred_nonnull"] += p is not None
-            s["gt_nonnull"] += g is not None
-            s["tp"] += ok and p is not None
-            if f in TEXT_FIELDS and g is not None:
-                gf, pf = fold_for_match(g), fold_for_match(p or "")
-                s["cer_err"] += levenshtein(gf, pf) if p else len(gf)
-                s["cer_len"] += len(gf)
-            if f == "timestamp":
-                s["date_em"] += ts_match(p, g, date_only=True)
-            if not ok:
-                rows.append(
-                    {
-                        "img_id": rec.img_id,
-                        "field": f,
-                        "gt": g,
-                        "pred": p,
-                        "raw": getattr(pred.raw_fields, f),
-                    }
-                )
-    out = {}
-    tot = defaultdict(float)
-    for f, s in stats.items():
-        prec = s["tp"] / s["pred_nonnull"] if s["pred_nonnull"] else float("nan")
-        rec_ = s["tp"] / s["gt_nonnull"] if s["gt_nonnull"] else float("nan")
-        out[f] = {
-            "n": int(s["n"]),
-            "em": s["em"] / s["n"] if s["n"] else float("nan"),
-            "precision": prec,
-            "recall": rec_,
-            "f1": 2 * prec * rec_ / (prec + rec_) if prec + rec_ else 0.0,
-        }
-        if s["cer_len"]:
-            out[f]["cer"] = s["cer_err"] / s["cer_len"]
-        if f == "timestamp":
-            out[f]["date_em"] = s["date_em"] / s["n"]
-        for k in ("tp", "pred_nonnull", "gt_nonnull", "em", "n"):
-            tot[k] += s[k]
-    p = tot["tp"] / tot["pred_nonnull"] if tot["pred_nonnull"] else float("nan")
-    r = tot["tp"] / tot["gt_nonnull"] if tot["gt_nonnull"] else float("nan")
-    out["overall"] = {
-        "em": tot["em"] / tot["n"],
-        "precision": p,
-        "recall": r,
-        "f1": 2 * p * r / (p + r) if p + r else 0.0,
-    }
-    return {"metrics": out, "errors": rows}
 
 
 def run(split: str, ocr_run: str, kie_name: str, workers: int = 1) -> dict:
@@ -144,7 +42,8 @@ def run(split: str, ocr_run: str, kie_name: str, workers: int = 1) -> dict:
         pred, usage = extract_from_ocr(kie, ocr[rec.img_id])  # upright layout
         return rec.img_id, pred, usage, (time.perf_counter() - t0) * 1000
 
-    preds, lat, usages, failures = {}, [], [], []
+    # lat: KIE latency per image; a cached LLM response is charged its original call time.
+    preds, lat, usages, failures = {}, {}, [], []
     with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {pool.submit(one, rec): rec.img_id for rec in records}
         for k, fut in enumerate(as_completed(futures), 1):
@@ -157,19 +56,21 @@ def run(split: str, ocr_run: str, kie_name: str, workers: int = 1) -> dict:
                 preds[img_id] = ReceiptExtraction(model_version="failed")
                 continue
             preds[img_id] = pred
-            lat.append(ms)
+            lat[img_id] = ms + (usage.latency_ms if usage is not None and usage.cached else 0.0)
             if usage is not None:
                 usages.append(usage)
             if workers > 1 and k % 20 == 0:
                 print(f"[{k}/{len(records)}]", flush=True)
     result = score(records, preds)
     result |= {
+        "preds": preds,  # in memory only (not part of the report)
+        "latency_ms": lat,
         "split": split,
         "ocr_run": ocr_run,
         "kie": f"{kie.name}-{kie.version}",
         "images": len(records),
         "failures": failures,
-        "kie_ms_mean": sum(lat) / len(lat) if lat else float("nan"),
+        "kie_ms_mean": sum(lat.values()) / len(lat) if lat else float("nan"),
     }
     if usages:
         live = [u for u in usages if not u.cached]

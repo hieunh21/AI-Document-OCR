@@ -31,6 +31,7 @@ from ai.kie.gazetteer import Gazetteer
 from ai.kie.rule_based import RuleBasedKIE
 from ai.kie.validate import validate_extraction
 from ai.layout import group_lines
+from ai.normalization.address import AdminUnits
 from ai.normalization.datetime_vi import parse_timestamp
 from ai.normalization.text import normalize_text
 from ai.schemas import (
@@ -204,6 +205,10 @@ class LLMKIE(KIEProvider):
     backend: LLMBackend
     cache_dir: Path | None = CACHE_DIR
     gazetteer: Gazetteer | None = None  # optional post-normalization of seller/address
+    admin: AdminUnits | None = None  # official place names: address accent repair
+    # Re-query the same prompt without reusing cached answers (e.g. to check whether the
+    # model behind a proxy changed). Part of the cache key; the request itself is unchanged.
+    run_tag: str = ""
     name: str = "llm"
     last_usage: LLMUsage = field(default_factory=LLMUsage)
 
@@ -212,11 +217,16 @@ class LLMKIE(KIEProvider):
         """Identity of the model request (cache key). Post-processing is not part of it."""
         tb = getattr(self.backend, "thinking_budget", None)
         think = "" if tb is None else f"-think{tb}"
-        return f"{self.backend.name}:{self.backend.model}{think}-{PROMPT_VERSION}"
+        rerun = f"-rerun{self.run_tag}" if self.run_tag else ""
+        return f"{self.backend.name}:{self.backend.model}{think}-{PROMPT_VERSION}{rerun}"
 
     @property
     def version(self) -> str:  # type: ignore[override]
-        return self.request_version + ("+gaz" if self.gazetteer else "")
+        return (
+            self.request_version
+            + ("+gaz" if self.gazetteer else "")
+            + ("+adm" if self.admin else "")
+        )
 
     @staticmethod
     def render(spans: list[OCRSpan]) -> str:
@@ -301,16 +311,14 @@ class LLMKIE(KIEProvider):
                         code="no_evidence", field=f, message="Value has no supporting OCR span."
                     )
                 )
-        if self.gazetteer:  # map to the canonical spelling of known stores
-            if "seller" in fields:
-                fields["seller"] = (
-                    self.gazetteer.canonical_seller(fields["seller"]) or fields["seller"]
-                )
-            if "seller_address" in fields:
-                fields["seller_address"] = (
-                    self.gazetteer.match_address(fields["seller_address"], fields.get("seller"))
-                    or fields["seller_address"]
-                )
+        if self.gazetteer and "seller" in fields:  # canonical spelling of known stores
+            fields["seller"] = self.gazetteer.canonical_seller(fields["seller"]) or fields["seller"]
+        if "seller_address" in fields:
+            addr = fields["seller_address"]
+            canon = (
+                self.gazetteer.match_address(addr, fields.get("seller")) if self.gazetteer else None
+            )
+            fields["seller_address"] = canon or (self.admin.correct(addr) if self.admin else addr)
         return validate_extraction(
             ReceiptExtraction(
                 model_version=f"{self.name}-{self.version}",

@@ -1,0 +1,33 @@
+{
+  "version": "pipeline-v3",
+  "frozen": "2026-10-19",
+  "evidence": "dev: evaluation/reports/ocr_vi3_dev.md (v3), rules_v2_dev.md (v2) and model_comparison.md (v1); test: evaluation/reports/final_test.md was run once on pipeline-v1",
+  "requires": "models/ppocrv6_medium_rec_vi3/ (fine-tuned recognizer, git-ignored; docs/finetune_rec.md)",
+  "pipelines": {
+    "default": {
+      "ocr": "v6_medium_vi3+orient",
+      "kie": "rules+gaz+adm-nofb",
+      "why": "offline, no API key, <1 s per receipt on GPU; v3 swaps in the Vietnamese fine-tuned recognizer: dev OCR CER (folded) 11.0 -> 3.2 %, overall EM 75.6 -> 76.2 % (+0.6 [-0.4, +1.6], not significant)"
+    },
+    "llm": {
+      "ocr": "v6_medium_vi3+orient",
+      "kie": "llm:gemini+gaz",
+      "why": "optional when GEMINI_API_KEY is set: dev overall EM 78.1 % (+0.6 [-1.0, +2.1] over stock OCR on the same proxy backend; +1.9 [-0.3, +4.4] over the default)"
+    }
+  },
+  "history": [
+    {
+      "version": "pipeline-v2",
+      "default_ocr": "v6_medium+orient",
+      "default_kie": "rules+gaz+adm-nofb",
+      "dev_overall_em": 0.756,
+      "report": "evaluation/reports/rules_v2_dev.md"
+    },
+    {
+      "version": "pipeline-v1",
+      "default_kie": "rules+gaz-nofb",
+      "test_overall_em": 0.753,
+      "report": "evaluation/reports/final_test.md"
+    }
+  ]
+}

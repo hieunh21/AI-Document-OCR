@@ -4,21 +4,21 @@
 
 | KIE | OCR | Seller EM | Address EM | Timestamp EM (date) | Total EM | Overall EM | Overall F1 | Seller CER | Address CER |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| `rules-v1` | `v6_medium+orient@gpu0` | 50.6% | 4.0% | 87.4% (93.4%) | 90.1% | 57.1% | 59.3% | 31.8% | 38.6% |
-| `rules-v1+gaz` | `v6_medium+orient@gpu0` | 70.7% | 45.4% | 87.4% (93.4%) | 90.1% | 72.9% | 76.2% | 17.2% | 26.7% |
-| `rules-v1+gaz-nofb` | `v6_medium+orient@gpu0` | 74.7% | 45.4% | 87.4% (93.4%) | 90.1% | 74.0% | 77.0% | 18.4% | 26.4% |
-| `llm-gemini:gemini-2.5-flash-p1` | `v6_medium+orient@gpu0` | 70.1% | 31.0% | 88.6% (92.8%) | 93.2% | 70.1% | 71.0% | 13.7% | 21.7% |
-| `llm-gemini:gemini-2.5-flash-p1+gaz` | `v6_medium+orient@gpu0` | 75.3% | 53.4% | 88.6% (92.8%) | 93.2% | 77.2% | 78.4% | 13.0% | 17.9% |
+| `rules-v1` | `v6_medium+orient@gpu0` | 50.6% | 4.0% | 87.4% (93.4%) | 90.1% | 57.1% | 59.3% | 33.5% | 40.6% |
+| `rules-v1+gaz` | `v6_medium+orient@gpu0` | 70.7% | 46.6% | 87.4% (93.4%) | 90.1% | 73.2% | 76.6% | 17.3% | 26.6% |
+| `rules-v1+gaz-nofb` | `v6_medium+orient@gpu0` | 74.7% | 46.6% | 87.4% (93.4%) | 90.1% | 74.3% | 77.3% | 18.5% | 26.2% |
+| `llm-gemini:gemini-2.5-flash-p1` | `v6_medium+orient@gpu0` | 70.1% | 32.8% | 88.6% (92.8%) | 93.2% | 70.6% | 71.5% | 13.7% | 22.4% |
+| `llm-gemini:gemini-2.5-flash-p1+gaz` | `v6_medium+orient@gpu0` | 75.3% | 56.3% | 88.6% (92.8%) | 93.2% | 78.0% | 79.2% | 12.9% | 17.6% |
 
 Per field P / R / F1 (non-null values):
 
 | KIE | OCR | seller | seller_address | timestamp | total_cost |
 |---|---|---|---|---|---|
 | `rules-v1` | `v6_medium+orient@gpu0` | 53.8% / 53.4% / 53.6% | 0.7% / 0.6% / 0.7% | 88.3% / 90.6% / 89.4% | 91.5% / 92.1% / 91.8% |
-| `rules-v1+gaz` | `v6_medium+orient@gpu0` | 74.7% / 75.2% / 74.9% | 51.4% / 45.1% / 48.0% | 88.3% / 90.6% / 89.4% | 91.5% / 92.1% / 91.8% |
-| `rules-v1+gaz-nofb` | `v6_medium+orient@gpu0` | 81.2% / 75.2% / 78.1% | 51.0% / 45.1% / 47.9% | 88.3% / 90.6% / 89.4% | 91.5% / 92.1% / 91.8% |
-| `llm-gemini:gemini-2.5-flash-p1` | `v6_medium+orient@gpu0` | 69.2% / 72.7% / 70.9% | 30.1% / 30.9% / 30.5% | 88.5% / 91.8% / 90.1% | 92.9% / 95.4% / 94.2% |
-| `llm-gemini:gemini-2.5-flash-p1+gaz` | `v6_medium+orient@gpu0` | 74.6% / 78.3% / 76.4% | 53.6% / 54.9% / 54.3% | 88.5% / 91.8% / 90.1% | 92.9% / 95.4% / 94.2% |
+| `rules-v1+gaz` | `v6_medium+orient@gpu0` | 74.7% / 75.2% / 74.9% | 52.8% / 46.3% / 49.3% | 88.3% / 90.6% / 89.4% | 91.5% / 92.1% / 91.8% |
+| `rules-v1+gaz-nofb` | `v6_medium+orient@gpu0` | 81.2% / 75.2% / 78.1% | 52.4% / 46.3% / 49.2% | 88.3% / 90.6% / 89.4% | 91.5% / 92.1% / 91.8% |
+| `llm-gemini:gemini-2.5-flash-p1` | `v6_medium+orient@gpu0` | 69.2% / 72.7% / 70.9% | 31.9% / 32.7% / 32.3% | 88.5% / 91.8% / 90.1% | 92.9% / 95.4% / 94.2% |
+| `llm-gemini:gemini-2.5-flash-p1+gaz` | `v6_medium+orient@gpu0` | 74.6% / 78.3% / 76.4% | 56.6% / 58.0% / 57.3% | 88.5% / 91.8% / 90.1% | 92.9% / 95.4% / 94.2% |
 
 Scorable images per field: seller 174, seller_address 174, timestamp 167, total_cost 161.
 

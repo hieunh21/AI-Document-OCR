@@ -6,10 +6,13 @@ Hardware: NVIDIA RTX 3050 Laptop 4 GB (gpu0), laptop CPU; Paddle 3.3.1, PaddleOC
 
 | Run | Images | Regions | Detected | CER | CER folded | CER no-accent | Line exact | Amount read | Date-time read | P50 ms | P95 ms |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| `v6_medium@gpu0` | 174 | 975 | 99.5% | 14.9% | 12.8% | 6.4% | 27.6% | 95.5% | 85.6% | 696 | 1054 |
-| `v6_medium+orient@gpu0` | 174 | 975 | 99.6% | 13.0% | 11.0% | 4.4% | 28.0% | 95.5% | 87.5% | 598 | 990 |
+| `v6_medium@gpu0` | 174 | 975 | 99.5% | 14.9% | 12.8% | 6.4% | 27.6% | 95.5% | 86.9% | 696 | 1054 |
+| `v6_medium+orient@gpu0` | 174 | 975 | 99.6% | 13.0% | 11.0% | 4.4% | 28.0% | 95.5% | 88.8% | 598 | 990 |
+| `v6_medium_bt05+orient@gpu0` | 174 | 975 | 100.0% | 12.4% | 10.5% | 3.9% | 27.9% | 95.5% | 88.8% | 603 | 995 |
 | `v6med_det+vietocr_seq2seq+orient@gpu0` | 174 | 975 | 99.9% | 10.7% | 7.5% | 5.3% | 39.9% | 95.5% | 81.2% | 736 | 1028 |
-| `v6med_det+vietocr_transformer+orient@gpu0` | 174 | 975 | 99.9% | 8.9% | 5.2% | 3.1% | 35.3% | 94.9% | 85.6% | 2773 | 3736 |
+| `v6med_det+vietocr_transformer+orient@gpu0` | 174 | 975 | 99.9% | 8.9% | 5.2% | 3.1% | 35.3% | 94.9% | 86.2% | 2773 | 3736 |
+| `v6_medium_vi+orient@gpu0` | 174 | 975 | 99.6% | 7.3% | 5.5% | 4.9% | 51.5% | 86.5% | 63.1% | 584 | 919 |
+| `v6_medium_vi3+orient@gpu0` | 174 | 975 | 99.6% | 4.9% | 3.2% | 2.4% | 63.5% | 95.5% | 86.9% | 414 | 2016 |
 
 CER by field (case-sensitive / no-accent):
 
@@ -17,8 +20,11 @@ CER by field (case-sensitive / no-accent):
 |---|---|---|---|---|
 | `v6_medium@gpu0` | 9.6% / 5.3% | 19.4% / 7.9% | 9.0% / 3.4% | 15.2% / 7.0% |
 | `v6_medium+orient@gpu0` | 7.3% / 2.8% | 17.2% / 5.7% | 7.1% / 1.6% | 14.2% / 5.8% |
+| `v6_medium_bt05+orient@gpu0` | 6.6% / 2.1% | 16.1% / 4.7% | 7.1% / 1.6% | 14.2% / 5.8% |
 | `v6med_det+vietocr_seq2seq+orient@gpu0` | 9.1% / 5.4% | 13.7% / 6.4% | 6.3% / 2.6% | 10.3% / 5.7% |
 | `v6med_det+vietocr_transformer+orient@gpu0` | 10.1% / 3.4% | 9.9% / 3.2% | 6.2% / 1.8% | 8.9% / 4.2% |
+| `v6_medium_vi+orient@gpu0` | 6.6% / 5.2% | 8.2% / 5.5% | 7.2% / 4.0% | 5.8% / 4.5% |
+| `v6_medium_vi3+orient@gpu0` | 3.8% / 2.5% | 6.1% / 2.9% | 3.9% / 0.7% | 4.4% / 3.0% |
 
 *Amount read*: share of TOTAL_COST regions holding an amount (156) whose amount appears in the OCR text. *Date-time read*: share of TIMESTAMP regions with a parseable value (160) whose parsed ISO value equals the one parsed from the OCR text. Both use the Phase 1 parsers.
 
@@ -35,5 +41,8 @@ Versions:
 
 - `v6_medium@gpu0`: 3.7.0:PP-OCRv6_medium_det+PP-OCRv6_medium_rec
 - `v6_medium+orient@gpu0`: 3.7.0:PP-OCRv6_medium_det+PP-OCRv6_medium_rec+orient
+- `v6_medium_bt05+orient@gpu0`: 3.7.0:PP-OCRv6_medium_det+PP-OCRv6_medium_rec+orient
 - `v6med_det+vietocr_seq2seq+orient@gpu0`: PP-OCRv6_medium_det+vietocr:vgg_seq2seq+orient
 - `v6med_det+vietocr_transformer+orient@gpu0`: PP-OCRv6_medium_det+vietocr:vgg_transformer+orient
+- `v6_medium_vi+orient@gpu0`: 3.7.0:PP-OCRv6_medium_det+PP-OCRv6_medium_rec@ppocrv6_medium_rec_vi+orient
+- `v6_medium_vi3+orient@gpu0`: 3.7.0:PP-OCRv6_medium_det+PP-OCRv6_medium_rec@ppocrv6_medium_rec_vi3+orient

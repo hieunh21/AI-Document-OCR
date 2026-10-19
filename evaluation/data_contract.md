@@ -1,6 +1,7 @@
 # Data contract — MC-OCR 2021 for VietDocAI
 
-Status: **frozen for Phase 2–4** (version `mcocr2021-gt-v2`, splits `splits-v1`).
+Status: **frozen for Phase 2–4** (version `mcocr2021-gt-v2`, splits `splits-v1`,
+metrics `kie-metrics-v2`).
 Changing anything below requires bumping the version, regenerating
 `data/splits/` and `docs/dataset_eda.md`, and saying so in the next report.
 
@@ -111,15 +112,18 @@ model/config version, and this contract's version.
 Per field `f`, per image where `f` is scorable:
 
 - **Exact match (EM)** of normalized values:
-  - `seller`, `seller_address`: `fold_for_match(pred) == fold_for_match(gt)` (NFC, case-fold,
-    punctuation → space, whitespace collapsed, diacritics **kept**);
+  - `seller`, `seller_address`: `text_key(pred) == text_key(gt)` (`evaluation/metrics.py`):
+    `fold_for_match` (NFC, case-fold, punctuation → space, whitespace collapsed, diacritics
+    **kept**) then `canonical_tones` — each word's tone mark moved to the end of the word, so
+    old/new-style placement is equal (`Thuỵ` = `Thụy`, `hoà` = `hòa`) while a different
+    tone or letter still differs;
   - `timestamp`: equal ISO strings compared at the precision of the GT (date-only GT → date
     part; GT without seconds → `HH:MM`); a date-only match is also reported separately;
   - `total_cost`: integer equality;
   - `null` vs `null` is a match; value vs `null` (either direction) is a miss.
 - **Field precision / recall / F1** over non-null values: TP = pred non-null and EM;
   FP = pred non-null and not EM; FN = GT non-null and (pred null or not EM).
-- **CER** (character error rate, Levenshtein / len(GT)) on `fold_for_match` text for
+- **CER** (character error rate, Levenshtein / len(GT)) on `text_key` text for
   `seller` and `seller_address` — KIE text CER, not full-page OCR CER (MC-OCR has no full-page transcription).
 - **IQA**: MAE / RMSE against `anno_image_quality` if a quality model is evaluated.
 - **Latency**: `latency_ms` per stage (preprocess / OCR / KIE / total), P50 and P95, with hardware stated.
@@ -132,3 +136,4 @@ Our numbers are **not** comparable with the RIVF 2021 leaderboard (different spl
 |---|---|---|---|
 | `mcocr2021-gt-v1` | 2026-10-18 | Initial contract (Phase 1) | — |
 | `mcocr2021-gt-v2` | 2026-10-18 | Date parser rejected any date directly after `:` (`"Ngày:16/08/2020"`); now only a preceding `<digit>:` (clock time) is excluded. Found in Phase 2 when OCR text dropped the space. | 5 more normalized timestamps (1040 → 1045); splits unchanged (`--check` reproducible) |
+| `kie-metrics-v2` | 2026-10-18 | Metric only (GT unchanged): text fields compared after canonical tone placement. Phase 3 error review found correct predictions counted wrong because the receipt and the label used different tone placement (`Thuỵ`/`Thụy`). Decided on dev before any test run. | dev, `rules+gaz-nofb`: address EM 45.4 → 46.6 %; Gemini + gaz 53.4 → 56.3 % |

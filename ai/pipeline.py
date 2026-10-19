@@ -6,8 +6,11 @@ offline evaluation, so reported metrics always belong to the served model.
 
 from __future__ import annotations
 
+import json
 import time
 from dataclasses import dataclass, field
+from pathlib import Path
+from typing import Any
 
 from PIL import Image, ImageOps
 
@@ -23,6 +26,7 @@ class PipelineResult:
     extraction: ReceiptExtraction
     quality: QualityReport | None = None
     timings_ms: dict[str, float] = field(default_factory=dict)
+    llm_usage: Any = None  # ai.kie.llm.LLMUsage when the KIE provider is an LLM
 
 
 class ReceiptPipeline:
@@ -44,7 +48,7 @@ class ReceiptPipeline:
         t1 = time.perf_counter()
         ocr = self.ocr.predict(image)
         t2 = time.perf_counter()
-        extraction, _ = extract_from_ocr(self.kie, ocr, image)
+        extraction, usage = extract_from_ocr(self.kie, ocr, image)
         t3 = time.perf_counter()
         quality = self.quality.assess(image, ocr) if self.quality else None
         t4 = time.perf_counter()
@@ -64,6 +68,7 @@ class ReceiptPipeline:
             ocr=ocr,
             extraction=extraction,
             quality=quality,
+            llm_usage=usage,
             timings_ms={
                 "preprocess": (t1 - t0) * 1000,
                 "ocr": (t2 - t1) * 1000,
@@ -72,3 +77,20 @@ class ReceiptPipeline:
                 "total": (t4 - t0) * 1000,
             },
         )
+
+
+PIPELINE_CONFIG = Path("configs/pipeline.json")
+
+
+def pipeline_config(name: str = "default", path: Path = PIPELINE_CONFIG) -> dict[str, str]:
+    """OCR preset and KIE name of a frozen pipeline (chosen in Phase 4)."""
+    config = json.loads(path.read_text(encoding="utf-8"))
+    return config["pipelines"][name] | {"version": config["version"]}
+
+
+def build_pipeline(name: str = "default", device: str = "gpu:0") -> ReceiptPipeline:
+    from ai.kie.factory import build_kie
+    from ai.ocr.factory import build_ocr
+
+    cfg = pipeline_config(name)
+    return ReceiptPipeline(build_ocr(cfg["ocr"], device), build_kie(cfg["kie"]), QualityAssessor())

@@ -188,3 +188,32 @@ def test_kie_on_rotated_ocr_uses_upright_layout_and_original_boxes(photo_turn):
     assert ex.fields.timestamp == "2020-08-11T08:06"
     ev = ex.evidence["total_cost"].regions
     assert ev[1].bbox == photo_box(RECEIPT[10].bbox)  # evidence in photo coordinates
+
+
+def test_rules_attach_time_printed_on_the_line_above():
+    spans = [
+        S(0, "VinCommerce", 97, 387, 300, 427),
+        S(1, "Thời gian:10:43", 318, 433, 520, 461),  # other column, OCR line above
+        S(2, "Ngày:12/08/2020", 100, 449, 300, 478),
+        S(3, "NVBH:09021212", 337, 473, 520, 497),
+    ]
+    ex = RuleBasedKIE().extract(None, spans)
+    assert ex.fields.timestamp == "2020-08-12T10:43"
+    assert ex.evidence["timestamp"].span_ids == ["s001", "s002"]
+
+
+def test_rules_find_address_by_place_names_and_repair_accents():
+    from ai.normalization.address import AdminUnits
+
+    admin = AdminUnits.load()
+    if admin is None:
+        pytest.skip("configs/vn_admin_units.json not built")
+    spans = [
+        S(0, "THỨC COFFEE", 167, 65, 560, 162),
+        S(1, "22 Quang Trung, P10, Gò Vãp", 234, 175, 520, 214),  # no address keyword
+        S(2, "Tel:028 3588 3591", 307, 212, 500, 242),
+        S(3, "Cảm ơn quý khách", 200, 900, 500, 930),  # bottom of the receipt
+    ]
+    assert RuleBasedKIE(seller_fallback=False).extract(None, spans).fields.seller_address is None
+    kie = RuleBasedKIE(seller_fallback=False, admin=admin)
+    assert kie.extract(None, spans).fields.seller_address == "22 Quang Trung, P10, Gò Vấp"

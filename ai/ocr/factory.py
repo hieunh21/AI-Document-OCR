@@ -6,8 +6,9 @@ from ai.ocr.base import OCRProvider
 
 # Phase 2 default (evaluation/reports/ocr_dev.md): fastest GPU option with the best
 # date/amount reading. VietOCR transformer reads Vietnamese text far better
-# (folded CER 5.2 % vs 11.0 %) at ~3 s/image; the final choice is made in Phase 4
-# on KIE metrics, not on OCR CER alone.
+# (folded CER 5.2 % vs 11.0 %) at ~3 s/image, but Phase 4 found no KIE gain from it
+# (evaluation/reports/model_comparison.md), so the app keeps v6_medium
+# (configs/pipeline.json).
 DEFAULT_PRESET = "v6_medium+orient"
 ACCURATE_PRESET = "v6med_det+vietocr_transformer+orient"
 CPU_PRESET = "v6_tiny+orient"

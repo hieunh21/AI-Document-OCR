@@ -7,6 +7,7 @@ data/interim/
 data/cache/
 data/smoke/
 data/private/
+data/external/
 *.jpg
 *.jpeg
 *.png

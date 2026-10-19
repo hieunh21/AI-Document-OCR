@@ -4,8 +4,9 @@ Read a photo of a Vietnamese retail receipt and extract **seller, seller address
 timestamp and total cost**, with the evidence region for each value, a human review
 step, and a reproducible offline benchmark on **MC-OCR 2021**.
 
-> Status: **Phase 0–3 done** (data contracts, MC-OCR adapter and splits, OCR + orientation +
-> image quality, rule-based and LLM key-information extraction with dev benchmarks).
+> Status: **Phase 0–4 done** (data contracts, MC-OCR adapter and splits, OCR + orientation +
+> image quality, rule-based and LLM key-information extraction, benchmark with error
+> analysis and a single held-out test run).
 > The app still serves mock data (Phase 5).
 > Roadmap: `VietDocAI_MC_OCR_Phase_Roadmap.md`; progress: `docs/progress/`.
 
@@ -15,7 +16,7 @@ step, and a reproducible offline benchmark on **MC-OCR 2021**.
 ai/            AI core: schemas (data contracts), OCR/KIE interfaces, normalization, pipeline, mocks
 backend/       FastAPI app (GET /health, /api/v1/documents — mock store until Phase 5)
 frontend/      React + Ant Design (Upload, History, Review, Dashboard)
-evaluation/    MC-OCR adapter, dedup, splits, EDA, data contract, (Phase 4) metrics & reports
+evaluation/    MC-OCR adapter, dedup, splits, EDA, data contract, metrics, benchmark, error analysis
 data/splits/   train/dev/test/smoke manifests (ids + SHA-256 only, no images/labels)
 docs/          requirements, EDA, data usage rules, manual annotation check, schemas, progress
 scripts/       environment checks and utilities
@@ -89,12 +90,28 @@ PP-OCR detection + VietOCR recognition (`v6med_det+vietocr_seq2seq|transformer`)
 `+orient` for automatic page orientation. Dev results: `evaluation/reports/ocr_dev.md`,
 image quality: `evaluation/reports/iqa_dev.md`.
 
+The stock PP-OCRv6 recognizer cannot write the 90 Vietnamese letters with a tone mark
+(ả, ẩ, ộ, …): its dictionary lacks them.
+
+`docs/finetune_rec.md` fine-tunes it with a 237-character Vietnamese dictionary:
+- `scripts/export_rec_dataset.py` exports the train/dev line crops;
+- `scripts/remap_rec_head.py` builds the new output layers from the stock ones;
+- `notebooks/finetune_ppocrv6_rec_vi.ipynb` trains on Colab.
+
+On dev, folded OCR CER drops from 11.0 % to 3.2 % (`evaluation/reports/ocr_vi3_dev.md`).
+The model has to be trained at the stock 320 px width: the backbone pools training
+features to a fixed 40 time steps.
+
+The result is preset `v6_medium_vi3`, the OCR of `pipeline-v3`. Its weights are not in
+git: place the exported model in `models/ppocrv6_medium_rec_vi3/`.
+
 ## Key information extraction (Phase 3)
 
 ```bash
 python -m evaluation.build_gazetteer                       # store list from the train split
+python scripts/build_admin_units.py                        # official place names (GSO directory)
 python -m evaluation.kie_eval --split dev --ocr-run "v6_medium+orient@gpu0"     --kie rules+gaz-nofb llm:gemini+gaz --workers 4         # LLM needs GEMINI_* in .env
-python scripts/extract_receipt.py path/to/receipt.jpg --kie rules+gaz-nofb
+python scripts/extract_receipt.py path/to/receipt.jpg [--pipeline default|llm]
 ```
 
 KIE options (`ai/kie/factory.py`): rule baseline (`rules`, `rules+gaz-nofb`) and Gemini over
@@ -103,8 +120,57 @@ cite them; evidence boxes always come from OCR. Dev numbers: `evaluation/reports
 
 ## Benchmark
 
-Dev results so far are in `evaluation/reports/` (OCR, image quality, KIE). The full benchmark
-with per-stratum results and the single held-out test run comes in Phase 4.
+```bash
+python -m evaluation.run_benchmark --split dev --model rules baseline llm     --latency-images 30 --report model_comparison   # OCR -> KIE -> metrics -> report
+python -m evaluation.error_analysis --split dev --model rules llm
+```
+
+Held-out **test** split (173 images), run once after the pipeline was frozen
+(`configs/pipeline.json`). EM = exact match of the normalized field value
+(`evaluation/data_contract.md` §5). Latency is end to end (file → JSON) on an RTX 3050
+Laptop GPU.
+
+| Pipeline | Seller EM | Address EM | Timestamp EM | Total EM | Overall EM | P50 / P95 latency |
+|---|---:|---:|---:|---:|---:|---:|
+| Rules, no store list (baseline) | 50.9 % | 4.0 % | 87.9 % | 89.4 % | 57.1 % | 0.5 / 0.7 s |
+| **Rules + store gazetteer (pipeline-v1 default, offline)** | 72.8 % | 52.6 % | 87.9 % | 89.4 % | **75.3 %** | 0.5 / 0.7 s |
+| Gemini 2.5 Flash + gazetteer (optional) | 74.0 % | 53.8 % | 88.5 % | 92.5 % | **76.8 %** | 4.4 / 8.7 s |
+
+- **OCR:** PP-OCRv6 medium with automatic orientation, for all three pipelines.
+- **Gemini vs rules:** on test the gap is +1.5 points with a 95 % paired-bootstrap interval
+  of [−0.6, +3.6]. On dev it was +3.7 [+1.3, +6.2].
+- **Proxy check:** the LLM proxy's backend changed during the day (about 2.5× more output
+  tokens, about 2× slower). Re-sending the same 174 dev requests gave +3.3 [+1.0, +5.6]
+  over rules (`llm_backend_check_dev.md`). Accuracy held; latency and cost did not.
+- **Rejected after dev comparison:**
+  - VietOCR recognition: better OCR CER, but no KIE gain and about 3 s slower per image.
+  - A lower detection threshold: no KIE gain either.
+- **Error analysis (`docs/error_analysis.md`):** in a manual review of 29 errors, about a
+  third were label omissions or typos, so these numbers are lower bounds.
+- **Weak spot:** seller and address for stores never seen in training.
+- **Rules v2 (after the test run, dev only):** official Vietnamese place names (GSO
+  directory) find address lines and repair their accents. Dev overall EM rises from 74.3 %
+  to 75.6 %, +1.2 [+0.4, +2.2] over v1 (`evaluation/reports/rules_v2_dev.md`). It is now
+  `pipeline-v2`. It has no test number, because the test split was used once, for v1.
+- **Pipeline v3 (dev only), the current default:** the same pipelines on the fine-tuned
+  Vietnamese recognizer (`configs/pipeline.json`).
+  - Folded OCR CER: 11.0 % → 3.2 %.
+  - Overall EM, rules: 75.6 → 76.2 %.
+  - Overall EM, Gemini: 77.5 → 78.1 % on the same proxy backend.
+  - Both KIE gains are within noise (`evaluation/reports/ocr_vi3_dev.md`).
+  - What v3 adds is correct Vietnamese in the evidence and raw OCR text.
+
+Full reports:
+
+- `evaluation/reports/final_test.md` — test split.
+- `evaluation/reports/model_comparison.md` — six pipelines on dev, plus breakdowns by
+  subset and latency per stage.
+- `evaluation/reports/baseline_dev.md` — the baseline alone.
+- `evaluation/reports/llm_backend_check_dev.md` — dev LLM requests re-sent to the changed
+  proxy backend.
+
+The numbers are not comparable with the RIVF 2021 leaderboard, which used a different
+split and protocol.
 
 ## References
 

@@ -31,6 +31,7 @@ from ai.kie.base import KIEProvider
 from ai.kie.gazetteer import Gazetteer
 from ai.kie.validate import validate_extraction
 from ai.layout import group_lines, reading_order
+from ai.normalization.address import AdminUnits
 from ai.normalization.datetime_vi import parse_timestamp
 from ai.normalization.money import find_amounts, to_vnd
 from ai.normalization.text import fold_noacc, normalize_text
@@ -159,13 +160,23 @@ _STORE_CODE = re.compile(r"^(vm|vin|vmt)\b")  # "VM+ QNH …" store-name lines: 
 class RuleBasedKIE(KIEProvider):
     name = "rules"
 
-    def __init__(self, gazetteer: Gazetteer | None = None, seller_fallback: bool = True) -> None:
+    def __init__(
+        self,
+        gazetteer: Gazetteer | None = None,
+        seller_fallback: bool = True,
+        admin: AdminUnits | None = None,
+        admin_hint: bool = True,
+    ) -> None:
         self.gazetteer = gazetteer
         self.seller_fallback = seller_fallback
+        self.admin = admin  # official place names: accent repair (+ address cue)
+        self.admin_hint = admin_hint
 
     @property
     def version(self) -> str:  # type: ignore[override]
-        return "v1" + ("+gaz" if self.gazetteer else "") + ("" if self.seller_fallback else "-nofb")
+        adm = ("+adm" if self.admin_hint else "+admfix") if self.admin else ""
+        fb = "" if self.seller_fallback else "-nofb"
+        return "v2" + ("+gaz" if self.gazetteer else "") + adm + fb
 
     def extract(self, image: Image.Image | None, ocr_spans: list[OCRSpan]) -> ReceiptExtraction:
         spans = [s for s in ocr_spans if s.text.strip()]
@@ -219,13 +230,13 @@ class RuleBasedKIE(KIEProvider):
                 continue
             used = [s for s in line.spans if re.search(r"\d", s.text)]
             text = line.text
-            if parsed.time is None and i + 1 < len(lines):  # "Ngày: …" then "Giờ: …"
-                nxt = lines[i + 1]
-                t = parse_timestamp(nxt.text)
-                if t and t.time and t.date is None:
+            if parsed.time is None:  # "Ngày: …" with "Giờ: …" on a neighbouring line
+                near = self._time_nearby(lines, i)
+                if near:
+                    t, other = near
                     parsed.time, parsed.has_seconds = t.time, t.has_seconds
-                    used += [s for s in nxt.spans if re.search(r"\d", s.text)]
-                    text = f"{text} {nxt.text}"
+                    used += [s for s in other.spans if re.search(r"\d", s.text)]
+                    text = f"{text} {other.text}"
             score = 2 * bool(_DATE_KW.search(line.key)) + (parsed.time is not None)
             score -= 3 * bool(_NOT_TX_DATE.search(line.key))
             cand = (score, -i, parsed.iso, text, used)
@@ -233,7 +244,30 @@ class RuleBasedKIE(KIEProvider):
                 best = cand
         if best is None:
             return None, None, []
-        return best[2], normalize_text(best[3]), best[4]
+        return best[2], normalize_text(best[3]), reading_order(best[4], lambda s: s.bbox)
+
+    @staticmethod
+    def _time_nearby(lines: list[Line], i: int):
+        """A time-only line within two lines of ``lines[i]``, above or below.
+
+        The time is often printed in another column ("Ngày:12/08/2020 … Thời gian:10:43")
+        and OCR boxes put it on the line above as well as below. The closest wins; a
+        line with a time keyword beats one without.
+        """
+        best = None
+        for j in (i - 2, i - 1, i + 1, i + 2):
+            if not 0 <= j < len(lines):
+                continue
+            other = lines[j]
+            if abs(other.y0 - lines[i].y0) > 2.5 * max(lines[i].height, other.height):
+                continue
+            t = parse_timestamp(other.text)
+            if not (t and t.time and t.date is None):
+                continue
+            rank = (not _DATE_KW.search(other.key), abs(j - i), j < i)  # below wins a tie
+            if best is None or rank < best[0]:
+                best = (rank, t, other)
+        return (best[1], best[2]) if best else None
 
     # ------------------------------------------------------------------ total
     @staticmethod
@@ -368,15 +402,16 @@ class RuleBasedKIE(KIEProvider):
                     or (_TITLE.search(key) and not _ADDRESS_HINT.search(key))
                 ):
                     continue
-                if _ADDRESS_HINT.search(key) or _STORE_CODE.search(key):
+                if (
+                    _ADDRESS_HINT.search(key)
+                    or _STORE_CODE.search(key)
+                    or (self.admin_hint and self.admin and self.admin.contains_name(s.text))
+                ):
                     used.append(s)
         if not used:
             return None, None, []
         used = reading_order(used, lambda s: s.bbox)
         raw = normalize_text(" ".join(s.text for s in used))
-        value = raw
-        if self.gazetteer:
-            canon = self.gazetteer.match_address(raw, seller)
-            if canon:
-                value = canon
+        canon = self.gazetteer.match_address(raw, seller) if self.gazetteer else None
+        value = canon or (self.admin.correct(raw) if self.admin else raw)
         return value, raw, used

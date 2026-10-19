@@ -116,3 +116,23 @@ def test_reading_order_groups_same_line():
     }
     order = reading_order(list(boxes), lambda k: boxes[k])
     assert order == ["header", "keyword", "amount", "below"]
+
+
+def test_admin_units_repair_accents_only_with_consistent_hierarchy():
+    import pytest
+
+    from ai.normalization.address import AdminUnits
+
+    admin = AdminUnits.load()
+    if admin is None:
+        pytest.skip("configs/vn_admin_units.json not built")
+    assert admin.correct("TP. Căm Pha, T. Quang Ninh") == "TP. Cẩm Phả, T. Quảng Ninh"
+    assert admin.correct("Q.Gò Vãp, TP.HCM") == "Q.Gò Vấp, TP.HCM"
+    # ambiguous alone (Cấm Sơn / Cẩm Sơn) but resolved by the province named in the text
+    assert admin.correct("P. Cåm Son") == "P. Cåm Son"
+    assert admin.correct("P. Cåm Son, Quang Ninh") == "P. Cẩm Sơn, Quảng Ninh"
+    # a village (thôn) name is not in the directory: never mapped to a ward elsewhere
+    assert admin.correct("Thôn Phú Thuy, Xã Phú Thi, Huyện Gia Lâm") == (
+        "Thôn Phú Thuy, Xã Phú Thị, Huyện Gia Lâm"
+    )
+    assert admin.correct("CAM PHA") == "CẨM PHẢ"  # case kept

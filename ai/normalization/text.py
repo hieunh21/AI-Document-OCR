@@ -39,3 +39,25 @@ def strip_accents(s: str) -> str:
 def fold_noacc(s: str | None) -> str:
     """``fold_for_match`` without diacritics: robust key for keyword matching on OCR text."""
     return strip_accents(fold_for_match(s))
+
+
+# Vietnamese tone marks (grave, acute, tilde, hook above, dot below) as combining chars.
+_TONE_MARKS = frozenset("̣̀́̃̉")
+
+
+def canonical_tones(s: str) -> str:
+    """Move every word's tone mark to the end of the word, then NFC.
+
+    Old- and new-style tone placement then compare equal ("Thuỵ" / "Thụy",
+    "hoà" / "hòa"), while a different tone or letter still differs. Vowel-quality
+    marks (circumflex, breve, horn) stay where they are. Only for comparing
+    strings: the output is not correct spelling.
+    """
+    words = []
+    for word in s.split(" "):
+        d = unicodedata.normalize("NFD", word)
+        tones = [c for c in d if c in _TONE_MARKS]
+        if tones:
+            d = "".join(c for c in d if c not in _TONE_MARKS) + "".join(tones)
+        words.append(unicodedata.normalize("NFC", d))
+    return " ".join(words)

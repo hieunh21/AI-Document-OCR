@@ -16,8 +16,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from ai.kie.factory import build_kie  # noqa: E402
-from ai.ocr.factory import DEFAULT_PRESET, build_ocr  # noqa: E402
-from ai.pipeline import ReceiptPipeline  # noqa: E402
+from ai.ocr.factory import build_ocr  # noqa: E402
+from ai.pipeline import ReceiptPipeline, pipeline_config  # noqa: E402
 from ai.preprocessing.image import load_image  # noqa: E402
 from ai.quality.assess import QualityAssessor  # noqa: E402
 
@@ -25,10 +25,13 @@ from ai.quality.assess import QualityAssessor  # noqa: E402
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("image", type=Path)
-    ap.add_argument("--ocr", default=DEFAULT_PRESET)
-    ap.add_argument("--kie", default="rules+gaz-nofb")
+    ap.add_argument("--pipeline", default="default")
+    ap.add_argument("--ocr")
+    ap.add_argument("--kie")
     ap.add_argument("--device", default="gpu:0")
     args = ap.parse_args()
+    cfg = pipeline_config(args.pipeline)
+    args.ocr, args.kie = args.ocr or cfg["ocr"], args.kie or cfg["kie"]
 
     pipeline = ReceiptPipeline(
         build_ocr(args.ocr, args.device), build_kie(args.kie), QualityAssessor()

@@ -44,6 +44,7 @@ markers = [
 [tool.ruff]
 line-length = 100
 target-version = "py311"
+extend-exclude = ["notebooks", "scripts/build_finetune_notebook.py"]  # Colab-style cells
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
