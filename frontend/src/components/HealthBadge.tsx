@@ -2,6 +2,9 @@ import { Badge, Tooltip } from "antd";
 import { useEffect, useState } from "react";
 import { api } from "../api/client";
 import type { Health } from "../api/types";
+import { errorText } from "../format";
+
+const white = { color: "#fff" };
 
 export function HealthBadge() {
   const [health, setHealth] = useState<Health | null>(null);
@@ -11,21 +14,32 @@ export function HealthBadge() {
     api
       .health()
       .then(setHealth)
-      .catch((e: Error) => setError(e.message));
+      .catch((e) => setError(errorText(e)));
   }, []);
 
   if (error) {
     return (
       <Tooltip title={error}>
-        <Badge status="error" text={<span style={{ color: "#fff" }}>API offline</span>} />
+        <Badge status="error" text={<span style={white}>API offline</span>} />
       </Tooltip>
     );
   }
-  if (!health) return <Badge status="processing" text={<span style={{ color: "#fff" }}>API…</span>} />;
+  if (!health) return <Badge status="processing" text={<span style={white}>API…</span>} />;
+  const ok = health.status === "ok";
   return (
-    <Badge
-      status="success"
-      text={<span style={{ color: "#fff" }}>{`API ${health.version} · ${health.env}`}</span>}
-    />
+    <Tooltip
+      title={`Database: ${health.database} · pipeline ${health.pipeline.name} (${
+        health.pipeline.loaded ? "models loaded" : "models load on first use"
+      })`}
+    >
+      <Badge
+        status={ok ? "success" : "warning"}
+        text={
+          <span style={white}>
+            {ok ? `${health.pipeline.version} · API ${health.version}` : "Database unavailable"}
+          </span>
+        }
+      />
+    </Tooltip>
   );
 }

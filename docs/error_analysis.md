@@ -146,3 +146,46 @@ much better. The test split confirms the pattern with n = 20 (`final_test.md`).
      address.
 
    None of these was tuned on test.
+
+## 6. Update for pipeline-v3 (fine-tuned Vietnamese recognizer, dev)
+
+Report: `evaluation/reports/error_breakdown_dev.md`. It now also covers `rules-adm` (v2),
+`rules-vi3` and `llm-vi3`.
+
+| Rules pipeline | Wrong values | label | OCR | KIE |
+|---|---:|---:|---:|---:|
+| v2 (`rules-adm`, stock OCR) | 165 | 21 (13 %) | 111 (67 %) | 33 (20 %) |
+| v3 (`rules-vi3`) | 161 | 22 (14 %) | 47 (29 %) | 92 (57 %) |
+
+The new recognizer removes most OCR-stage errors (OCR misreads: 108 → 44). The total
+barely moves, because the errors move to the KIE stage. The OCR text now matches the
+label, so a wrong value is blamed on extraction.
+
+Most of the new KIE-stage errors are `kie_partial`: the right region was chosen, but the
+text differs. That category grew from 15 to 65. Of those 65:
+- 38 differ from the label by at most 2 characters;
+- 9 differ by 3–5 characters;
+- 18 differ by more than 5 characters.
+
+In a sample of these near misses, the label is often the wrong side:
+- "690 Trần Phú" for a printed "590";
+- "Chợ sửi" for "Chợ Sủi";
+- "Vin+QNH" or "NHÀ QNH" for "VM+QNH";
+- "12 Thanh Niên" for "112".
+
+Real misses remain as well:
+- labels typed without accents ("Duong", "dich vu") against an accented reading;
+- one "dich" read as "đich".
+
+Gemini on v3 OCR shows the same pattern: 36 of its 67 `kie_partial` values are within 2
+characters of the label.
+
+Consequences:
+- Exact match against these labels now understates v3 more than it did v2. A cleaned dev
+  label set would measure the gap between the two.
+- The extraction errors worth fixing are elsewhere:
+  - `kie_missed`: 23 values, mostly seller and address of stores without a gazetteer
+    entry;
+  - `kie_partial` with large differences: 18 values (wrong lines joined or dropped).
+
+  A learned line classifier targets exactly these.

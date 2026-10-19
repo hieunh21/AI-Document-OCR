@@ -4,18 +4,21 @@ Read a photo of a Vietnamese retail receipt and extract **seller, seller address
 timestamp and total cost**, with the evidence region for each value, a human review
 step, and a reproducible offline benchmark on **MC-OCR 2021**.
 
-> Status: **Phase 0–4 done** (data contracts, MC-OCR adapter and splits, OCR + orientation +
-> image quality, rule-based and LLM key-information extraction, benchmark with error
-> analysis and a single held-out test run).
-> The app still serves mock data (Phase 5).
+> Status: **Phase 0–6 done**.
+> - Phases 0–4: data contracts, MC-OCR adapter and splits, OCR with orientation and image
+>   quality, rule-based and LLM key-information extraction, benchmark with error analysis,
+>   and a single held-out test run.
+> - Phase 5: FastAPI + PostgreSQL service running the real pipeline.
+> - Phase 6: React app covering upload, review with evidence boxes, corrections, approval,
+>   history and export.
 > Roadmap: `VietDocAI_MC_OCR_Phase_Roadmap.md`; progress: `docs/progress/`.
 
 ## Layout
 
 ```text
 ai/            AI core: schemas (data contracts), OCR/KIE interfaces, normalization, pipeline, mocks
-backend/       FastAPI app (GET /health, /api/v1/documents — mock store until Phase 5)
-frontend/      React + Ant Design (Upload, History, Review, Dashboard)
+backend/       FastAPI + SQLAlchemy/PostgreSQL service, Alembic migrations, API tests
+frontend/      React + Ant Design: Dashboard, Upload (+ demo receipts), Review (evidence, edit, approve), History (filter, export)
 evaluation/    MC-OCR adapter, dedup, splits, EDA, data contract, metrics, benchmark, error analysis
 data/splits/   train/dev/test/smoke manifests (ids + SHA-256 only, no images/labels)
 docs/          requirements, EDA, data usage rules, manual annotation check, schemas, progress
@@ -33,10 +36,12 @@ uv venv .venv --python 3.12              # or: python -m venv .venv
 uv pip install --python .venv -e ".[dev]"  # core + tests
 # uv pip install --python .venv -e ".[ocr]"  # PaddleOCR on CPU; for GPU + VietOCR see docs/setup_gpu.md
 
-# Backend  (run from the repository root)
+# Database + backend  (run from the repository root; copy .env.example to .env first)
+docker compose up -d db                                  # PostgreSQL 16 on :5432
+.venv/Scripts/alembic -c backend/alembic.ini upgrade head  # create / migrate tables
 .venv/Scripts/python -m uvicorn app.main:app --app-dir backend --reload   # Windows
 # .venv/bin/python -m uvicorn app.main:app --app-dir backend --reload     # Linux/macOS
-curl http://127.0.0.1:8000/health
+curl http://127.0.0.1:8000/health                        # API docs: http://127.0.0.1:8000/docs
 
 # Frontend (proxies /api and /health to :8000)
 cd frontend && npm install && npm run dev   # http://localhost:5173
@@ -45,6 +50,44 @@ cd frontend && npm install && npm run dev   # http://localhost:5173
 .venv/Scripts/python -m pytest
 .venv/Scripts/ruff check .
 ```
+
+## Web app (Phase 6)
+
+Open http://localhost:5173 with the database, the backend and `npm run dev` running.
+
+1. **Upload:** drop a receipt photo, or pick one of the demo receipts
+   (`scripts/make_demo_receipts.py`, invented content).
+2. **Review:** the four fields sit next to the image.
+   - Selecting a field highlights where its value was read.
+   - Each value is tagged as coming from the AI or from a person.
+   - Warnings show missing or implausible values.
+   - **Save correction** stores the edits; **Approve** locks the record.
+3. **History:** filter by status, seller or dates, and export the selection as CSV or
+   JSON, e.g. approved records only.
+4. **Dashboard:** counts per status. The money total covers approved receipts only.
+
+## Backend API (Phase 5)
+
+The backend runs the frozen pipeline from `configs/pipeline.json` (`VIETDOCAI_PIPELINE`,
+default `default`). Results are stored in PostgreSQL; image files stay on disk under
+`storage/`. Interactive docs are at `/docs`.
+
+| Endpoint | Purpose |
+|---|---|
+| `POST /api/v1/documents[?process=true]` | Upload a JPG/PNG/WebP. Checks size, type, decodability and dimensions, with a per-client rate limit. The same bytes return the existing document. |
+| `POST /api/v1/documents/{id}/process` | Run the pipeline synchronously (about 0.5 s on GPU once the models are loaded). |
+| `GET /api/v1/documents/{id}` | Status, current fields with their source (`ai` / `human`), warnings, AI extraction, OCR spans and evidence boxes, corrections, events. |
+| `GET /api/v1/documents/{id}/image` | The uploaded image. |
+| `PATCH /api/v1/documents/{id}/fields` | Correct fields (`"510.760"` and `"30/04/2020 10:41"` are normalized); old and new values are logged. |
+| `POST /api/v1/documents/{id}/approve` | Human approval; the document is then locked. |
+| `GET /api/v1/documents` | List with paging and filters: status, seller, upload date, receipt date. |
+| `GET /api/v1/documents/{id}/export`, `GET /api/v1/documents/export?status=approved` | JSON or CSV (UTF-8 with BOM for Excel). |
+
+- **Tables:** `documents`, `extractions` (every pipeline run), `field_corrections`,
+  `document_events` (audit trail).
+- **Errors:** every error returns `{"detail", "code", "request_id"}`.
+- **Tests:** `backend/tests` covers the main flow and the error paths. They run on SQLite
+  with the mock pipeline, so they need neither PostgreSQL nor a GPU.
 
 ## Dataset (not included)
 

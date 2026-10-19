@@ -15,6 +15,9 @@ dependencies = [
     "pillow>=10.4",
     "opencv-contrib-python>=4.10",  # same distribution PaddleX installs (one cv2 only)
     "rapidfuzz>=3.9",
+    "sqlalchemy>=2.0.30,<3",
+    "psycopg[binary]>=3.2,<4",
+    "alembic>=1.13,<2",
 ]
 
 [project.optional-dependencies]
@@ -53,7 +56,7 @@ select = ["E", "F", "I", "UP", "B"]
 packages = []
 
 [tool.ruff.lint.flake8-bugbear]
-extend-immutable-calls = ["fastapi.Depends", "fastapi.Query", "fastapi.File"]
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query", "fastapi.File", "fastapi.Body", "fastapi.Header"]
 
 [tool.ruff.lint.isort]
 known-first-party = ["ai", "evaluation", "app", "tests"]

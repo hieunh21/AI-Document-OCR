@@ -1,0 +1,23 @@
+# Local PostgreSQL for the backend (Phase 5):
+#   docker compose up -d db
+#   alembic -c backend/alembic.ini upgrade head
+# Matches VIETDOCAI_DATABASE_URL in .env.example.
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: vietdocai
+      POSTGRES_PASSWORD: vietdocai
+      POSTGRES_DB: vietdocai
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vietdocai -d vietdocai"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  pgdata:
