@@ -1,0 +1,274 @@
+{
+ "version": "lgbm-v1",
+ "classes": [
+  "other",
+  "seller",
+  "seller_address",
+  "timestamp",
+  "total_cost"
+ ],
+ "features": [
+  "y0",
+  "y1",
+  "yc",
+  "x0",
+  "x1",
+  "xc",
+  "rel_h",
+  "rel_w",
+  "center_offset",
+  "line_idx",
+  "line_pos",
+  "lines_below",
+  "n_in_line",
+  "pos_in_line",
+  "is_first_in_line",
+  "is_last_in_line",
+  "in_header",
+  "n_chars",
+  "n_words",
+  "digit_ratio",
+  "alpha_ratio",
+  "upper_ratio",
+  "has_colon",
+  "starts_digit",
+  "date",
+  "time_only",
+  "date_kw",
+  "not_tx_date",
+  "total_prio",
+  "total_neg",
+  "title",
+  "meta",
+  "address_hint",
+  "store_code",
+  "store_word",
+  "header_word",
+  "long_number",
+  "price",
+  "amount",
+  "n_amounts",
+  "amount_is_max",
+  "amount_rank",
+  "gaz_seller",
+  "gaz_address",
+  "admin",
+  "line_total_prio",
+  "line_has_amount",
+  "line_has_date",
+  "left_total_prio",
+  "line_admin",
+  "line_address_hint",
+  "prev_date",
+  "prev_time_only",
+  "prev_total_prio",
+  "prev_address_hint",
+  "prev_admin",
+  "prev_store_word",
+  "prev_amount",
+  "prev_rel_h",
+  "next_date",
+  "next_time_only",
+  "next_total_prio",
+  "next_address_hint",
+  "next_admin",
+  "next_store_word",
+  "next_amount",
+  "next_rel_h",
+  "prev_line_address_hint",
+  "next_line_address_hint",
+  "prev_line_admin",
+  "next_line_admin"
+ ],
+ "thresholds": {
+  "seller": 0.5,
+  "seller_address": 0.5,
+  "timestamp": 0.3,
+  "total_cost": 0.1,
+  "confident": 0.5
+ },
+ "params": {
+  "objective": "multiclass",
+  "num_class": 5,
+  "learning_rate": 0.05,
+  "num_leaves": 31,
+  "min_data_in_leaf": 20,
+  "feature_fraction": 0.8,
+  "bagging_fraction": 0.8,
+  "bagging_freq": 1,
+  "lambda_l2": 1.0,
+  "verbose": -1,
+  "seed": 2026,
+  "num_threads": 4
+ },
+ "num_boost_round": 99,
+ "trained_on": {
+  "split": "train",
+  "ground_truth": "mcocr2021-gt-v2",
+  "images": 808,
+  "ocr_runs": [
+   "v6_medium_vi3+orient@gpu0",
+   "v6_medium+orient@gpu0"
+  ],
+  "spans": 67151,
+  "class_counts": {
+   "other": 57606,
+   "seller": 1678,
+   "seller_address": 2845,
+   "timestamp": 1922,
+   "total_cost": 3100
+  }
+ },
+ "out_of_fold": {
+  "folds": 5,
+  "gazetteer": "built from the other folds",
+  "field_em": {
+   "v6_medium_vi3+orient@gpu0": {
+    "lines": {
+     "seller": 0.7853598014888338,
+     "seller_address": 0.5632754342431762,
+     "timestamp": 0.8727506426735219,
+     "total_cost": 0.8952254641909815,
+     "overall": 0.7763994910941476
+    },
+    "rules": {
+     "seller": 0.7320099255583127,
+     "seller_address": 0.48759305210918114,
+     "timestamp": 0.87146529562982,
+     "total_cost": 0.8912466843501327,
+     "overall": 0.7420483460559797
+    }
+   },
+   "v6_medium+orient@gpu0": {
+    "lines": {
+     "seller": 0.7803970223325062,
+     "seller_address": 0.5521091811414393,
+     "timestamp": 0.8663239074550129,
+     "total_cost": 0.8859416445623343,
+     "overall": 0.7684478371501272
+    },
+    "rules": {
+     "seller": 0.7357320099255583,
+     "seller_address": 0.4826302729528536,
+     "timestamp": 0.8663239074550129,
+     "total_cost": 0.8687002652519894,
+     "overall": 0.7350508905852418
+    }
+   }
+  },
+  "ready_vs_confident": [
+   {
+    "confident": 0.5,
+    "ready_share": 0.8007425742574258,
+    "ready_precision": 0.4652241112828439
+   },
+   {
+    "confident": 0.6,
+    "ready_share": 0.7710396039603961,
+    "ready_precision": 0.463884430176565
+   },
+   {
+    "confident": 0.7,
+    "ready_share": 0.6955445544554455,
+    "ready_precision": 0.4750889679715303
+   },
+   {
+    "confident": 0.8,
+    "ready_share": 0.6064356435643564,
+    "ready_precision": 0.47346938775510206
+   },
+   {
+    "confident": 0.9,
+    "ready_share": 0.3972772277227723,
+    "ready_precision": 0.43613707165109034
+   },
+   {
+    "confident": 0.95,
+    "ready_share": 0.24257425742574257,
+    "ready_precision": 0.4642857142857143
+   }
+  ]
+ },
+ "top_features": [
+  [
+   "gaz_address",
+   91708.1
+  ],
+  [
+   "line_total_prio",
+   71410.9
+  ],
+  [
+   "gaz_seller",
+   71040.4
+  ],
+  [
+   "date",
+   66718.4
+  ],
+  [
+   "y0",
+   44570.7
+  ],
+  [
+   "line_has_date",
+   29909.2
+  ],
+  [
+   "in_header",
+   19753.7
+  ],
+  [
+   "n_in_line",
+   15633.3
+  ],
+  [
+   "total_prio",
+   13860.6
+  ],
+  [
+   "line_pos",
+   13074.6
+  ],
+  [
+   "yc",
+   12153.4
+  ],
+  [
+   "n_chars",
+   11941.4
+  ],
+  [
+   "line_idx",
+   10157.9
+  ],
+  [
+   "line_has_amount",
+   10021.7
+  ],
+  [
+   "rel_w",
+   9437.8
+  ],
+  [
+   "upper_ratio",
+   7726.1
+  ],
+  [
+   "left_total_prio",
+   7499.1
+  ],
+  [
+   "alpha_ratio",
+   7204.6
+  ],
+  [
+   "date_kw",
+   6216.5
+  ],
+  [
+   "rel_h",
+   6174.2
+  ]
+ ]
+}

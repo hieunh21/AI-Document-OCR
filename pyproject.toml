@@ -18,6 +18,7 @@ dependencies = [
     "sqlalchemy>=2.0.30,<3",
     "psycopg[binary]>=3.2,<4",
     "alembic>=1.13,<2",
+    "lightgbm>=4.5,<5",  # learned KIE span classifier
 ]
 
 [project.optional-dependencies]

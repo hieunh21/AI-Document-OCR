@@ -1,21 +1,28 @@
 {
-  "version": "pipeline-v3",
+  "version": "pipeline-v4",
   "frozen": "2026-10-19",
-  "evidence": "dev: evaluation/reports/ocr_vi3_dev.md (v3), rules_v2_dev.md (v2) and model_comparison.md (v1); test: evaluation/reports/final_test.md was run once on pipeline-v1",
-  "requires": "models/ppocrv6_medium_rec_vi3/ (fine-tuned recognizer, git-ignored; docs/finetune_rec.md)",
+  "evidence": "dev: evaluation/reports/lines_dev.md (v4), ocr_vi3_dev.md (v3), rules_v2_dev.md (v2), model_comparison.md (v1); test: evaluation/reports/final_test.md was run once on pipeline-v1",
+  "requires": "models/ppocrv6_medium_rec_vi3/ (fine-tuned recognizer, git-ignored; docs/finetune_rec.md); configs/kie_line_model.txt (python -m evaluation.train_line_classifier)",
   "pipelines": {
     "default": {
       "ocr": "v6_medium_vi3+orient",
-      "kie": "rules+gaz+adm-nofb",
-      "why": "offline, no API key, <1 s per receipt on GPU; v3 swaps in the Vietnamese fine-tuned recognizer: dev OCR CER (folded) 11.0 -> 3.2 %, overall EM 75.6 -> 76.2 % (+0.6 [-0.4, +1.6], not significant)"
+      "kie": "lines+gaz+adm",
+      "why": "offline, no API key, <1 s per receipt on GPU; v4 replaces the hand-written line rules with a LightGBM span classifier trained on the train split: dev overall EM 76.2 -> 79.0 % (+2.8 [+1.0, +4.7]), address 52.3 -> 60.9 %"
     },
     "llm": {
       "ocr": "v6_medium_vi3+orient",
       "kie": "llm:gemini+gaz",
-      "why": "optional when GEMINI_API_KEY is set: dev overall EM 78.1 % (+0.6 [-1.0, +2.1] over stock OCR on the same proxy backend; +1.9 [-0.3, +4.4] over the default)"
+      "why": "optional when GEMINI_API_KEY is set: dev overall EM 78.1 %; since v4 the free default is at least as accurate on dev (-0.9 [-2.7, +0.9] for Gemini), so this is kept for comparison"
     }
   },
   "history": [
+    {
+      "version": "pipeline-v3",
+      "default_ocr": "v6_medium_vi3+orient",
+      "default_kie": "rules+gaz+adm-nofb",
+      "dev_overall_em": 0.762,
+      "report": "evaluation/reports/ocr_vi3_dev.md"
+    },
     {
       "version": "pipeline-v2",
       "default_ocr": "v6_medium+orient",

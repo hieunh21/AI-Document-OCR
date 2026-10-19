@@ -82,6 +82,10 @@ PIPELINES: dict[str, Pipeline] = {
         "v6_medium_vi3+orient", "rules+gaz+adm-nofb", "rules + gazetteer + place names, vi rec"
     ),
     "llm-vi3": Pipeline("v6_medium_vi3+orient", "llm:gemini+gaz", "Gemini + gazetteer, vi rec"),
+    # pipeline-v4: learned span classifier instead of line rules (ai/kie/learned.py)
+    "lines-vi3": Pipeline(
+        "v6_medium_vi3+orient", "lines+gaz+adm", "span classifier + gazetteer + place names"
+    ),
 }
 
 

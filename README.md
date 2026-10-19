@@ -202,6 +202,13 @@ Laptop GPU.
   - Overall EM, Gemini: 77.5 → 78.1 % on the same proxy backend.
   - Both KIE gains are within noise (`evaluation/reports/ocr_vi3_dev.md`).
   - What v3 adds is correct Vietnamese in the evidence and raw OCR text.
+- **Pipeline v4 (dev only), the current default:** a LightGBM span classifier replaces
+  the hand-written line rules (`ai/kie/learned.py`, trained on train with
+  `python -m evaluation.train_line_classifier`).
+  - Overall EM: 76.2 → **79.0 %** (+2.8 [+1.0, +4.7]).
+  - Address: 52.3 → 60.9 %.
+  - The free pipeline is now at least as accurate as Gemini on dev (78.1 %).
+  - Report: `evaluation/reports/lines_dev.md`.
 
 Full reports:
 

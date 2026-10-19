@@ -19,8 +19,12 @@ from ai.normalization.text import fold_noacc
 from evaluation.dataset_adapter import load_split
 
 
-def build(min_seller_count: int = 2) -> dict:
-    records = load_split("train")
+def build(min_seller_count: int = 2, records=None) -> dict:
+    """Gazetteer data from ``records`` (default: the whole train split).
+
+    The line classifier passes subsets of train to build out-of-fold gazetteers.
+    """
+    records = load_split("train") if records is None else records
     seller_variants: dict[str, Counter] = defaultdict(Counter)
     address_variants: dict[tuple[str, str], Counter] = defaultdict(Counter)
     for r in records:

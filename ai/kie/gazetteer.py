@@ -34,6 +34,10 @@ class Gazetteer:
         self._seller_keys = [s["key"] for s in sellers]
 
     @classmethod
+    def from_dict(cls, data: dict, **kw) -> Gazetteer:
+        return cls(data["sellers"], data["addresses"], **kw)
+
+    @classmethod
     def load(cls, path: Path = GAZETTEER_PATH, **kw) -> Gazetteer | None:
         if not path.exists():
             return None

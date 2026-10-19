@@ -11,6 +11,8 @@ Names:
                            e.g. llm:gemini:gemini-2.5-flash:think0
     llm:gemini+gaz         Gemini, then seller/address mapped to the gazetteer spelling
     llm:gemini:rerun<T>    same request, answers cached separately under tag T
+    lines                  learned span classifier (configs/kie_line_model.*), no store list
+    lines+gaz+adm          + gazetteer and official place names (as the rules)
 """
 
 from __future__ import annotations
@@ -25,6 +27,8 @@ KIE_NAMES = (
     "llm:gemini",
     "llm:gemini+gaz",
     "llm:gemini+gaz+adm",
+    "lines",
+    "lines+gaz+adm",
 )
 
 
@@ -42,6 +46,16 @@ def build_kie(name: str) -> KIEProvider:
             seller_fallback=not name.endswith("-nofb"),
             admin=_admin() if flags & {"adm", "admfix"} else None,
             admin_hint="adm" in flags,
+        )
+    if name == "lines" or name.startswith("lines+"):
+        from ai.kie.learned import LineClassifierKIE
+
+        flags = set(name.split("+")[1:])
+        if not flags <= {"gaz", "adm"}:
+            raise ValueError(f"unknown KIE {name!r}; choose from {KIE_NAMES}")
+        return LineClassifierKIE(
+            gazetteer=_gazetteer() if "gaz" in flags else None,
+            admin=_admin() if "adm" in flags else None,
         )
     if name.startswith("llm:gemini"):
         from ai.kie.gazetteer import Gazetteer
